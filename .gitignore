@@ -55,3 +55,15 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# JetBrains Rider / IntelliJ
+.idea/
+*.sln.iml
+
+# Visual Studio
+.vs/
+
+# shuttle-rank: HTML-кэш скрейпера и сгенерированные данные сайта
+data/cache/
+web/node_modules/
+web/dist/
