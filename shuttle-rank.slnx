@@ -1,11 +1,4 @@
 <Solution>
-  <Folder Name="/src/">
-    <Project Path="src/SR.Core/SR.Core.csproj" />
-    <Project Path="src/SR.Scraper/SR.Scraper.csproj" />
-  </Folder>
-  <Folder Name="/tests/">
-    <Project Path="tests/SR.Core.Tests/SR.Core.Tests.csproj" />
-  </Folder>
   <Folder Name="/web/">
     <File Path="web/package.json" />
     <File Path="web/vite.config.js" />
@@ -20,4 +13,7 @@
     <File Path="web/src/components/MethodologyFooter.vue" />
     <File Path="web/src/utils/format.js" />
   </Folder>
+  <Project Path="src/SR.Core/SR.Core.csproj" />
+  <Project Path="src/SR.Scraper/SR.Scraper.csproj" />
+  <Project Path="tests/SR.Core.Tests/SR.Core.Tests.csproj" />
 </Solution>
