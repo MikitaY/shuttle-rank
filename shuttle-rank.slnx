@@ -1,4 +1,23 @@
 <Solution>
-  <Project Path="src/SR.Core/SR.Core.csproj" />
-  <Project Path="src/SR.Scraper/SR.Scraper.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/SR.Core/SR.Core.csproj" />
+    <Project Path="src/SR.Scraper/SR.Scraper.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SR.Core.Tests/SR.Core.Tests.csproj" />
+  </Folder>
+  <Folder Name="/web/">
+    <File Path="web/package.json" />
+    <File Path="web/vite.config.js" />
+    <File Path="web/index.html" />
+    <File Path="web/src/main.js" />
+    <File Path="web/src/style.css" />
+    <File Path="web/src/App.vue" />
+    <File Path="web/src/components/LeagueHeader.vue" />
+    <File Path="web/src/components/RatingControls.vue" />
+    <File Path="web/src/components/RatingTable.vue" />
+    <File Path="web/src/components/PlayerMatchLog.vue" />
+    <File Path="web/src/components/MethodologyFooter.vue" />
+    <File Path="web/src/utils/format.js" />
+  </Folder>
 </Solution>
