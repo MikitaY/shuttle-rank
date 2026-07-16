@@ -3,14 +3,14 @@ using System.Text.Json;
 
 namespace SR.Core;
 
-/// <summary>Единые настройки сериализации: snake_case ключи, читаемый отступ,
-/// кириллица без \u-экранирования (аналог ensure_ascii=False в Python).</summary>
+/// <summary>Shared serialization options: snake_case keys, readable indentation,
+/// and non-ASCII (Cyrillic) left unescaped (like ensure_ascii=False in Python).</summary>
 public static class Json
 {
     public static readonly JsonSerializerOptions Options = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
-        DictionaryKeyPolicy = null,              // ключи словарей ("overall", "E"…) как есть
+        DictionaryKeyPolicy = null,              // keep dictionary keys ("overall", "E"…) verbatim
         PropertyNameCaseInsensitive = true,
         WriteIndented = true,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,

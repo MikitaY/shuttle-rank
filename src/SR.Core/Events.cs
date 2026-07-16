@@ -1,6 +1,6 @@
 namespace SR.Core;
 
-/// <summary>Разбор кодов событий и раундов tournamentsoftware.</summary>
+/// <summary>Parsing of tournamentsoftware event codes and round names.</summary>
 public static class Events
 {
     /// <summary>"SE - Group A" -> ("SE", "Group A"); "XDD" -> ("XDD", null).</summary>
@@ -12,8 +12,8 @@ public static class Events
         return (evt, group);
     }
 
-    /// <summary>Код события -> (дисциплина, уровень).
-    /// SE = одиночки E, DC = пары C, XDB = микст B, MASTER+ = пары Masters.</summary>
+    /// <summary>Event code -> (discipline, level).
+    /// SE = singles E, DC = doubles C, XDB = mixed B, MASTER+ = doubles Masters.</summary>
     public static (string Discipline, string? Level) EventMeta(string eventCode)
     {
         var code = eventCode.ToUpperInvariant();
@@ -28,7 +28,7 @@ public static class Events
         return ("unknown", null);
     }
 
-    /// <summary>Название раунда -> стадия для начисления очков.</summary>
+    /// <summary>Round name -> stage used for awarding points.</summary>
     public static string RoundKind(string? roundName)
     {
         var r = (roundName ?? "").ToLowerInvariant();

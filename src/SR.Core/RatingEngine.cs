@@ -1,7 +1,7 @@
 namespace SR.Core;
 
-/// <summary>Считает Elo, очки и предположительный уровень игроков из LeagueData.
-/// Портирование ratings.py — сохраняет порядок обхода и формулы.</summary>
+/// <summary>Computes Elo, points and inferred player level from LeagueData.
+/// Port of ratings.py — preserves traversal order and formulas.</summary>
 public sealed class RatingEngine
 {
     private static readonly string[] Scopes = { "overall", "singles", "doubles", "mixed" };
@@ -18,7 +18,7 @@ public sealed class RatingEngine
 
     public RatingsOutput Compute(LeagueData league)
     {
-        // Dictionary сохраняет порядок вставки (первое появление игрока) — как defaultdict в Python.
+        // Dictionary preserves insertion order (first appearance of a player) — like Python's defaultdict.
         var players = new Dictionary<string, Acc>();
         Acc Get(string name)
         {
@@ -88,7 +88,7 @@ public sealed class RatingEngine
                 }
             }
 
-            // Elo — без walkover. Обновляем и общий рейтинг, и рейтинг дисциплины.
+            // Elo — walkovers excluded. Update both the overall rating and the discipline rating.
             if (!m.Walkover)
             {
                 foreach (var scope in new[] { "overall", discipline })
@@ -146,7 +146,7 @@ public sealed class RatingEngine
             }).ToList(),
         };
 
-        // OrderByDescending стабилен — при равном Elo сохраняется порядок появления (как sorted в Python).
+        // OrderByDescending is stable — on equal Elo the appearance order is kept (like Python's sorted).
         foreach (var (name, p) in players.OrderByDescending(kv => kv.Value.Elo["overall"]))
         {
             output.Players.Add(new PlayerOut
@@ -184,7 +184,7 @@ public sealed class RatingEngine
     private static List<string> Last(List<string> src, int n) =>
         src.Skip(Math.Max(0, src.Count - n)).ToList();
 
-    /// <summary>Матчи в хронологическом порядке, пригодные для рейтинга.</summary>
+    /// <summary>Matches in chronological order that are eligible for rating.</summary>
     private static IEnumerable<(Tournament, Match)> IterPlayed(LeagueData league)
     {
         foreach (var t in league.Tournaments)
@@ -194,8 +194,8 @@ public sealed class RatingEngine
                 if (m.Sides.Count != 2) continue;
                 var a = m.Sides[0];
                 var b = m.Sides[1];
-                if (a.Players.Count == 0 || b.Players.Count == 0) continue; // нераскрытый плейсхолдер
-                if (!a.Won && !b.Won) continue;                             // матч не сыгран
+                if (a.Players.Count == 0 || b.Players.Count == 0) continue; // unresolved placeholder
+                if (!a.Won && !b.Won) continue;                             // match not played
                 yield return (t, m);
             }
     }

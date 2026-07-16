@@ -6,7 +6,7 @@ import RatingTable from './components/RatingTable.vue'
 import MethodologyFooter from './components/MethodologyFooter.vue'
 import { LEVEL_NUM } from './utils/format.js'
 
-// --- Данные ---
+// --- Data ---
 const data = ref(null)
 const error = ref(null)
 
@@ -20,15 +20,15 @@ onMounted(async () => {
   }
 })
 
-// --- Состояние интерфейса ---
+// --- UI state ---
 const discipline = ref('overall')   // overall | singles | doubles | mixed
 const system = ref('elo')           // elo | points
 const query = ref('')
 const minMatches = ref(true)
 const sortKey = ref('rating')
-const sortDir = ref(-1)             // 1 = по возрастанию, -1 = по убыванию
+const sortDir = ref(-1)             // 1 = ascending, -1 = descending
 
-// Статистика игрока в разрезе выбранной дисциплины.
+// Player stats for the selected discipline.
 function disciplineStats(p) {
   if (discipline.value === 'overall') {
     return { matches: p.matches, wins: p.wins, losses: p.losses, winrate: p.winrate, form: p.form }
@@ -37,7 +37,7 @@ function disciplineStats(p) {
     || { matches: 0, wins: 0, losses: 0, winrate: 0, form: [] }
 }
 
-// Значение рейтинга для выбранной системы (Elo/очки) и дисциплины.
+// Rating value for the selected system (Elo/points) and discipline.
 function ratingOf(p) {
   if (system.value === 'elo') {
     return discipline.value === 'overall' ? p.elo.overall : p.elo[discipline.value]
@@ -47,7 +47,7 @@ function ratingOf(p) {
     : (p.points_by_discipline[discipline.value] || 0)
 }
 
-// Отфильтрованный и отсортированный список строк таблицы.
+// Filtered and sorted list of table rows.
 const rows = computed(() => {
   if (!data.value) return []
   let list = data.value.players.map(p => ({
@@ -88,7 +88,7 @@ function onSort(key) {
   }
 }
 
-// Смена системы возвращает сортировку к рейтингу (по убыванию).
+// Switching the system resets sorting back to rating (descending).
 function onSystemChange(value) {
   system.value = value
   sortKey.value = 'rating'

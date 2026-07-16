@@ -1,5 +1,3 @@
-using SR.Core;
-
 namespace SR.Core.Tests;
 
 public class RatingEngineTests
@@ -10,8 +8,8 @@ public class RatingEngineTests
         Points = new PointsConfig
         {
             Participation = 5,
-            WinByRound = new() { ["group"] = 10, ["quarter"] = 15, ["semi"] = 20, ["final"] = 30 },
-            LevelMultiplier = new() { ["E"] = 1.0, ["D"] = 1.25, ["C"] = 1.55, ["B"] = 1.9, ["M"] = 2.3 },
+            WinByRound = new Dictionary<string, double> { ["group"] = 10, ["quarter"] = 15, ["semi"] = 20, ["final"] = 30 },
+            LevelMultiplier = new Dictionary<string, double> { ["E"] = 1.0, ["D"] = 1.25, ["C"] = 1.55, ["B"] = 1.9, ["M"] = 2.3 },
         },
         LevelInference = new LevelInferenceConfig { WinrateUp = 0.65, WinrateDown = 0.35, Adjustment = 0.4 },
     };
@@ -52,7 +50,7 @@ public class RatingEngineTests
         var a = Player(r, "A");
         var b = Player(r, "B");
 
-        // Равный старт => ожидание 0.5 => дельта 32*(1-0.5)=16.
+        // Equal start => expected 0.5 => delta 32*(1-0.5)=16.
         Assert.Equal(1516.0, a.Elo["overall"]);
         Assert.Equal(1516.0, a.Elo["singles"]);
         Assert.Equal(1484.0, b.Elo["overall"]);
@@ -64,7 +62,7 @@ public class RatingEngineTests
     public void Points_count_win_plus_participation()
     {
         var r = new RatingEngine(Config()).Compute(SinglesMatch());
-        // Победа в группе (10 × ×1.0) + участие 5 = 15; проигравший — только участие 5.
+        // Group win (10 × ×1.0) + participation 5 = 15; the loser gets participation 5 only.
         Assert.Equal(15.0, Player(r, "A").Points);
         Assert.Equal(5.0, Player(r, "B").Points);
         Assert.Equal(10.0, Player(r, "A").PointsByDiscipline["singles"]);
@@ -81,13 +79,17 @@ public class RatingEngineTests
         Assert.Equal("down", b.LevelTrend);
     }
 
+    private static readonly int[] GamesForA = [21, 10];
+    private static readonly int[] GamesForBFlipped = [10, 21];
+    private static readonly string[] OpponentsOfA = ["B"];
+
     [Fact]
     public void MatchLog_flips_games_for_second_side()
     {
         var r = new RatingEngine(Config()).Compute(SinglesMatch());
-        Assert.Equal(new[] { 21, 10 }, Player(r, "A").MatchLog[0].Games[0]);
-        Assert.Equal(new[] { 10, 21 }, Player(r, "B").MatchLog[0].Games[0]);
-        Assert.Equal(new[] { "B" }, Player(r, "A").MatchLog[0].Opponents.ToArray());
+        Assert.Equal(GamesForA, Player(r, "A").MatchLog[0].Games[0]);
+        Assert.Equal(GamesForBFlipped, Player(r, "B").MatchLog[0].Games[0]);
+        Assert.Equal(OpponentsOfA, Player(r, "A").MatchLog[0].Opponents.ToArray());
     }
 
     [Fact]
@@ -95,9 +97,9 @@ public class RatingEngineTests
     {
         var r = new RatingEngine(Config()).Compute(SinglesMatch(walkover: true));
         var a = Player(r, "A");
-        Assert.Equal(1500.0, a.Elo["overall"]);   // Elo не меняется
+        Assert.Equal(1500.0, a.Elo["overall"]); // Elo is unchanged
         Assert.Equal(0, a.EloMatches["overall"]);
-        Assert.Equal(1, a.Matches);                 // но матч засчитан
+        Assert.Equal(1, a.Matches); // but the match is counted
         Assert.Equal(1, a.Walkovers);
     }
 }

@@ -1,6 +1,6 @@
 namespace SR.Core;
 
-/// <summary>Промежуточная модель (league.json): турниры, матчи, стороны.</summary>
+/// <summary>Intermediate model (league.json): tournaments, matches, sides.</summary>
 public sealed class LeagueData
 {
     public List<Tournament> Tournaments { get; set; } = new();
@@ -39,7 +39,7 @@ public sealed class Side
     public string? ResolvedFrom { get; set; }
 }
 
-/// <summary>Строка группового standings: место -> игроки.</summary>
+/// <summary>A group standings row: position -> players.</summary>
 public sealed class Standing
 {
     public int Pos { get; set; }

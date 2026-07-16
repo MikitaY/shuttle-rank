@@ -1,5 +1,5 @@
 <script setup>
-// Статический блок с описанием методики расчёта.
+// Static block describing the rating methodology.
 </script>
 
 <template>

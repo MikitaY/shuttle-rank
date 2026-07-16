@@ -1,10 +1,10 @@
 namespace SR.Core;
 
-/// <summary>Итоговая модель (ratings.json), которую читает фронтенд.</summary>
+/// <summary>Final model (ratings.json) consumed by the frontend.</summary>
 public sealed class RatingsOutput
 {
-    public List<TournamentSummary> Tournaments { get; set; } = new();
-    public List<PlayerOut> Players { get; set; } = new();
+    public List<TournamentSummary> Tournaments { get; set; } = [];
+    public List<PlayerOut> Players { get; set; } = [];
     public string? Updated { get; set; }
 }
 

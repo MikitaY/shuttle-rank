@@ -6,8 +6,8 @@ using Match = SR.Core.Match;
 
 namespace SR.Scraper;
 
-/// <summary>Скрейпинг и разбор страниц: турниры организатора -> матчи -> standings.
-/// Портирование scraper.py на AngleSharp.</summary>
+/// <summary>Scraping and page parsing: organizer tournaments -> matches -> standings.
+/// Port of scraper.py to AngleSharp.</summary>
 public sealed partial class Scraper
 {
     private readonly AppConfig _cfg;
@@ -23,7 +23,7 @@ public sealed partial class Scraper
     private async Task<IDocument> LoadAsync(string url, bool xhr = false) =>
         await _parser.ParseDocumentAsync(await _client.FetchAsync(url, xhr));
 
-    /// <summary>Все турниры организатора, отфильтрованные по названию лиги.</summary>
+    /// <summary>All organizer tournaments, filtered by the league name.</summary>
     public async Task<List<Tournament>> DiscoverTournamentsAsync()
     {
         var url = $"{_cfg.BaseUrl}/find.aspx?a=7&q={_cfg.OrganizerId}";
@@ -49,7 +49,7 @@ public sealed partial class Scraper
         return tournaments.OrderBy(t => t.Date ?? "", StringComparer.Ordinal).ToList();
     }
 
-    /// <summary>Страница Matches -> список матчей (с дедупликацией list/grid view).</summary>
+    /// <summary>Matches page -> list of matches (deduplicating the list/grid views).</summary>
     public async Task<List<Match>> ParseMatchesAsync(Tournament tournament)
     {
         var url = $"{_cfg.BaseUrl}/tournament/{tournament.Id}/Matches";
@@ -144,7 +144,7 @@ public sealed partial class Scraper
         return unique;
     }
 
-    /// <summary>GetStandings -> места в группе (место -> игроки).</summary>
+    /// <summary>GetStandings -> group positions (position -> players).</summary>
     public async Task<List<Standing>> ParseStandingsAsync(Tournament tournament, int drawId)
     {
         var url = $"{_cfg.BaseUrl}/tournament/{tournament.Id}/Draw/{drawId}/GetStandings";
@@ -171,7 +171,7 @@ public sealed partial class Scraper
         return rows;
     }
 
-    /// <summary>"Group A #2" в плей-офф -> игроки со 2-го места в "SE - Group A".</summary>
+    /// <summary>"Group A #2" in the playoff -> the players ranked 2nd in "SE - Group A".</summary>
     public static int ResolvePlaceholders(List<Match> matches, Dictionary<string, List<Standing>> standingsByDrawName)
     {
         var unresolved = 0;
@@ -201,7 +201,7 @@ public sealed partial class Scraper
         return unresolved;
     }
 
-    /// <summary>Схлопывает пробелы и применяет карту псевдонимов игроков.</summary>
+    /// <summary>Collapses whitespace and applies the player alias map.</summary>
     public void NormalizeNames(List<Match> matches)
     {
         foreach (var m in matches)

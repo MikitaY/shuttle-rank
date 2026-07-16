@@ -2,7 +2,7 @@ using System.Text.Json;
 
 namespace SR.Core;
 
-/// <summary>config.json: параметры источника данных и алгоритмов рейтинга.</summary>
+/// <summary>config.json: data-source settings and rating algorithm parameters.</summary>
 public sealed class AppConfig
 {
     public string OrganizerId { get; set; } = "";
@@ -19,7 +19,7 @@ public sealed class AppConfig
     {
         var json = File.ReadAllText(path);
         return JsonSerializer.Deserialize<AppConfig>(json, Json.Options)
-               ?? throw new InvalidOperationException($"Не удалось прочитать {path}");
+               ?? throw new InvalidOperationException($"Could not read {path}");
     }
 }
 

@@ -1,5 +1,3 @@
-using SR.Core;
-
 namespace SR.Core.Tests;
 
 public class EventsTests

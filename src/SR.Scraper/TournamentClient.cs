@@ -4,9 +4,9 @@ using SR.Core;
 
 namespace SR.Scraper;
 
-/// <summary>HTTP-клиент tournamentsoftware с дисковым кэшем.
-/// Ключ кэша — md5(url [+ "|xhr"]) — совпадает с Python-версией, поэтому
-/// уже скачанные страницы переиспользуются без обращения к сайту.</summary>
+/// <summary>tournamentsoftware HTTP client with an on-disk cache.
+/// The cache key — md5(url [+ "|xhr"]) — matches the Python version, so already
+/// downloaded pages are reused without hitting the site.</summary>
 public sealed class TournamentClient : IDisposable
 {
     private readonly HttpClient _http = new();
@@ -36,7 +36,7 @@ public sealed class TournamentClient : IDisposable
         resp.EnsureSuccessStatusCode();
         var text = await resp.Content.ReadAsStringAsync();
 
-        await Task.Delay(700); // вежливая пауза между реальными запросами
+        await Task.Delay(700); // polite pause between real requests
         await File.WriteAllTextAsync(cacheFile, text, new UTF8Encoding(false));
         return text;
     }

@@ -4,7 +4,7 @@ import { fmtDate, DISCIPLINE_GENITIVE } from '../utils/format.js'
 
 const props = defineProps({ player: { type: Object, required: true } })
 
-// Сводка Elo по дисциплинам, где игрок сыграл хотя бы один матч.
+// Elo summary for disciplines where the player has at least one match.
 const eloSummary = computed(() => {
   const p = props.player
   const parts = ['singles', 'doubles', 'mixed']
@@ -13,7 +13,7 @@ const eloSummary = computed(() => {
   return parts.length ? ', ' + parts.join(', ') : ''
 })
 
-// Матчи от последнего к первому.
+// Matches from most recent to oldest.
 const log = computed(() => props.player.match_log.slice().reverse())
 
 const score = m => m.games.map(g => g.join(':')).join(', ') || 'w/o'

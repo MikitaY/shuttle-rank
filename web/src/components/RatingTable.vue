@@ -10,7 +10,7 @@ defineProps({
 })
 const emit = defineEmits(['sort'])
 
-// Раскрытая строка с историей матчей (по имени игрока).
+// Expanded row with match history (keyed by player name).
 const openName = ref(null)
 function toggle(name) {
   openName.value = openName.value === name ? null : name
