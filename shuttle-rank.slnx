@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/SR.Core/SR.Core.csproj" />
+  <Project Path="src/SR.Scraper/SR.Scraper.csproj" />
+</Solution>
