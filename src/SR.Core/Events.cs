@@ -13,7 +13,8 @@ public static class Events
     }
 
     /// <summary>Event code -> (discipline, level).
-    /// SE = singles E, DC = doubles C, XDB = mixed B, MASTER+ = doubles Masters.</summary>
+    /// SE = singles E, DC = doubles C, XDB = mixed B, MSA = men's singles A,
+    /// MDC = men's doubles C, MASTER+ = doubles Masters.</summary>
     public static (string Discipline, string? Level) EventMeta(string eventCode)
     {
         var code = eventCode.ToUpperInvariant();
@@ -21,7 +22,9 @@ public static class Events
 
         if (code.StartsWith("MASTER")) return ("doubles", "M");
         if (code.StartsWith("XD")) return ("mixed", At(code, 2));
+        if (code.StartsWith("MS")) return ("singles", At(code, 2));
         if (code.StartsWith("WS")) return ("singles", At(code, 2));
+        if (code.StartsWith("MD")) return ("doubles", At(code, 2));
         if (code.StartsWith("WD")) return ("doubles", At(code, 2));
         if (code.StartsWith("S")) return ("singles", At(code, 1));
         if (code.StartsWith("D")) return ("doubles", At(code, 1));
