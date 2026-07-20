@@ -21,37 +21,38 @@ onMounted(async () => {
 })
 
 // --- UI state ---
-const discipline = ref('overall')   // overall | singles | doubles | mixed
+// 'overall' | 'singles' | 'doubles' | 'mixed' (discipline) or 'A' | 'B' | 'C' | 'D' | 'E' | 'M' (skill level).
+const category = ref('overall')
 const system = ref('elo')           // elo | points
 const query = ref('')
 const minMatches = ref(true)
 const sortKey = ref('rating')
 const sortDir = ref(-1)             // 1 = ascending, -1 = descending
 
-// Player stats for the selected discipline.
-function disciplineStats(p) {
-  if (discipline.value === 'overall') {
+// Player stats for the selected category (discipline or level).
+// Optional chaining: older ratings.json snapshots may not have by_level yet.
+function categoryStats(p) {
+  if (category.value === 'overall') {
     return { matches: p.matches, wins: p.wins, losses: p.losses, winrate: p.winrate, form: p.form }
   }
-  return p.by_discipline[discipline.value]
+  return p.by_discipline?.[category.value] || p.by_level?.[category.value]
     || { matches: 0, wins: 0, losses: 0, winrate: 0, form: [] }
 }
 
-// Rating value for the selected system (Elo/points) and discipline.
+// Rating value for the selected system (Elo/points) and category.
 function ratingOf(p) {
   if (system.value === 'elo') {
-    return discipline.value === 'overall' ? p.elo.overall : p.elo[discipline.value]
+    return p.elo[category.value] ?? 0
   }
-  return discipline.value === 'overall'
-    ? p.points
-    : (p.points_by_discipline[discipline.value] || 0)
+  if (category.value === 'overall') return p.points
+  return p.points_by_discipline?.[category.value] ?? p.points_by_level?.[category.value] ?? 0
 }
 
 // Filtered and sorted list of table rows.
 const rows = computed(() => {
   if (!data.value) return []
   let list = data.value.players.map(p => ({
-    p, d: disciplineStats(p), rating: ratingOf(p),
+    p, d: categoryStats(p), rating: ratingOf(p),
   })).filter(r => r.d.matches > 0)
 
   if (minMatches.value) list = list.filter(r => r.d.matches >= 5)
@@ -94,6 +95,13 @@ function onSystemChange(value) {
   sortKey.value = 'rating'
   sortDir.value = -1
 }
+
+// Switching the category (discipline/level) resets sorting back to rating (descending).
+function onCategoryChange(value) {
+  category.value = value
+  sortKey.value = 'rating'
+  sortDir.value = -1
+}
 </script>
 
 <template>
@@ -106,11 +114,11 @@ function onSystemChange(value) {
     />
 
     <RatingControls
-      :discipline="discipline"
+      :category="category"
       :system="system"
       :query="query"
       :min-matches="minMatches"
-      @update:discipline="discipline = $event"
+      @update:category="onCategoryChange"
       @update:system="onSystemChange"
       @update:query="query = $event"
       @update:min-matches="minMatches = $event"

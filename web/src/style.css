@@ -2,7 +2,7 @@
   --bg: #f6f7f9; --card: #ffffff; --text: #1a2233; --muted: #64748b;
   --border: #e2e8f0; --accent: #2563eb; --accent-soft: #dbeafe;
   --win: #16a34a; --loss: #dc2626; --hover: #f1f5f9;
-  --lvl-E: #94a3b8; --lvl-D: #38bdf8; --lvl-C: #34d399; --lvl-B: #fbbf24; --lvl-M: #f472b6;
+  --lvl-E: #94a3b8; --lvl-D: #38bdf8; --lvl-C: #34d399; --lvl-B: #fbbf24; --lvl-A: #f97316; --lvl-M: #f472b6;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -27,6 +27,34 @@ header a { color: var(--accent); }
 }
 .stat b { display: block; font-size: 22px; }
 .stat span { color: var(--muted); font-size: 13px; }
+
+.info-btn {
+  background: var(--card); border: 1px solid var(--border); color: var(--muted);
+  border-radius: 10px; padding: 10px 16px; font: inherit; font-size: 13px;
+  cursor: pointer; align-self: stretch;
+}
+.info-btn:hover { color: var(--text); border-color: var(--accent); }
+
+.tournaments-panel {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 16px; margin: -10px 0 20px;
+}
+.tournaments-panel-head {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+}
+.close-btn {
+  background: transparent; border: 0; color: var(--muted); cursor: pointer; font-size: 15px;
+}
+.close-btn:hover { color: var(--text); }
+.tournaments-panel ul { list-style: none; margin: 0; padding: 0; }
+.tournaments-panel li {
+  display: flex; gap: 12px; padding: 6px 0; border-top: 1px solid var(--border);
+  font-size: 14px; flex-wrap: wrap;
+}
+.tournaments-panel li:first-child { border-top: 0; }
+.tournaments-panel .t-date { color: var(--muted); min-width: 76px; }
+.tournaments-panel .t-name { flex: 1; }
+.tournaments-panel .t-matches { color: var(--muted); font-size: 13px; }
 .controls {
   display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 14px;
 }
@@ -66,7 +94,7 @@ td.name { font-weight: 600; white-space: normal; }
 }
 .lvl-E { background: var(--lvl-E); } .lvl-D { background: var(--lvl-D); }
 .lvl-C { background: var(--lvl-C); } .lvl-B { background: var(--lvl-B); }
-.lvl-M { background: var(--lvl-M); }
+.lvl-A { background: var(--lvl-A); } .lvl-M { background: var(--lvl-M); }
 .trend { font-size: 11px; margin-left: 3px; }
 .trend.up { color: var(--win); } .trend.down { color: var(--loss); }
 .num { font-variant-numeric: tabular-nums; }
