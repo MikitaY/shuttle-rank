@@ -7,7 +7,8 @@ const props = defineProps({
   rows: { type: Array, required: true },
   sortKey: String,
   sortDir: Number,
-  category: String,
+  discipline: String,
+  level: String,
 })
 const emit = defineEmits(['sort'])
 
@@ -17,8 +18,9 @@ function toggle(name) {
   openName.value = openName.value === name ? null : name
 }
 
+const labelOf = key => CATEGORIES.find(c => c.key === key)?.label || key
 const categoryLabel = computed(() =>
-  CATEGORIES.find(c => c.key === props.category)?.label || '')
+  props.level ? `${labelOf(props.discipline)} · ${labelOf(props.level)}` : labelOf(props.discipline))
 
 const columns = [
   { key: 'rank', label: '#' },
@@ -58,7 +60,7 @@ const pct = winrate => Math.round(winrate * 100)
             <td class="num">{{ r.d.matches }}</td>
             <td class="num hide-m">{{ r.d.wins }}–{{ r.d.losses }}</td>
             <td class="num">
-              <span class="bar-bg"><span class="bar" :style="{ width: pct(r.d.winrate) + '%' }"></span></span>
+              <span class="bar-bg hide-m"><span class="bar" :style="{ width: pct(r.d.winrate) + '%' }"></span></span>
               {{ pct(r.d.winrate) }}%
             </td>
             <td class="hide-m">
@@ -69,7 +71,7 @@ const pct = winrate => Math.round(winrate * 100)
             </td>
           </tr>
           <tr v-if="openName === r.p.name" class="detail">
-            <td colspan="8"><PlayerMatchLog :player="r.p" :category="category" /></td>
+            <td colspan="8"><PlayerMatchLog :player="r.p" :discipline="discipline" :level="level" /></td>
           </tr>
         </template>
 

@@ -3,13 +3,14 @@ import { ref, nextTick } from 'vue'
 import { CATEGORIES } from '../utils/format.js'
 
 defineProps({
-  category: String,
+  discipline: String,
+  level: String,
   system: String,
   query: String,
   minMatches: Boolean,
 })
 const emit = defineEmits([
-  'update:category', 'update:system', 'update:query', 'update:minMatches',
+  'update:discipline', 'update:level', 'update:system', 'update:query', 'update:minMatches',
 ])
 
 const disciplines = CATEGORIES.filter(c => c.group === 'discipline')
@@ -33,16 +34,16 @@ function toggleSearch() {
     <div class="tabs tabs-wide">
       <button
         v-for="d in disciplines" :key="d.key"
-        :class="{ active: category === d.key }"
-        @click="emit('update:category', d.key)"
+        :class="{ active: discipline === d.key }"
+        @click="emit('update:discipline', d.key)"
       >{{ d.label }}</button>
     </div>
 
     <div class="tabs tabs-wide">
       <button
         v-for="l in levels" :key="l.key"
-        :class="{ active: category === l.key }"
-        @click="emit('update:category', l.key)"
+        :class="{ active: level === l.key }"
+        @click="emit('update:level', level === l.key ? null : l.key)"
       >{{ l.label }}</button>
     </div>
 

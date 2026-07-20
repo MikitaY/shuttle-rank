@@ -1,10 +1,11 @@
 <script setup>
 import { computed } from 'vue'
-import { fmtDate, DISCIPLINE_GENITIVE, CATEGORIES, surnameFirst } from '../utils/format.js'
+import { fmtDate, DISCIPLINE_GENITIVE, CATEGORIES, surnameFirst, comboKey } from '../utils/format.js'
 
 const props = defineProps({
   player: { type: Object, required: true },
-  category: { type: String, default: '' },
+  discipline: { type: String, default: '' },
+  level: { type: String, default: null },
 })
 
 // Elo summary for disciplines where the player has at least one match.
@@ -19,35 +20,41 @@ const eloSummary = computed(() => {
 // Matches from most recent to oldest.
 const fullLog = computed(() => props.player.match_log.slice().reverse())
 
-const levelKeys = CATEGORIES.filter(c => c.group === 'level').map(c => c.key)
 const disciplineKeys = CATEGORIES.filter(c => c.group === 'discipline').map(c => c.key)
+const levelKeys = CATEGORIES.filter(c => c.group === 'level').map(c => c.key)
+const labelOf = key => CATEGORIES.find(c => c.key === key)?.label || key
 
-// Which facet the active tab filters on.
-const facetKey = computed(() => {
-  if (levelKeys.includes(props.category)) return 'level'
-  if (disciplineKeys.includes(props.category)) return 'discipline'
-  return null
-})
+// A match belongs to the active view if it's the right discipline, and (when a level
+// is also picked) the right level too — e.g. "singles" + "D" only matches singles-D.
+const isPrimary = m => m.discipline === props.discipline && (!props.level || m.level === props.level)
 
-const valueOf = m => (facetKey.value === 'level' ? m.level : m.discipline)
+const primary = computed(() => fullLog.value.filter(isPrimary))
 
-// Matches played in the currently selected category.
-const primary = computed(() =>
-  facetKey.value ? fullLog.value.filter(m => valueOf(m) === props.category) : fullLog.value)
-
-// Everything else, grouped by the same facet (other levels, or other disciplines).
+// Everything else. With no level picked, group by discipline (as before). With a level
+// picked, the discipline+level pair is already pinned, so group by the exact combo
+// each remaining match belongs to (e.g. "Пары · C").
 const otherGroups = computed(() => {
-  if (!facetKey.value) return []
-  const keys = facetKey.value === 'level' ? levelKeys : disciplineKeys
-  const rest = fullLog.value.filter(m => valueOf(m) !== props.category)
-  return keys
-    .filter(k => k !== props.category)
-    .map(k => ({
-      key: k,
-      label: CATEGORIES.find(c => c.key === k)?.label || k,
-      matches: rest.filter(m => valueOf(m) === k),
-    }))
-    .filter(g => g.matches.length)
+  const rest = fullLog.value.filter(m => !isPrimary(m))
+  if (!rest.length) return []
+
+  if (!props.level) {
+    return disciplineKeys
+      .filter(d => d !== props.discipline)
+      .map(d => ({ key: d, label: labelOf(d), matches: rest.filter(m => m.discipline === d) }))
+      .filter(g => g.matches.length)
+  }
+
+  const groups = new Map()
+  for (const m of rest) {
+    const key = comboKey(m.discipline, m.level)
+    if (!groups.has(key)) groups.set(key, { key, label: `${labelOf(m.discipline)} · ${labelOf(m.level)}`, matches: [] })
+    groups.get(key).matches.push(m)
+  }
+  return [...groups.values()].sort((x, y) => {
+    const [da, la] = x.key.split('_')
+    const [db, lb] = y.key.split('_')
+    return disciplineKeys.indexOf(da) - disciplineKeys.indexOf(db) || levelKeys.indexOf(la) - levelKeys.indexOf(lb)
+  })
 })
 
 // One section for the active category, then (if any) a divider and one section per other group.

@@ -19,6 +19,12 @@ export const CATEGORIES = [
   { key: 'E', label: 'E', group: 'level' },
 ]
 
+// Combined discipline+level key, e.g. ("singles", "D") -> "singles_D" — matches the
+// keys the backend uses for elo/by_combo/points_by_combo when both facets are active.
+export function comboKey(discipline, level) {
+  return `${discipline}_${level}`
+}
+
 // Genitive-case discipline names for the match-history summary (Russian UI text).
 export const DISCIPLINE_GENITIVE = {
   singles: 'одиночки', doubles: 'пары', mixed: 'микст',

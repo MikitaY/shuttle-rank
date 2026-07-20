@@ -135,6 +135,4 @@ footer p { margin: 0 0 8px; }
 
   /* Tabs: scroll horizontally instead of wrapping into extra rows. */
   .tabs { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
-
-  .bar-bg { width: 40px; }
 }

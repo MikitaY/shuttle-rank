@@ -4,6 +4,7 @@ import LeagueHeader from './components/LeagueHeader.vue'
 import RatingControls from './components/RatingControls.vue'
 import RatingTable from './components/RatingTable.vue'
 import MethodologyFooter from './components/MethodologyFooter.vue'
+import { comboKey } from './utils/format.js'
 
 // --- Data ---
 const data = ref(null)
@@ -20,27 +21,32 @@ onMounted(async () => {
 })
 
 // --- UI state ---
-// 'singles' | 'doubles' | 'mixed' (discipline) or 'A' | 'B' | 'C' | 'D' | 'E' | 'M' (skill level).
-const category = ref('singles')
+const discipline = ref('singles')   // 'singles' | 'doubles' | 'mixed' — always one selected.
+const level = ref(null)             // 'A' | 'B' | 'C' | 'D' | 'E' | 'M' | null — optional refinement.
 const system = ref('elo')           // elo | points
 const query = ref('')
 const minMatches = ref(true)
 const sortKey = ref('rating')
 const sortDir = ref(-1)             // 1 = ascending, -1 = descending
 
-// Player stats for the selected category (discipline or level).
-// Optional chaining: older ratings.json snapshots may not have by_level yet.
+// The compound key ("singles_D") once a level narrows the discipline, discipline alone otherwise.
+const categoryKey = computed(() => level.value ? comboKey(discipline.value, level.value) : discipline.value)
+
+// Player stats for the selected discipline (+ level, if set).
+// Optional chaining: older ratings.json snapshots may not have by_combo yet.
 function categoryStats(p) {
-  return p.by_discipline?.[category.value] || p.by_level?.[category.value]
-    || { matches: 0, wins: 0, losses: 0, winrate: 0, form: [] }
+  const stats = level.value ? p.by_combo?.[categoryKey.value] : p.by_discipline?.[discipline.value]
+  return stats || { matches: 0, wins: 0, losses: 0, winrate: 0, form: [] }
 }
 
-// Rating value for the selected system (Elo/points) and category.
+// Rating value for the selected system (Elo/points), discipline (+ level, if set).
 function ratingOf(p) {
   if (system.value === 'elo') {
-    return p.elo[category.value] ?? 0
+    return p.elo[categoryKey.value] ?? 0
   }
-  return p.points_by_discipline?.[category.value] ?? p.points_by_level?.[category.value] ?? 0
+  return level.value
+    ? p.points_by_combo?.[categoryKey.value] ?? 0
+    : p.points_by_discipline?.[discipline.value] ?? 0
 }
 
 // Filtered and sorted list of table rows.
@@ -90,9 +96,14 @@ function onSystemChange(value) {
   sortDir.value = -1
 }
 
-// Switching the category (discipline/level) resets sorting back to rating (descending).
-function onCategoryChange(value) {
-  category.value = value
+// Switching the discipline or level resets sorting back to rating (descending).
+function onDisciplineChange(value) {
+  discipline.value = value
+  sortKey.value = 'rating'
+  sortDir.value = -1
+}
+function onLevelChange(value) {
+  level.value = value
   sortKey.value = 'rating'
   sortDir.value = -1
 }
@@ -108,11 +119,13 @@ function onCategoryChange(value) {
     />
 
     <RatingControls
-      :category="category"
+      :discipline="discipline"
+      :level="level"
       :system="system"
       :query="query"
       :min-matches="minMatches"
-      @update:category="onCategoryChange"
+      @update:discipline="onDisciplineChange"
+      @update:level="onLevelChange"
       @update:system="onSystemChange"
       @update:query="query = $event"
       @update:min-matches="minMatches = $event"
@@ -123,7 +136,8 @@ function onCategoryChange(value) {
       :rows="rows"
       :sort-key="sortKey"
       :sort-dir="sortDir"
-      :category="category"
+      :discipline="discipline"
+      :level="level"
       @sort="onSort"
     />
     <p v-else-if="error" class="empty">Не удалось загрузить данные: {{ error }}</p>
