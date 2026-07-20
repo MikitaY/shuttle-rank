@@ -46,6 +46,15 @@ public sealed partial class Scraper
             tournaments.Add(new Tournament { Id = guid, Name = name, Date = date });
         }
 
+        // One-off tournaments from other organizers, named explicitly in config
+        // (their titles don't carry a date and don't match TournamentNamePattern).
+        foreach (var extra in _cfg.ExtraTournaments)
+        {
+            var guid = extra.Id.ToLowerInvariant();
+            if (tournaments.Any(t => t.Id == guid)) continue;
+            tournaments.Add(new Tournament { Id = guid, Name = extra.Name, Date = extra.Date });
+        }
+
         return tournaments.OrderBy(t => t.Date ?? "", StringComparer.Ordinal).ToList();
     }
 

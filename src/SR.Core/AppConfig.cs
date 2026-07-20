@@ -10,6 +10,7 @@ public sealed class AppConfig
     public string BaseUrl { get; set; } = "";
     public string Cookie { get; set; } = "";
     public string UserAgent { get; set; } = "";
+    public List<ExtraTournamentConfig> ExtraTournaments { get; set; } = new();
     public Dictionary<string, string> PlayerAliases { get; set; } = new();
     public EloConfig Elo { get; set; } = new();
     public PointsConfig Points { get; set; } = new();
@@ -42,4 +43,13 @@ public sealed class LevelInferenceConfig
     public double WinrateUp { get; set; } = 0.65;
     public double WinrateDown { get; set; } = 0.35;
     public double Adjustment { get; set; } = 0.4;
+}
+
+/// <summary>A tournament outside OrganizerId/TournamentNamePattern, included by id
+/// (e.g. a one-off amateur event run by a different organizer).</summary>
+public sealed class ExtraTournamentConfig
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string? Date { get; set; }
 }
