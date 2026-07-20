@@ -21,8 +21,10 @@ onMounted(async () => {
 })
 
 // --- UI state ---
-const discipline = ref('singles')   // 'singles' | 'doubles' | 'mixed' — always one selected.
-const level = ref(null)             // 'A' | 'B' | 'C' | 'D' | 'E' | 'M' | null — optional refinement.
+// Masters (M) is only ever played as doubles in this league, so "Пары" + Masters
+// is the default view that actually has players in it.
+const discipline = ref('doubles')   // 'singles' | 'doubles' | 'mixed' — always one selected.
+const level = ref('M')              // 'A' | 'B' | 'C' | 'D' | 'E' | 'M' | null — optional refinement.
 const system = ref('elo')           // elo | points
 const query = ref('')
 const minMatches = ref(true)
