@@ -4,7 +4,6 @@ import LeagueHeader from './components/LeagueHeader.vue'
 import RatingControls from './components/RatingControls.vue'
 import RatingTable from './components/RatingTable.vue'
 import MethodologyFooter from './components/MethodologyFooter.vue'
-import { LEVEL_NUM } from './utils/format.js'
 
 // --- Data ---
 const data = ref(null)
@@ -64,7 +63,6 @@ const rows = computed(() => {
     rank: r => r.rating,
     rating: r => r.rating,
     name: r => r.p.name,
-    level: r => LEVEL_NUM[r.p.level] || 0,
     tournaments: r => r.p.tournaments,
     matches: r => r.d.matches,
     wl: r => r.d.wins - r.d.losses,
@@ -129,6 +127,7 @@ function onCategoryChange(value) {
       :rows="rows"
       :sort-key="sortKey"
       :sort-dir="sortDir"
+      :category="category"
       @sort="onSort"
     />
     <p v-else-if="error" class="empty">Не удалось загрузить данные: {{ error }}</p>

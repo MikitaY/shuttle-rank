@@ -1,12 +1,13 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import PlayerMatchLog from './PlayerMatchLog.vue'
-import { LEVEL_CLASS } from '../utils/format.js'
+import { CATEGORIES } from '../utils/format.js'
 
-defineProps({
+const props = defineProps({
   rows: { type: Array, required: true },
   sortKey: String,
   sortDir: Number,
+  category: String,
 })
 const emit = defineEmits(['sort'])
 
@@ -16,10 +17,12 @@ function toggle(name) {
   openName.value = openName.value === name ? null : name
 }
 
+const categoryLabel = computed(() =>
+  CATEGORIES.find(c => c.key === props.category)?.label || '')
+
 const columns = [
   { key: 'rank', label: '#' },
   { key: 'name', label: 'Игрок' },
-  { key: 'level', label: 'Уровень' },
   { key: 'rating', label: 'Рейтинг' },
   { key: 'tournaments', label: 'Турниры', cls: 'hide-m' },
   { key: 'matches', label: 'Матчи' },
@@ -32,6 +35,8 @@ const pct = winrate => Math.round(winrate * 100)
 </script>
 
 <template>
+  <p v-if="category !== 'overall'" class="category-caption">Категория: {{ categoryLabel }}</p>
+
   <table>
     <thead>
       <tr>
@@ -47,14 +52,6 @@ const pct = winrate => Math.round(winrate * 100)
         <tr class="player-row" @click="toggle(r.p.name)">
           <td class="rank num">{{ i + 1 }}</td>
           <td class="name">{{ r.p.name }}</td>
-          <td>
-            <template v-if="r.p.level">
-              <span class="lvl" :class="LEVEL_CLASS[r.p.level]">{{ r.p.level_label }}</span>
-              <span v-if="r.p.level_trend === 'up'" class="trend up">▲</span>
-              <span v-else-if="r.p.level_trend === 'down'" class="trend down">▼</span>
-            </template>
-            <template v-else>—</template>
-          </td>
           <td class="num rating-val">{{ Math.round(r.rating) }}</td>
           <td class="num hide-m">{{ r.p.tournaments }}</td>
           <td class="num">{{ r.d.matches }}</td>
@@ -71,12 +68,12 @@ const pct = winrate => Math.round(winrate * 100)
           </td>
         </tr>
         <tr v-if="openName === r.p.name" class="detail">
-          <td colspan="9"><PlayerMatchLog :player="r.p" /></td>
+          <td colspan="8"><PlayerMatchLog :player="r.p" :category="category" /></td>
         </tr>
       </template>
 
       <tr v-if="!rows.length">
-        <td colspan="9" class="empty">Никого не найдено</td>
+        <td colspan="8" class="empty">Никого не найдено</td>
       </tr>
     </tbody>
   </table>
