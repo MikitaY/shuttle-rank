@@ -5,12 +5,13 @@ namespace SR.Core;
 public sealed class RatingEngine
 {
     private static readonly string[] Scopes = { "overall", "singles", "doubles", "mixed" };
+    private static readonly string[] Levels = { "A", "B", "C", "D", "E", "M" };
     private static readonly Dictionary<string, int> LevelNum =
-        new() { ["E"] = 1, ["D"] = 2, ["C"] = 3, ["B"] = 4, ["M"] = 5 };
+        new() { ["E"] = 1, ["D"] = 2, ["C"] = 3, ["B"] = 4, ["A"] = 5, ["M"] = 6 };
     private static readonly Dictionary<int, string> NumLevel =
         LevelNum.ToDictionary(kv => kv.Value, kv => kv.Key);
     private static readonly Dictionary<string, string> LevelLabel =
-        new() { ["E"] = "E", ["D"] = "D", ["C"] = "C", ["B"] = "B", ["M"] = "Masters" };
+        new() { ["E"] = "E", ["D"] = "D", ["C"] = "C", ["B"] = "B", ["A"] = "A", ["M"] = "Masters" };
 
     private readonly AppConfig _cfg;
 
@@ -56,6 +57,8 @@ public sealed class RatingEngine
                         p.Wins++;
                         p.Points += winPts;
                         p.PointsByDiscipline[discipline] = p.PointsByDiscipline.GetValueOrDefault(discipline) + winPts;
+                        if (level != null)
+                            p.PointsByLevel[level] = p.PointsByLevel.GetValueOrDefault(level) + winPts;
                     }
                     if (m.Walkover) p.Walkovers++;
                     if (level != null) p.LevelsPlayed[level] = p.LevelsPlayed.GetValueOrDefault(level) + 1;
@@ -69,6 +72,18 @@ public sealed class RatingEngine
                     d.Matches++;
                     if (won) d.Wins++;
                     d.History.Add(won ? "W" : "L");
+
+                    if (level != null)
+                    {
+                        if (!p.ByLevel.TryGetValue(level, out var dl))
+                        {
+                            dl = new DiscAcc();
+                            p.ByLevel[level] = dl;
+                        }
+                        dl.Matches++;
+                        if (won) dl.Wins++;
+                        dl.History.Add(won ? "W" : "L");
+                    }
 
                     var games = ReferenceEquals(side, a)
                         ? m.Games.Select(g => new[] { g[0], g[1] }).ToList()
@@ -88,10 +103,13 @@ public sealed class RatingEngine
                 }
             }
 
-            // Elo — walkovers excluded. Update both the overall rating and the discipline rating.
+            // Elo — walkovers excluded. Update the overall, discipline and level ratings.
             if (!m.Walkover)
             {
-                foreach (var scope in new[] { "overall", discipline })
+                var scopes = level != null
+                    ? new[] { "overall", discipline, level }
+                    : new[] { "overall", discipline };
+                foreach (var scope in scopes)
                 {
                     var ra = a.Players.Average(n => Get(n).Elo[scope]);
                     var rb = b.Players.Average(n => Get(n).Elo[scope]);
@@ -125,7 +143,7 @@ public sealed class RatingEngine
             if (winrate >= cfg.WinrateUp) avg += cfg.Adjustment;
             else if (winrate <= cfg.WinrateDown) avg -= cfg.Adjustment;
 
-            var num = Math.Clamp((int)(avg + 0.5), 1, 5);
+            var num = Math.Clamp((int)(avg + 0.5), 1, Levels.Length);
             p.Level = NumLevel[num];
             p.Trend = winrate >= cfg.WinrateUp ? "up"
                     : winrate <= cfg.WinrateDown ? "down"
@@ -160,6 +178,7 @@ public sealed class RatingEngine
                 EloMatches = new Dictionary<string, int>(p.EloMatches),
                 Points = Math.Round(p.Points, 1),
                 PointsByDiscipline = p.PointsByDiscipline.ToDictionary(kv => kv.Key, kv => Math.Round(kv.Value, 1)),
+                PointsByLevel = p.PointsByLevel.ToDictionary(kv => kv.Key, kv => Math.Round(kv.Value, 1)),
                 Tournaments = p.Tournaments.Count,
                 Matches = p.Matches,
                 Wins = p.Wins,
@@ -167,6 +186,14 @@ public sealed class RatingEngine
                 Winrate = p.Matches > 0 ? Math.Round((double)p.Wins / p.Matches, 3) : 0,
                 Walkovers = p.Walkovers,
                 ByDiscipline = p.ByDiscipline.ToDictionary(kv => kv.Key, kv => new DisciplineStat
+                {
+                    Matches = kv.Value.Matches,
+                    Wins = kv.Value.Wins,
+                    Losses = kv.Value.Matches - kv.Value.Wins,
+                    Winrate = kv.Value.Matches > 0 ? Math.Round((double)kv.Value.Wins / kv.Value.Matches, 3) : 0,
+                    Form = Last(kv.Value.History, 8),
+                }),
+                ByLevel = p.ByLevel.ToDictionary(kv => kv.Key, kv => new DisciplineStat
                 {
                     Matches = kv.Value.Matches,
                     Wins = kv.Value.Wins,
@@ -206,6 +233,7 @@ public sealed class RatingEngine
         public Dictionary<string, int> EloMatches { get; }
         public double Points { get; set; }
         public Dictionary<string, double> PointsByDiscipline { get; } = new();
+        public Dictionary<string, double> PointsByLevel { get; } = new();
         public HashSet<string> Tournaments { get; } = new();
         public int Matches { get; set; }
         public int Wins { get; set; }
@@ -213,14 +241,16 @@ public sealed class RatingEngine
         public Dictionary<string, int> LevelsPlayed { get; } = new();
         public List<string> History { get; } = new();
         public Dictionary<string, DiscAcc> ByDiscipline { get; } = new();
+        public Dictionary<string, DiscAcc> ByLevel { get; } = new();
         public List<MatchLogEntry> MatchLog { get; } = new();
         public string? Level { get; set; }
         public string? Trend { get; set; }
 
         public Acc(double initialElo)
         {
-            Elo = Scopes.ToDictionary(s => s, _ => initialElo);
-            EloMatches = Scopes.ToDictionary(s => s, _ => 0);
+            var keys = Scopes.Concat(Levels);
+            Elo = keys.ToDictionary(s => s, _ => initialElo);
+            EloMatches = keys.ToDictionary(s => s, _ => 0);
         }
     }
 

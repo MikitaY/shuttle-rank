@@ -27,6 +27,7 @@ public sealed class PlayerOut
     public Dictionary<string, int> EloMatches { get; set; } = new();
     public double Points { get; set; }
     public Dictionary<string, double> PointsByDiscipline { get; set; } = new();
+    public Dictionary<string, double> PointsByLevel { get; set; } = new();
     public int Tournaments { get; set; }
     public int Matches { get; set; }
     public int Wins { get; set; }
@@ -34,6 +35,7 @@ public sealed class PlayerOut
     public double Winrate { get; set; }
     public int Walkovers { get; set; }
     public Dictionary<string, DisciplineStat> ByDiscipline { get; set; } = new();
+    public Dictionary<string, DisciplineStat> ByLevel { get; set; } = new();
     public List<string> Form { get; set; } = new();
     public List<MatchLogEntry> MatchLog { get; set; } = new();
 }
