@@ -28,6 +28,7 @@ public sealed class PlayerOut
     public double Points { get; set; }
     public Dictionary<string, double> PointsByDiscipline { get; set; } = new();
     public Dictionary<string, double> PointsByLevel { get; set; } = new();
+    public Dictionary<string, double> PointsByCombo { get; set; } = new();
     public int Tournaments { get; set; }
     public int Matches { get; set; }
     public int Wins { get; set; }
@@ -36,6 +37,7 @@ public sealed class PlayerOut
     public int Walkovers { get; set; }
     public Dictionary<string, DisciplineStat> ByDiscipline { get; set; } = new();
     public Dictionary<string, DisciplineStat> ByLevel { get; set; } = new();
+    public Dictionary<string, DisciplineStat> ByCombo { get; set; } = new();
     public List<string> Form { get; set; } = new();
     public List<MatchLogEntry> MatchLog { get; set; } = new();
 }

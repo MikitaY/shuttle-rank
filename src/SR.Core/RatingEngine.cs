@@ -4,7 +4,6 @@ namespace SR.Core;
 /// Port of ratings.py — preserves traversal order and formulas.</summary>
 public sealed class RatingEngine
 {
-    private static readonly string[] Scopes = { "overall", "singles", "doubles", "mixed" };
     private static readonly string[] Levels = { "A", "B", "C", "D", "E", "M" };
     private static readonly Dictionary<string, int> LevelNum =
         new() { ["E"] = 1, ["D"] = 2, ["C"] = 3, ["B"] = 4, ["A"] = 5, ["M"] = 6 };
@@ -38,6 +37,7 @@ public sealed class RatingEngine
             var winner = a.Won ? a : b;
             var discipline = m.Discipline;
             var level = m.Level;
+            var combo = level != null ? $"{discipline}_{level}" : null;
             var kind = Events.RoundKind(m.Round);
 
             var mult = level != null && _cfg.Points.LevelMultiplier.TryGetValue(level, out var mm) ? mm : 1.0;
@@ -58,32 +58,18 @@ public sealed class RatingEngine
                         p.Points += winPts;
                         p.PointsByDiscipline[discipline] = p.PointsByDiscipline.GetValueOrDefault(discipline) + winPts;
                         if (level != null)
+                        {
                             p.PointsByLevel[level] = p.PointsByLevel.GetValueOrDefault(level) + winPts;
+                            p.PointsByCombo[combo!] = p.PointsByCombo.GetValueOrDefault(combo!) + winPts;
+                        }
                     }
                     if (m.Walkover) p.Walkovers++;
                     if (level != null) p.LevelsPlayed[level] = p.LevelsPlayed.GetValueOrDefault(level) + 1;
                     p.History.Add(won ? "W" : "L");
 
-                    if (!p.ByDiscipline.TryGetValue(discipline, out var d))
-                    {
-                        d = new DiscAcc();
-                        p.ByDiscipline[discipline] = d;
-                    }
-                    d.Matches++;
-                    if (won) d.Wins++;
-                    d.History.Add(won ? "W" : "L");
-
-                    if (level != null)
-                    {
-                        if (!p.ByLevel.TryGetValue(level, out var dl))
-                        {
-                            dl = new DiscAcc();
-                            p.ByLevel[level] = dl;
-                        }
-                        dl.Matches++;
-                        if (won) dl.Wins++;
-                        dl.History.Add(won ? "W" : "L");
-                    }
+                    Bump(p.ByDiscipline, discipline, won);
+                    if (level != null) Bump(p.ByLevel, level, won);
+                    if (combo != null) Bump(p.ByCombo, combo, won);
 
                     var games = ReferenceEquals(side, a)
                         ? m.Games.Select(g => new[] { g[0], g[1] }).ToList()
@@ -104,21 +90,22 @@ public sealed class RatingEngine
                 }
             }
 
-            // Elo — walkovers excluded. Update the overall, discipline and level ratings.
+            // Elo — walkovers excluded. Update the overall, discipline, level and
+            // discipline+level (combo) ratings, e.g. "singles_D" for a singles-D match.
             if (!m.Walkover)
             {
-                var scopes = level != null
-                    ? new[] { "overall", discipline, level }
+                var scopes = combo != null
+                    ? new[] { "overall", discipline, level!, combo }
                     : new[] { "overall", discipline };
                 foreach (var scope in scopes)
                 {
-                    var ra = a.Players.Average(n => Get(n).Elo[scope]);
-                    var rb = b.Players.Average(n => Get(n).Elo[scope]);
+                    var ra = a.Players.Average(n => Get(n).GetElo(scope));
+                    var rb = b.Players.Average(n => Get(n).GetElo(scope));
                     var ea = 1.0 / (1.0 + Math.Pow(10, (rb - ra) / _cfg.Elo.Scale));
                     var sa = ReferenceEquals(a, winner) ? 1.0 : 0.0;
                     var delta = _cfg.Elo.KFactor * (sa - ea);
-                    foreach (var n in a.Players) { var p = Get(n); p.Elo[scope] += delta; p.EloMatches[scope]++; }
-                    foreach (var n in b.Players) { var p = Get(n); p.Elo[scope] -= delta; p.EloMatches[scope]++; }
+                    foreach (var n in a.Players) { var p = Get(n); p.Elo[scope] = p.GetElo(scope) + delta; p.EloMatches[scope] = p.EloMatches.GetValueOrDefault(scope) + 1; }
+                    foreach (var n in b.Players) { var p = Get(n); p.Elo[scope] = p.GetElo(scope) - delta; p.EloMatches[scope] = p.EloMatches.GetValueOrDefault(scope) + 1; }
                 }
             }
         }
@@ -180,28 +167,16 @@ public sealed class RatingEngine
                 Points = Math.Round(p.Points, 1),
                 PointsByDiscipline = p.PointsByDiscipline.ToDictionary(kv => kv.Key, kv => Math.Round(kv.Value, 1)),
                 PointsByLevel = p.PointsByLevel.ToDictionary(kv => kv.Key, kv => Math.Round(kv.Value, 1)),
+                PointsByCombo = p.PointsByCombo.ToDictionary(kv => kv.Key, kv => Math.Round(kv.Value, 1)),
                 Tournaments = p.Tournaments.Count,
                 Matches = p.Matches,
                 Wins = p.Wins,
                 Losses = p.Matches - p.Wins,
                 Winrate = p.Matches > 0 ? Math.Round((double)p.Wins / p.Matches, 3) : 0,
                 Walkovers = p.Walkovers,
-                ByDiscipline = p.ByDiscipline.ToDictionary(kv => kv.Key, kv => new DisciplineStat
-                {
-                    Matches = kv.Value.Matches,
-                    Wins = kv.Value.Wins,
-                    Losses = kv.Value.Matches - kv.Value.Wins,
-                    Winrate = kv.Value.Matches > 0 ? Math.Round((double)kv.Value.Wins / kv.Value.Matches, 3) : 0,
-                    Form = Last(kv.Value.History, 8),
-                }),
-                ByLevel = p.ByLevel.ToDictionary(kv => kv.Key, kv => new DisciplineStat
-                {
-                    Matches = kv.Value.Matches,
-                    Wins = kv.Value.Wins,
-                    Losses = kv.Value.Matches - kv.Value.Wins,
-                    Winrate = kv.Value.Matches > 0 ? Math.Round((double)kv.Value.Wins / kv.Value.Matches, 3) : 0,
-                    Form = Last(kv.Value.History, 8),
-                }),
+                ByDiscipline = p.ByDiscipline.ToDictionary(kv => kv.Key, kv => ToStat(kv.Value)),
+                ByLevel = p.ByLevel.ToDictionary(kv => kv.Key, kv => ToStat(kv.Value)),
+                ByCombo = p.ByCombo.ToDictionary(kv => kv.Key, kv => ToStat(kv.Value)),
                 Form = Last(p.History, 8),
                 MatchLog = p.MatchLog,
             });
@@ -211,6 +186,27 @@ public sealed class RatingEngine
 
     private static List<string> Last(List<string> src, int n) =>
         src.Skip(Math.Max(0, src.Count - n)).ToList();
+
+    private static DisciplineStat ToStat(DiscAcc d) => new()
+    {
+        Matches = d.Matches,
+        Wins = d.Wins,
+        Losses = d.Matches - d.Wins,
+        Winrate = d.Matches > 0 ? Math.Round((double)d.Wins / d.Matches, 3) : 0,
+        Form = Last(d.History, 8),
+    };
+
+    private static void Bump(Dictionary<string, DiscAcc> dict, string key, bool won)
+    {
+        if (!dict.TryGetValue(key, out var d))
+        {
+            d = new DiscAcc();
+            dict[key] = d;
+        }
+        d.Matches++;
+        if (won) d.Wins++;
+        d.History.Add(won ? "W" : "L");
+    }
 
     /// <summary>Matches in chronological order that are eligible for rating.</summary>
     private static IEnumerable<(Tournament, Match)> IterPlayed(LeagueData league)
@@ -230,11 +226,14 @@ public sealed class RatingEngine
 
     private sealed class Acc
     {
-        public Dictionary<string, double> Elo { get; }
-        public Dictionary<string, int> EloMatches { get; }
+        private readonly double _initialElo;
+
+        public Dictionary<string, double> Elo { get; } = new();
+        public Dictionary<string, int> EloMatches { get; } = new();
         public double Points { get; set; }
         public Dictionary<string, double> PointsByDiscipline { get; } = new();
         public Dictionary<string, double> PointsByLevel { get; } = new();
+        public Dictionary<string, double> PointsByCombo { get; } = new();
         public HashSet<string> Tournaments { get; } = new();
         public int Matches { get; set; }
         public int Wins { get; set; }
@@ -243,16 +242,22 @@ public sealed class RatingEngine
         public List<string> History { get; } = new();
         public Dictionary<string, DiscAcc> ByDiscipline { get; } = new();
         public Dictionary<string, DiscAcc> ByLevel { get; } = new();
+        public Dictionary<string, DiscAcc> ByCombo { get; } = new();
         public List<MatchLogEntry> MatchLog { get; } = new();
         public string? Level { get; set; }
         public string? Trend { get; set; }
 
         public Acc(double initialElo)
         {
-            var keys = Scopes.Concat(Levels);
-            Elo = keys.ToDictionary(s => s, _ => initialElo);
-            EloMatches = keys.ToDictionary(s => s, _ => 0);
+            _initialElo = initialElo;
+            // "overall" is always touched (every played match), so seed it eagerly;
+            // every other scope ("singles", "D", "singles_D"...) is seeded lazily by GetElo.
+            Elo["overall"] = initialElo;
+            EloMatches["overall"] = 0;
         }
+
+        /// <summary>Elo for a scope, initializing it to the starting value on first use.</summary>
+        public double GetElo(string scope) => Elo.TryGetValue(scope, out var v) ? v : (Elo[scope] = _initialElo);
     }
 
     private sealed class DiscAcc
