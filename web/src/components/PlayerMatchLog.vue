@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from 'vue'
-import { fmtDate, DISCIPLINE_GENITIVE, CATEGORIES } from '../utils/format.js'
+import { fmtDate, DISCIPLINE_GENITIVE, CATEGORIES, surnameFirst } from '../utils/format.js'
 
 const props = defineProps({
   player: { type: Object, required: true },
-  category: { type: String, default: 'overall' },
+  category: { type: String, default: '' },
 })
 
 // Elo summary for disciplines where the player has at least one match.
@@ -20,9 +20,9 @@ const eloSummary = computed(() => {
 const fullLog = computed(() => props.player.match_log.slice().reverse())
 
 const levelKeys = CATEGORIES.filter(c => c.group === 'level').map(c => c.key)
-const disciplineKeys = CATEGORIES.filter(c => c.group === 'discipline' && c.key !== 'overall').map(c => c.key)
+const disciplineKeys = CATEGORIES.filter(c => c.group === 'discipline').map(c => c.key)
 
-// Which facet the active tab filters on — null for the "Общий" tab (no split).
+// Which facet the active tab filters on.
 const facetKey = computed(() => {
   if (levelKeys.includes(props.category)) return 'level'
   if (disciplineKeys.includes(props.category)) return 'discipline'
@@ -64,7 +64,7 @@ const score = m => m.games.map(g => g.join(':')).join(', ') || 'w/o'
 </script>
 
 <template>
-  <b>{{ player.name }}</b> — Elo: общий {{ Math.round(player.elo.overall) }}{{ eloSummary }}
+  <b>{{ surnameFirst(player.name) }}</b> — Elo: общий {{ Math.round(player.elo.overall) }}{{ eloSummary }}
   · очки {{ Math.round(player.points) }}
 
   <template v-for="(s, si) in sections" :key="si">
@@ -79,7 +79,7 @@ const score = m => m.games.map(g => g.join(':')).join(', ') || 'w/o'
             <td>{{ m.round || '' }}</td>
             <td :class="m.won ? 'res-W' : 'res-L'">{{ m.won ? 'победа' : 'поражение' }}</td>
             <td>
-              {{ m.opponents.join(' / ') }}<template v-if="m.teammates.length"> (с {{ m.teammates.join(', ') }})</template>
+              {{ m.opponents.map(surnameFirst).join(' / ') }}<template v-if="m.teammates.length"> (с {{ m.teammates.map(surnameFirst).join(', ') }})</template>
             </td>
             <td class="score">{{ score(m) }}</td>
           </tr>

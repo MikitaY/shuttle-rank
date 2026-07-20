@@ -20,8 +20,8 @@ onMounted(async () => {
 })
 
 // --- UI state ---
-// 'overall' | 'singles' | 'doubles' | 'mixed' (discipline) or 'A' | 'B' | 'C' | 'D' | 'E' | 'M' (skill level).
-const category = ref('overall')
+// 'singles' | 'doubles' | 'mixed' (discipline) or 'A' | 'B' | 'C' | 'D' | 'E' | 'M' (skill level).
+const category = ref('singles')
 const system = ref('elo')           // elo | points
 const query = ref('')
 const minMatches = ref(true)
@@ -31,9 +31,6 @@ const sortDir = ref(-1)             // 1 = ascending, -1 = descending
 // Player stats for the selected category (discipline or level).
 // Optional chaining: older ratings.json snapshots may not have by_level yet.
 function categoryStats(p) {
-  if (category.value === 'overall') {
-    return { matches: p.matches, wins: p.wins, losses: p.losses, winrate: p.winrate, form: p.form }
-  }
   return p.by_discipline?.[category.value] || p.by_level?.[category.value]
     || { matches: 0, wins: 0, losses: 0, winrate: 0, form: [] }
 }
@@ -43,7 +40,6 @@ function ratingOf(p) {
   if (system.value === 'elo') {
     return p.elo[category.value] ?? 0
   }
-  if (category.value === 'overall') return p.points
   return p.points_by_discipline?.[category.value] ?? p.points_by_level?.[category.value] ?? 0
 }
 

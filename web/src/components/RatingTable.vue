@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import PlayerMatchLog from './PlayerMatchLog.vue'
-import { CATEGORIES } from '../utils/format.js'
+import { CATEGORIES, surnameFirst } from '../utils/format.js'
 
 const props = defineProps({
   rows: { type: Array, required: true },
@@ -35,7 +35,7 @@ const pct = winrate => Math.round(winrate * 100)
 </script>
 
 <template>
-  <p v-if="category !== 'overall'" class="category-caption">Категория: {{ categoryLabel }}</p>
+  <p class="category-caption">Категория: {{ categoryLabel }}</p>
 
   <table>
     <thead>
@@ -51,7 +51,7 @@ const pct = winrate => Math.round(winrate * 100)
       <template v-for="(r, i) in rows" :key="r.p.name">
         <tr class="player-row" @click="toggle(r.p.name)">
           <td class="rank num">{{ i + 1 }}</td>
-          <td class="name">{{ r.p.name }}</td>
+          <td class="name">{{ surnameFirst(r.p.name) }}</td>
           <td class="num rating-val">{{ Math.round(r.rating) }}</td>
           <td class="num hide-m">{{ r.p.tournaments }}</td>
           <td class="num">{{ r.d.matches }}</td>
