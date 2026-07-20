@@ -1,4 +1,5 @@
 <script setup>
+import { ref, nextTick } from 'vue'
 import { CATEGORIES } from '../utils/format.js'
 
 defineProps({
@@ -17,6 +18,14 @@ const systems = [
   { key: 'elo', label: 'Elo' },
   { key: 'points', label: 'Очки' },
 ]
+
+// On narrow screens the search field collapses behind a magnifier button (see CSS).
+const searchOpen = ref(false)
+const searchInput = ref(null)
+function toggleSearch() {
+  searchOpen.value = !searchOpen.value
+  if (searchOpen.value) nextTick(() => searchInput.value?.focus())
+}
 </script>
 
 <template>
@@ -45,11 +54,18 @@ const systems = [
       >{{ s.label }}</button>
     </div>
 
-    <input
-      type="search" placeholder="Поиск игрока…"
-      :value="query"
-      @input="emit('update:query', $event.target.value)"
-    />
+    <div class="search-wrap" :class="{ open: searchOpen }">
+      <button
+        type="button" class="search-btn" :class="{ active: query }"
+        @click="toggleSearch" aria-label="Поиск игрока"
+      >🔍</button>
+      <input
+        ref="searchInput"
+        type="search" placeholder="Поиск игрока…"
+        :value="query"
+        @input="emit('update:query', $event.target.value)"
+      />
+    </div>
 
     <label class="minm">
       <input

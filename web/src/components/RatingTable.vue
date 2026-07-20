@@ -37,44 +37,46 @@ const pct = winrate => Math.round(winrate * 100)
 <template>
   <p class="category-caption">Категория: {{ categoryLabel }}</p>
 
-  <table>
-    <thead>
-      <tr>
-        <th
-          v-for="c in columns" :key="c.key"
-          :class="[c.cls, { sorted: sortKey === c.key }]"
-          @click="emit('sort', c.key)"
-        >{{ c.label }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <template v-for="(r, i) in rows" :key="r.p.name">
-        <tr class="player-row" @click="toggle(r.p.name)">
-          <td class="rank num">{{ i + 1 }}</td>
-          <td class="name">{{ surnameFirst(r.p.name) }}</td>
-          <td class="num rating-val">{{ Math.round(r.rating) }}</td>
-          <td class="num hide-m">{{ r.p.tournaments }}</td>
-          <td class="num">{{ r.d.matches }}</td>
-          <td class="num hide-m">{{ r.d.wins }}–{{ r.d.losses }}</td>
-          <td class="num">
-            <span class="bar-bg"><span class="bar" :style="{ width: pct(r.d.winrate) + '%' }"></span></span>
-            {{ pct(r.d.winrate) }}%
-          </td>
-          <td class="hide-m">
-            <span
-              v-for="(x, j) in r.d.form.slice(-5)" :key="j"
-              class="chip" :class="x"
-            >{{ x === 'W' ? 'В' : 'П' }}</span>
-          </td>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th
+            v-for="c in columns" :key="c.key"
+            :class="[c.cls, { sorted: sortKey === c.key }]"
+            @click="emit('sort', c.key)"
+          >{{ c.label }}</th>
         </tr>
-        <tr v-if="openName === r.p.name" class="detail">
-          <td colspan="8"><PlayerMatchLog :player="r.p" :category="category" /></td>
-        </tr>
-      </template>
+      </thead>
+      <tbody>
+        <template v-for="(r, i) in rows" :key="r.p.name">
+          <tr class="player-row" @click="toggle(r.p.name)">
+            <td class="rank num">{{ i + 1 }}</td>
+            <td class="name">{{ surnameFirst(r.p.name) }}</td>
+            <td class="num rating-val">{{ Math.round(r.rating) }}</td>
+            <td class="num hide-m">{{ r.p.tournaments }}</td>
+            <td class="num">{{ r.d.matches }}</td>
+            <td class="num hide-m">{{ r.d.wins }}–{{ r.d.losses }}</td>
+            <td class="num">
+              <span class="bar-bg"><span class="bar" :style="{ width: pct(r.d.winrate) + '%' }"></span></span>
+              {{ pct(r.d.winrate) }}%
+            </td>
+            <td class="hide-m">
+              <span
+                v-for="(x, j) in r.d.form.slice(-5)" :key="j"
+                class="chip" :class="x"
+              >{{ x === 'W' ? 'В' : 'П' }}</span>
+            </td>
+          </tr>
+          <tr v-if="openName === r.p.name" class="detail">
+            <td colspan="8"><PlayerMatchLog :player="r.p" :category="category" /></td>
+          </tr>
+        </template>
 
-      <tr v-if="!rows.length">
-        <td colspan="8" class="empty">Никого не найдено</td>
-      </tr>
-    </tbody>
-  </table>
+        <tr v-if="!rows.length">
+          <td colspan="8" class="empty">Никого не найдено</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>

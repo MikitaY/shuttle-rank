@@ -48,6 +48,10 @@ const showList = ref(false)
     <button class="info-btn" type="button" @click="showList = !showList">
       ⓘ турниры в рейтинге
     </button>
+
+    <button class="burger-btn" type="button" @click="showList = !showList" aria-label="Инфо о рейтинге">
+      ☰
+    </button>
   </div>
 
   <div v-if="showList" class="tournaments-panel">
@@ -55,6 +59,11 @@ const showList = ref(false)
       <b>Турниры, учитываемые в рейтинге</b>
       <button type="button" class="close-btn" @click="showList = false">✕</button>
     </div>
+
+    <ul class="panel-stats">
+      <li v-for="s in stats" :key="s.label"><b>{{ s.value }}</b> {{ s.label }}</li>
+    </ul>
+
     <ul>
       <li v-for="t in tournamentsByDate" :key="t.id">
         <span class="t-date">{{ fmtDate(t.date) }}</span>
