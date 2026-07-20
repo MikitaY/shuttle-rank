@@ -33,7 +33,7 @@ const showList = ref(false)
 <template>
   <header class="header-row">
     <div>
-      <h1>🏸 ЛББ</h1>
+      <h1>🏸 Shuttle Rank BY</h1>
       <p class="sub">
         Рейтинг игроков по открытым результатам
         <a href="https://www.tournamentsoftware.com" target="_blank" rel="noopener">tournamentsoftware.com</a>

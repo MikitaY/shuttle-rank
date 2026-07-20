@@ -55,18 +55,16 @@ header a { color: var(--accent); }
 .tournaments-panel .t-date { color: var(--muted); min-width: 76px; }
 .tournaments-panel .t-name { flex: 1; }
 .tournaments-panel .t-matches { color: var(--muted); font-size: 13px; }
-.controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
-.controls-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.controls { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+.controls-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; align-self: stretch; }
 .tabs {
   display: flex; gap: 4px; background: var(--card); border: 1px solid var(--border);
   border-radius: 10px; padding: 4px;
 }
-.tabs.tabs-wide { width: 100%; }
 .tabs button {
   border: 0; background: transparent; color: var(--text); padding: 7px 14px;
   border-radius: 7px; cursor: pointer; font: inherit; font-size: 14px;
 }
-.tabs.tabs-wide button { flex: 1; }
 .tabs button.active { background: var(--accent); color: #fff; }
 input[type=search] {
   background: var(--card); border: 1px solid var(--border); color: var(--text);
@@ -133,6 +131,7 @@ footer p { margin: 0 0 8px; }
   .search-wrap.open { flex: 1 1 100%; }
   .search-wrap.open input[type=search] { display: block; margin-left: 8px; }
 
-  /* Tabs: scroll horizontally instead of wrapping into extra rows. */
-  .tabs { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
+  /* Tabs: full width and evenly spread, scrolling horizontally rather than wrapping. */
+  .tabs.tabs-wide { width: 100%; flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
+  .tabs.tabs-wide button { flex: 1; }
 }
