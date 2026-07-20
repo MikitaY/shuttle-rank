@@ -63,7 +63,9 @@ nunit-*.xml
 # Visual Studio
 .vs/
 
-# shuttle-rank: HTML-кэш скрейпера и сгенерированные данные сайта
+# shuttle-rank: HTML-кэш скрейпера и промежуточный league.json (генерируются)
 data/cache/
+data/league.json
 web/node_modules/
 web/dist/
+.DS_Store

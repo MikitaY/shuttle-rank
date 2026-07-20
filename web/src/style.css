@@ -2,7 +2,6 @@
   --bg: #f6f7f9; --card: #ffffff; --text: #1a2233; --muted: #64748b;
   --border: #e2e8f0; --accent: #2563eb; --accent-soft: #dbeafe;
   --win: #16a34a; --loss: #dc2626; --hover: #f1f5f9;
-  --lvl-E: #94a3b8; --lvl-D: #38bdf8; --lvl-C: #34d399; --lvl-B: #fbbf24; --lvl-M: #f472b6;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,19 +16,47 @@ body {
   font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 16px 60px; }
+.header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
 header h1 { margin: 0 0 4px; font-size: 26px; }
 header .sub { color: var(--muted); margin: 0 0 20px; }
 header a { color: var(--accent); }
-.stats-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
-.stat {
+
+.info-round-btn {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--border); color: var(--muted);
+  font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
+}
+.info-round-btn:hover { color: var(--text); border-color: var(--accent); }
+
+.tournaments-panel {
   background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-  padding: 10px 18px; min-width: 120px;
+  padding: 14px 16px; margin: -10px 0 20px;
 }
-.stat b { display: block; font-size: 22px; }
-.stat span { color: var(--muted); font-size: 13px; }
-.controls {
-  display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 14px;
+.tournaments-panel-head {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
 }
+.close-btn {
+  background: transparent; border: 0; color: var(--muted); cursor: pointer; font-size: 15px;
+}
+.close-btn:hover { color: var(--text); }
+.panel-stats {
+  display: flex; list-style: none; margin: 0 0 10px; padding: 0 0 10px;
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 6px 16px;
+}
+.panel-stats li { font-size: 13px; color: var(--muted); }
+.panel-stats li b { color: var(--text); margin-right: 4px; }
+.tournaments-panel ul:not(.panel-stats) { list-style: none; margin: 0; padding: 0; }
+.tournaments-panel li {
+  display: flex; gap: 12px; padding: 6px 0; border-top: 1px solid var(--border);
+  font-size: 14px; flex-wrap: wrap;
+}
+.tournaments-panel li:first-child { border-top: 0; }
+.tournaments-panel .t-date { color: var(--muted); min-width: 76px; }
+.tournaments-panel .t-name { flex: 1; }
+.tournaments-panel .t-matches { color: var(--muted); font-size: 13px; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 14px; }
+.controls-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .tabs {
   display: flex; gap: 4px; background: var(--card); border: 1px solid var(--border);
   border-radius: 10px; padding: 4px;
@@ -43,7 +70,15 @@ input[type=search] {
   background: var(--card); border: 1px solid var(--border); color: var(--text);
   border-radius: 10px; padding: 9px 14px; font: inherit; flex: 1; min-width: 180px;
 }
+.search-wrap { display: flex; align-items: center; flex: 1; min-width: 180px; }
+.search-btn {
+  display: none; align-items: center; justify-content: center;
+  background: var(--card); border: 1px solid var(--border); color: var(--muted);
+  border-radius: 10px; width: 42px; height: 42px; font-size: 15px; cursor: pointer; flex-shrink: 0;
+}
+.search-btn.active { color: var(--accent); border-color: var(--accent); }
 label.minm { color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 6px; }
+.table-wrap { overflow-x: auto; border-radius: 12px; }
 table {
   width: 100%; border-collapse: collapse; background: var(--card);
   border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
@@ -60,15 +95,6 @@ tbody tr.player-row { cursor: pointer; }
 tbody tr.player-row:hover { background: var(--hover); }
 td.rank { color: var(--muted); width: 44px; }
 td.name { font-weight: 600; white-space: normal; }
-.lvl {
-  display: inline-block; min-width: 26px; text-align: center; padding: 2px 8px;
-  border-radius: 999px; font-size: 12px; font-weight: 700; color: #10141c;
-}
-.lvl-E { background: var(--lvl-E); } .lvl-D { background: var(--lvl-D); }
-.lvl-C { background: var(--lvl-C); } .lvl-B { background: var(--lvl-B); }
-.lvl-M { background: var(--lvl-M); }
-.trend { font-size: 11px; margin-left: 3px; }
-.trend.up { color: var(--win); } .trend.down { color: var(--loss); }
 .num { font-variant-numeric: tabular-nums; }
 .rating-val { font-weight: 700; }
 .bar-bg {
@@ -87,6 +113,9 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
 .log td.res-W { color: var(--win); font-weight: 700; }
 .log td.res-L { color: var(--loss); font-weight: 700; }
 .log td.score { font-variant-numeric: tabular-nums; }
+.log-divider { border: 0; border-top: 1px solid var(--border); margin: 10px 0; }
+.log-group-label { margin: 6px 8px 2px; color: var(--muted); font-size: 12px; font-weight: 600; }
+.category-caption { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
 footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
 footer h3 { color: var(--text); font-size: 15px; margin: 18px 0 6px; }
 footer p { margin: 0 0 8px; }
@@ -94,4 +123,19 @@ footer p { margin: 0 0 8px; }
 @media (max-width: 720px) {
   .hide-m { display: none; }
   .wrap { padding: 14px 8px 40px; }
+
+  /* Controls: one filter group per row instead of everything wrapping inline. */
+  .controls { flex-direction: column; align-items: stretch; }
+  .controls-row { align-self: stretch; }
+
+  /* Search: collapse the input behind a magnifier button until tapped. */
+  .search-wrap { flex: 0 0 auto; min-width: 0; }
+  .search-btn { display: flex; }
+  .search-wrap input[type=search] { display: none; min-width: 0; }
+  .search-wrap.open { flex: 1 1 100%; }
+  .search-wrap.open input[type=search] { display: block; margin-left: 8px; }
+
+  /* Tabs: full width and evenly spread, scrolling horizontally rather than wrapping. */
+  .tabs.tabs-wide { width: 100%; flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
+  .tabs.tabs-wide button { flex: 1; }
 }

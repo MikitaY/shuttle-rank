@@ -1,0 +1,4 @@
+# Normalize line endings to LF in the repo and on checkout (stops the
+# "LF will be replaced by CRLF" warnings on Windows). Binary files are
+# auto-detected and left untouched.
+* text=auto eol=lf
