@@ -30,7 +30,7 @@ function toggleSearch() {
 
 <template>
   <div class="controls">
-    <div class="tabs">
+    <div class="tabs tabs-wide">
       <button
         v-for="d in disciplines" :key="d.key"
         :class="{ active: category === d.key }"
@@ -38,7 +38,7 @@ function toggleSearch() {
       >{{ d.label }}</button>
     </div>
 
-    <div class="tabs">
+    <div class="tabs tabs-wide">
       <button
         v-for="l in levels" :key="l.key"
         :class="{ active: category === l.key }"
@@ -46,7 +46,7 @@ function toggleSearch() {
       >{{ l.label }}</button>
     </div>
 
-    <div class="tabs">
+    <div class="tabs tabs-wide">
       <button
         v-for="s in systems" :key="s.key"
         :class="{ active: system === s.key }"
@@ -54,26 +54,28 @@ function toggleSearch() {
       >{{ s.label }}</button>
     </div>
 
-    <div class="search-wrap" :class="{ open: searchOpen }">
-      <button
-        type="button" class="search-btn" :class="{ active: query }"
-        @click="toggleSearch" aria-label="Поиск игрока"
-      >🔍</button>
-      <input
-        ref="searchInput"
-        type="search" placeholder="Поиск игрока…"
-        :value="query"
-        @input="emit('update:query', $event.target.value)"
-      />
-    </div>
+    <div class="controls-row">
+      <div class="search-wrap" :class="{ open: searchOpen }">
+        <button
+          type="button" class="search-btn" :class="{ active: query }"
+          @click="toggleSearch" aria-label="Поиск игрока"
+        >🔍</button>
+        <input
+          ref="searchInput"
+          type="search" placeholder="Поиск игрока…"
+          :value="query"
+          @input="emit('update:query', $event.target.value)"
+        />
+      </div>
 
-    <label class="minm">
-      <input
-        type="checkbox"
-        :checked="minMatches"
-        @change="emit('update:minMatches', $event.target.checked)"
-      />
-      от 5 матчей
-    </label>
+      <label class="minm">
+        <input
+          type="checkbox"
+          :checked="minMatches"
+          @change="emit('update:minMatches', $event.target.checked)"
+        />
+        от 5 матчей
+      </label>
+    </div>
   </div>
 </template>

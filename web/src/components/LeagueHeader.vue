@@ -31,28 +31,20 @@ const showList = ref(false)
 </script>
 
 <template>
-  <header>
-    <h1>🏸 Любительский бадминтон Беларуси</h1>
-    <p class="sub">
-      Рейтинг игроков по открытым результатам
-      <a href="https://www.tournamentsoftware.com" target="_blank" rel="noopener">tournamentsoftware.com</a>
-      · обновлено {{ updatedLabel }}
-    </p>
-  </header>
-
-  <div class="stats-row">
-    <div v-for="s in stats" :key="s.label" class="stat">
-      <b>{{ s.value }}</b><span>{{ s.label }}</span>
+  <header class="header-row">
+    <div>
+      <h1>🏸 ЛББ</h1>
+      <p class="sub">
+        Рейтинг игроков по открытым результатам
+        <a href="https://www.tournamentsoftware.com" target="_blank" rel="noopener">tournamentsoftware.com</a>
+        · обновлено {{ updatedLabel }}
+      </p>
     </div>
 
-    <button class="info-btn" type="button" @click="showList = !showList">
-      ⓘ турниры в рейтинге
+    <button class="info-round-btn" type="button" @click="showList = !showList" aria-label="Инфо о рейтинге">
+      ?
     </button>
-
-    <button class="burger-btn" type="button" @click="showList = !showList" aria-label="Инфо о рейтинге">
-      ☰
-    </button>
-  </div>
+  </header>
 
   <div v-if="showList" class="tournaments-panel">
     <div class="tournaments-panel-head">
