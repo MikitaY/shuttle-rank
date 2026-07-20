@@ -68,3 +68,4 @@ data/cache/
 data/league.json
 web/node_modules/
 web/dist/
+.DS_Store
