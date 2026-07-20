@@ -93,6 +93,7 @@ public sealed class RatingEngine
                         Date = t.Date,
                         Event = m.Event,
                         Discipline = discipline,
+                        Level = level,
                         Round = m.Round,
                         Won = won,
                         Walkover = m.Walkover,

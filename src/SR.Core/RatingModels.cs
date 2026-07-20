@@ -54,6 +54,7 @@ public sealed class MatchLogEntry
     public string? Date { get; set; }
     public string Event { get; set; } = "";
     public string Discipline { get; set; } = "";
+    public string? Level { get; set; }
     public string? Round { get; set; }
     public bool Won { get; set; }
     public bool Walkover { get; set; }
