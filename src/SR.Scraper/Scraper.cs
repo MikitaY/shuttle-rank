@@ -58,14 +58,44 @@ public sealed partial class Scraper
         return tournaments.OrderBy(t => t.Date ?? "", StringComparer.Ordinal).ToList();
     }
 
-    /// <summary>Matches page -> list of matches (deduplicating the list/grid views).</summary>
+    /// <summary>Matches page -> list of matches (deduplicating the list/grid views).
+    /// Multi-day tournaments split their matches across day tabs; the default page
+    /// only renders the selected day, so every day is fetched and merged.</summary>
     public async Task<List<Match>> ParseMatchesAsync(Tournament tournament)
     {
-        var url = $"{_cfg.BaseUrl}/tournament/{tournament.Id}/Matches";
-        var doc = await LoadAsync(url);
+        var matchesUrl = $"{_cfg.BaseUrl}/tournament/{tournament.Id}/Matches";
+        var doc = await LoadAsync(matchesUrl);
+
+        var days = doc.QuerySelectorAll("a.js-date-selection-tab")
+                      .Select(a => a.GetAttribute("data-value"))
+                      .Where(d => !string.IsNullOrEmpty(d))
+                      .Distinct()
+                      .ToList();
+
         var matches = new List<Match>();
         var seq = 0;
+        if (days.Count == 0)
+        {
+            // Single-day tournament — the default page already holds every match.
+            ParseMatchGroups(doc, matches, ref seq);
+        }
+        else
+        {
+            // Multi-day — fetch each day's fragment (the default page shows only one).
+            foreach (var day in days)
+            {
+                var dayDoc = await LoadAsync($"{matchesUrl}/MatchesInDay?date={day}", xhr: true);
+                ParseMatchGroups(dayDoc, matches, ref seq);
+            }
+        }
 
+        return Deduplicate(matches);
+    }
+
+    /// <summary>Parses every match-group in a matches document (whole page or a day
+    /// fragment) into <paramref name="matches"/>, continuing the shared sequence.</summary>
+    private void ParseMatchGroups(IDocument doc, List<Match> matches, ref int seq)
+    {
         foreach (var ol in doc.QuerySelectorAll("ol.match-group"))
         {
             var header = ol.PreviousElementSibling;
@@ -134,8 +164,6 @@ public sealed partial class Scraper
                 });
             }
         }
-
-        return Deduplicate(matches);
     }
 
     private static List<Match> Deduplicate(List<Match> matches)

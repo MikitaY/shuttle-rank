@@ -55,7 +55,8 @@ public class RatingEngineTests
         Assert.Equal(1516.0, a.Elo["singles"]);
         Assert.Equal(1484.0, b.Elo["overall"]);
         Assert.Equal(1, a.EloMatches["singles"]);
-        Assert.Equal(0, a.EloMatches["doubles"]);
+        // A singles match never touches the doubles scope, so it stays unseeded.
+        Assert.False(a.EloMatches.ContainsKey("doubles"));
     }
 
     [Fact]
