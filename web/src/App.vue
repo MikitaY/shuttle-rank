@@ -219,7 +219,6 @@ function onModeChange(value) {
         :sort-key="sortKey"
         :sort-dir="sortDir"
         :confirm-at="confirmAt"
-        :ladder="ladder"
         :detailed="detailed"
         @sort="onSort"
       />

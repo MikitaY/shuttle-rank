@@ -61,27 +61,6 @@ export function categoryLabel(u) {
     : categoryName(u.category)
 }
 
-// Tooltip spelling out what the badge is showing.
-export function categoryHint(u, ladder = [], confirmAt = 10) {
-  if (u.provisional) {
-    const left = Math.max(0, confirmAt - u.matches)
-    return `Категория ещё не присвоена — показана та, в которой игрок начал. `
-      + `Осталось ${left} ${plural(left, ['матч', 'матча', 'матчей'])} из ${confirmAt}.`
-  }
-  if (u.status === 'promotion' && u.next_floor != null) {
-    const left = Math.max(0, Math.round(u.next_floor - u.rating))
-    return `До категории ${categoryName(u.next_category)} осталось `
-      + `${left} ${plural(left, ['очко', 'очка', 'очков'])}.`
-  }
-  if (u.status === 'demotion' && ladder.length) {
-    const at = ladder.findIndex(b => b.key === u.category)
-    const below = at > 0 ? ` (ниже — ${categoryName(ladder[at - 1].key)})` : ''
-    return `Рейтинг у нижней границы категории ${categoryName(u.category)}${below}.`
-  }
-  return `Категория ${categoryName(u.category)}: от ${Math.round(u.floor)}`
-    + (u.next_floor != null ? ` до ${Math.round(u.next_floor - 1)}.` : ' и выше.')
-}
-
 // A pair is not rated as an entity — its strength is the mean of the two players,
 // exactly the number the engine uses as the pair's expected level in a doubles match.
 export function pairRating(a, b) {

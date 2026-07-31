@@ -144,8 +144,6 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
   border: 1px solid transparent; font: inherit; font-size: 12px; font-weight: 700;
   white-space: nowrap; background: var(--cat-E-bg); color: var(--cat-E-fg);
 }
-button.cat { cursor: pointer; }
-button.cat:hover { border-color: currentColor; }
 .cat-E { background: var(--cat-E-bg); color: var(--cat-E-fg); }
 .cat-D { background: var(--cat-D-bg); color: var(--cat-D-fg); }
 .cat-C { background: var(--cat-C-bg); color: var(--cat-C-fg); }
@@ -157,13 +155,6 @@ button.cat:hover { border-color: currentColor; }
 .cat.promotion { border-style: dashed; border-color: currentColor; }
 .cat.provisional { background: var(--cat-E-bg); color: var(--muted); font-weight: 600; }
 .to-next { color: var(--muted); font-size: 12px; }
-
-/* One-line explanation of a player's category, opened by tapping the badge. */
-tr.hint-row td {
-  background: var(--hover); white-space: normal; color: var(--muted); font-size: 13px;
-  padding: 8px 10px;
-}
-tr.hint-row .cat { margin-right: 8px; }
 
 /* Long lists render in chunks; this row is both the loader trigger and the manual button. */
 .more-row td { padding: 0; }
@@ -243,6 +234,18 @@ label.detail-toggle { display: none; }  /* "Подробно" — only where col
   .header-actions { width: 100%; justify-content: flex-end; }
   header h1 { font-size: 23px; }
   header .sub { margin-bottom: 12px; }
+
+  /* The panels pull themselves up under the subtitle on desktop; here the buttons sit
+     between, so the negative offset would slide them over the buttons. */
+  .tournaments-panel, .calc { margin-top: 10px; }
+
+  /* Keep the info panel a popover rather than a wall of text that buries the table. */
+  .tournaments-panel { max-height: 65vh; overflow-y: auto; padding: 12px 14px; }
+  .tournaments-panel-head {
+    position: sticky; top: -12px; background: var(--card); padding: 4px 0 8px; margin: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .notes p { font-size: 12.5px; line-height: 1.55; }
 
   /* Controls: one filter group per row instead of everything wrapping inline. */
   .controls { flex-direction: column; align-items: stretch; }

@@ -39,7 +39,9 @@
   .page { max-width: 900px; margin: 0 auto; padding: 32px 20px 80px; }
 
   .hero { border-bottom: 1px solid var(--border); padding-bottom: 22px; margin-bottom: 26px; }
-  .kicker { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; }
+  .kicker { color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; }
+  .kicker .back { color: var(--accent); text-decoration: none; }
+  .kicker .back:hover { text-decoration: underline; }
   h1 { font-size: clamp(26px, 5vw, 38px); line-height: 1.15; margin: 0 0 10px; }
   .lead { font-size: 17px; color: var(--muted); margin: 0; }
 
@@ -164,7 +166,10 @@
 <div class="page">
 
   <header class="hero">
-    <p class="kicker">Shuttle Rank BY · методика</p>
+    <p class="kicker">
+      <!-- Relative: the guide sits next to index.html, both locally and on GitHub Pages. -->
+      <a class="back" href="./">← Shuttle Rank BY</a> · методика
+    </p>
     <h1>Как считается сквозной рейтинг</h1>
     <p class="lead">
       Один рейтинг на игрока по всем матчам лиги — одиночки, пары и микст вместе, — и
@@ -473,10 +478,6 @@ E = 1 / (1 + 10<sup>(1300 − 1319) / 400</sup>) = <b>0,528</b><br />
   </div>
 
   <h2 id="oboznacheniya"><span class="num">7</span>Обозначения в таблице</h2>
-  <p class="muted">
-    Категорию в таблице можно нажать — появится пояснение именно для этого игрока:
-    сколько очков до следующей категории или сколько матчей до подтверждения.
-  </p>
   <div class="card">
     <ul class="legend">
       <li>
@@ -610,7 +611,8 @@ E = 1 / (1 + 10<sup>(1300 − 1319) / 400</sup>) = <b>0,528</b><br />
   </dl>
 
   <footer>
-    <p><b>Shuttle Rank BY</b> — рейтинг Минской бадминтонной лиги.</p>
+    <p><a href="./"><b>Shuttle Rank BY</b></a> — рейтинг Минской бадминтонной лиги.
+      <a href="./">← вернуться к таблице рейтинга</a></p>
     <p>Примеры и числа — по состоянию данных на 31 июля 2026 года.</p>
   </footer>
 </div>
