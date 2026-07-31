@@ -13,7 +13,7 @@ permissions:
   pages: write
   id-token: write
 
-# Разрешаем только один параллельный деплой, не отменяя уже запущенный.
+# Allow a single concurrent deployment without cancelling one already in flight.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -39,7 +39,7 @@ jobs:
 
       - uses: actions/configure-pages@v5
         with:
-          # Включаем GitHub Pages автоматически, если он ещё не включён в репозитории.
+          # Turn GitHub Pages on automatically if the repository hasn't enabled it yet.
           enablement: true
 
       - uses: actions/upload-pages-artifact@v3
