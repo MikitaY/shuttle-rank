@@ -5138,7 +5138,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1895.8,
+        "rating": 1892.1,
         "seed": 1700,
         "seed_level": "B",
         "matches": 26,
@@ -5146,10 +5146,10 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.479,
+        "progress": 0.461,
         "status": "stable",
         "provisional": false,
-        "peak": 1906.4,
+        "peak": 1902.6,
         "category_since": "2026-05-10",
         "history": [
           {
@@ -5158,15 +5158,15 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1798.2
+            "rating": 1792.7
           },
           {
             "date": "2026-05-10",
-            "rating": 1873
+            "rating": 1868.4
           },
           {
             "date": "2026-06-27",
-            "rating": 1895.8
+            "rating": 1892.1
           }
         ]
       },
@@ -5320,8 +5320,8 @@
               4
             ]
           ],
-          "unified_delta": 25.5,
-          "unified_after": 1754.4
+          "unified_delta": 19.3,
+          "unified_after": 1748.2
         },
         {
           "date": "2026-04-11",
@@ -5348,8 +5348,8 @@
               14
             ]
           ],
-          "unified_delta": 18.5,
-          "unified_after": 1772.8
+          "unified_delta": 18.7,
+          "unified_after": 1766.9
         },
         {
           "date": "2026-04-11",
@@ -5376,8 +5376,8 @@
               15
             ]
           ],
-          "unified_delta": -12,
-          "unified_after": 1760.9
+          "unified_delta": -11.9,
+          "unified_after": 1754.9
         },
         {
           "date": "2026-04-11",
@@ -5408,8 +5408,8 @@
               15
             ]
           ],
-          "unified_delta": 17.7,
-          "unified_after": 1778.5
+          "unified_delta": 17.9,
+          "unified_after": 1772.9
         },
         {
           "date": "2026-04-11",
@@ -5436,8 +5436,8 @@
               15
             ]
           ],
-          "unified_delta": 19.6,
-          "unified_after": 1798.2
+          "unified_delta": 19.8,
+          "unified_after": 1792.7
         },
         {
           "date": "2026-05-10",
@@ -5468,8 +5468,8 @@
               14
             ]
           ],
-          "unified_delta": 17.6,
-          "unified_after": 1815.8
+          "unified_delta": 17.8,
+          "unified_after": 1810.5
         },
         {
           "date": "2026-05-10",
@@ -5496,8 +5496,8 @@
               16
             ]
           ],
-          "unified_delta": 10.6,
-          "unified_after": 1826.3
+          "unified_delta": 10.7,
+          "unified_after": 1821.2
         },
         {
           "date": "2026-05-10",
@@ -5528,8 +5528,8 @@
               18
             ]
           ],
-          "unified_delta": 12.5,
-          "unified_after": 1838.8
+          "unified_delta": 12.7,
+          "unified_after": 1833.9
         },
         {
           "date": "2026-05-10",
@@ -5560,8 +5560,8 @@
               18
             ]
           ],
-          "unified_delta": 11.2,
-          "unified_after": 1850.1
+          "unified_delta": 11.3,
+          "unified_after": 1845.2
         },
         {
           "date": "2026-05-10",
@@ -5588,8 +5588,8 @@
               12
             ]
           ],
-          "unified_delta": 11.6,
-          "unified_after": 1861.7
+          "unified_delta": 11.8,
+          "unified_after": 1857
         },
         {
           "date": "2026-05-10",
@@ -5621,7 +5621,7 @@
             ]
           ],
           "unified_delta": 12.4,
-          "unified_after": 1874.1
+          "unified_after": 1869.4
         },
         {
           "date": "2026-05-10",
@@ -5648,8 +5648,8 @@
               17
             ]
           ],
-          "unified_delta": 9,
-          "unified_after": 1883.1
+          "unified_delta": 9.1,
+          "unified_after": 1878.5
         },
         {
           "date": "2026-05-10",
@@ -5676,8 +5676,8 @@
               21
             ]
           ],
-          "unified_delta": -10.1,
-          "unified_after": 1873
+          "unified_delta": -10.2,
+          "unified_after": 1868.4
         },
         {
           "date": "2026-06-27",
@@ -5704,8 +5704,8 @@
               21
             ]
           ],
-          "unified_delta": -12.5,
-          "unified_after": 1860.5
+          "unified_delta": -12.4,
+          "unified_after": 1856
         },
         {
           "date": "2026-06-27",
@@ -5733,7 +5733,7 @@
             ]
           ],
           "unified_delta": 6,
-          "unified_after": 1866.5
+          "unified_after": 1862
         },
         {
           "date": "2026-06-27",
@@ -5764,8 +5764,8 @@
               19
             ]
           ],
-          "unified_delta": 13.1,
-          "unified_after": 1879.6
+          "unified_delta": 13.2,
+          "unified_after": 1875.2
         },
         {
           "date": "2026-06-27",
@@ -5793,7 +5793,7 @@
             ]
           ],
           "unified_delta": -11.6,
-          "unified_after": 1868
+          "unified_after": 1863.6
         },
         {
           "date": "2026-06-27",
@@ -5824,8 +5824,8 @@
               13
             ]
           ],
-          "unified_delta": 8.1,
-          "unified_after": 1876.1
+          "unified_delta": 8.3,
+          "unified_after": 1871.8
         },
         {
           "date": "2026-06-27",
@@ -5852,8 +5852,8 @@
               16
             ]
           ],
-          "unified_delta": 7.6,
-          "unified_after": 1883.7
+          "unified_delta": 7.7,
+          "unified_after": 1879.6
         },
         {
           "date": "2026-06-27",
@@ -5884,8 +5884,8 @@
               16
             ]
           ],
-          "unified_delta": 12.4,
-          "unified_after": 1896.1
+          "unified_delta": 12.6,
+          "unified_after": 1892.1
         },
         {
           "date": "2026-06-27",
@@ -5912,8 +5912,8 @@
               19
             ]
           ],
-          "unified_delta": 10.3,
-          "unified_after": 1906.4
+          "unified_delta": 10.4,
+          "unified_after": 1902.6
         },
         {
           "date": "2026-06-27",
@@ -5944,8 +5944,8 @@
               21
             ]
           ],
-          "unified_delta": -10.6,
-          "unified_after": 1895.8
+          "unified_delta": -10.5,
+          "unified_after": 1892.1
         }
       ]
     },
@@ -7772,7 +7772,7 @@
             ]
           ],
           "unified_delta": 14,
-          "unified_after": 1608.3
+          "unified_after": 1608.2
         },
         {
           "date": "2026-06-27",
@@ -7892,7 +7892,7 @@
             ]
           ],
           "unified_delta": 7.6,
-          "unified_after": 1627
+          "unified_after": 1626.9
         },
         {
           "date": "2026-06-27",
@@ -7948,7 +7948,7 @@
             ]
           ],
           "unified_delta": 7.3,
-          "unified_after": 1643.7
+          "unified_after": 1643.6
         },
         {
           "date": "2026-06-27",
@@ -10020,7 +10020,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1804.4,
+        "rating": 1804.1,
         "seed": 1700,
         "seed_level": "B",
         "matches": 49,
@@ -10028,10 +10028,10 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.022,
+        "progress": 0.021,
         "status": "demotion",
         "provisional": false,
-        "peak": 1816.2,
+        "peak": 1815.9,
         "category_since": "2026-01-25",
         "history": [
           {
@@ -10044,19 +10044,19 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1791.4
+            "rating": 1791.3
           },
           {
             "date": "2026-05-10",
-            "rating": 1774.4
+            "rating": 1774.1
           },
           {
             "date": "2026-06-27",
-            "rating": 1768.6
+            "rating": 1768.2
           },
           {
             "date": "2026-07-04",
-            "rating": 1804.4
+            "rating": 1804.1
           }
         ]
       },
@@ -10735,7 +10735,7 @@
               12
             ]
           ],
-          "unified_delta": 10.2,
+          "unified_delta": 10.1,
           "unified_after": 1793.7
         },
         {
@@ -10794,7 +10794,7 @@
             ]
           ],
           "unified_delta": -18,
-          "unified_after": 1791.4
+          "unified_after": 1791.3
         },
         {
           "date": "2026-05-10",
@@ -10825,8 +10825,8 @@
               21
             ]
           ],
-          "unified_delta": -14.1,
-          "unified_after": 1777.3
+          "unified_delta": -14.3,
+          "unified_after": 1777.1
         },
         {
           "date": "2026-05-10",
@@ -10854,7 +10854,7 @@
             ]
           ],
           "unified_delta": -12.6,
-          "unified_after": 1764.7
+          "unified_after": 1764.5
         },
         {
           "date": "2026-05-10",
@@ -10881,8 +10881,8 @@
               13
             ]
           ],
-          "unified_delta": 9.7,
-          "unified_after": 1774.4
+          "unified_delta": 9.6,
+          "unified_after": 1774.1
         },
         {
           "date": "2026-06-27",
@@ -10907,7 +10907,7 @@
             ]
           ],
           "unified_delta": 10.3,
-          "unified_after": 1784.7
+          "unified_after": 1784.4
         },
         {
           "date": "2026-06-27",
@@ -10932,7 +10932,7 @@
             ]
           ],
           "unified_delta": 8.3,
-          "unified_after": 1793
+          "unified_after": 1792.7
         },
         {
           "date": "2026-06-27",
@@ -10957,7 +10957,7 @@
             ]
           ],
           "unified_delta": 6.9,
-          "unified_after": 1799.8
+          "unified_after": 1799.6
         },
         {
           "date": "2026-06-27",
@@ -10982,7 +10982,7 @@
             ]
           ],
           "unified_delta": 11.4,
-          "unified_after": 1811.2
+          "unified_after": 1811
         },
         {
           "date": "2026-06-27",
@@ -11011,7 +11011,7 @@
             ]
           ],
           "unified_delta": -14.1,
-          "unified_after": 1797.1
+          "unified_after": 1796.8
         },
         {
           "date": "2026-06-27",
@@ -11039,7 +11039,7 @@
             ]
           ],
           "unified_delta": 4.6,
-          "unified_after": 1801.7
+          "unified_after": 1801.4
         },
         {
           "date": "2026-06-27",
@@ -11067,7 +11067,7 @@
             ]
           ],
           "unified_delta": -12.5,
-          "unified_after": 1789.2
+          "unified_after": 1789
         },
         {
           "date": "2026-06-27",
@@ -11099,7 +11099,7 @@
             ]
           ],
           "unified_delta": 6.4,
-          "unified_after": 1795.7
+          "unified_after": 1795.3
         },
         {
           "date": "2026-06-27",
@@ -11131,7 +11131,7 @@
             ]
           ],
           "unified_delta": -11.4,
-          "unified_after": 1784.2
+          "unified_after": 1783.9
         },
         {
           "date": "2026-06-27",
@@ -11159,7 +11159,7 @@
             ]
           ],
           "unified_delta": -7.4,
-          "unified_after": 1776.8
+          "unified_after": 1776.5
         },
         {
           "date": "2026-06-27",
@@ -11187,7 +11187,7 @@
             ]
           ],
           "unified_delta": -8.3,
-          "unified_after": 1768.6
+          "unified_after": 1768.2
         },
         {
           "date": "2026-07-04",
@@ -11219,7 +11219,7 @@
             ]
           ],
           "unified_delta": 6.4,
-          "unified_after": 1774.9
+          "unified_after": 1774.6
         },
         {
           "date": "2026-07-04",
@@ -11247,7 +11247,7 @@
             ]
           ],
           "unified_delta": 3.5,
-          "unified_after": 1778.4
+          "unified_after": 1778.1
         },
         {
           "date": "2026-07-04",
@@ -11275,7 +11275,7 @@
             ]
           ],
           "unified_delta": 7.7,
-          "unified_after": 1786.1
+          "unified_after": 1785.8
         },
         {
           "date": "2026-07-04",
@@ -11307,7 +11307,7 @@
             ]
           ],
           "unified_delta": 8.6,
-          "unified_after": 1794.8
+          "unified_after": 1794.4
         },
         {
           "date": "2026-07-04",
@@ -11335,7 +11335,7 @@
             ]
           ],
           "unified_delta": 2.8,
-          "unified_after": 1797.5
+          "unified_after": 1797.2
         },
         {
           "date": "2026-07-04",
@@ -11363,7 +11363,7 @@
             ]
           ],
           "unified_delta": 5.9,
-          "unified_after": 1803.5
+          "unified_after": 1803.1
         },
         {
           "date": "2026-07-04",
@@ -11391,7 +11391,7 @@
             ]
           ],
           "unified_delta": 4.6,
-          "unified_after": 1808.1
+          "unified_after": 1807.7
         },
         {
           "date": "2026-07-04",
@@ -11423,7 +11423,7 @@
             ]
           ],
           "unified_delta": 8.1,
-          "unified_after": 1816.2
+          "unified_after": 1815.9
         },
         {
           "date": "2026-07-04",
@@ -11455,7 +11455,7 @@
             ]
           ],
           "unified_delta": -11.7,
-          "unified_after": 1804.4
+          "unified_after": 1804.1
         }
       ]
     },
@@ -14499,7 +14499,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1890.9,
+        "rating": 1890.5,
         "seed": 1788.9,
         "seed_level": "B",
         "matches": 9,
@@ -14510,12 +14510,12 @@
         "progress": 1,
         "status": "provisional",
         "provisional": true,
-        "peak": 1890.9,
+        "peak": 1890.5,
         "category_since": null,
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1890.9
+            "rating": 1890.5
           }
         ]
       },
@@ -14545,7 +14545,7 @@
               15
             ]
           ],
-          "unified_delta": 8.1,
+          "unified_delta": 8.2,
           "unified_after": 1797
         },
         {
@@ -14573,8 +14573,8 @@
               12
             ]
           ],
-          "unified_delta": 15.6,
-          "unified_after": 1812.6
+          "unified_delta": 15.5,
+          "unified_after": 1812.5
         },
         {
           "date": "2026-06-27",
@@ -14602,7 +14602,7 @@
             ]
           ],
           "unified_delta": 11.5,
-          "unified_after": 1824.1
+          "unified_after": 1824
         },
         {
           "date": "2026-06-27",
@@ -14630,7 +14630,7 @@
             ]
           ],
           "unified_delta": 9.6,
-          "unified_after": 1833.8
+          "unified_after": 1833.7
         },
         {
           "date": "2026-06-27",
@@ -14658,7 +14658,7 @@
             ]
           ],
           "unified_delta": 14.5,
-          "unified_after": 1848.3
+          "unified_after": 1848.1
         },
         {
           "date": "2026-06-27",
@@ -14686,7 +14686,7 @@
             ]
           ],
           "unified_delta": 10.6,
-          "unified_after": 1858.9
+          "unified_after": 1858.7
         },
         {
           "date": "2026-06-27",
@@ -14714,7 +14714,7 @@
             ]
           ],
           "unified_delta": 6,
-          "unified_after": 1864.9
+          "unified_after": 1864.7
         },
         {
           "date": "2026-06-27",
@@ -14746,7 +14746,7 @@
             ]
           ],
           "unified_delta": 12.8,
-          "unified_after": 1877.7
+          "unified_after": 1877.5
         },
         {
           "date": "2026-06-27",
@@ -14777,8 +14777,8 @@
               13
             ]
           ],
-          "unified_delta": 13.2,
-          "unified_after": 1890.9
+          "unified_delta": 13.1,
+          "unified_after": 1890.5
         }
       ]
     },
@@ -15547,7 +15547,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1883.9,
+        "rating": 1883.6,
         "seed": 1754.5,
         "seed_level": "B",
         "matches": 10,
@@ -15555,15 +15555,15 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.419,
+        "progress": 0.418,
         "status": "stable",
         "provisional": false,
-        "peak": 1883.9,
+        "peak": 1883.6,
         "category_since": "2026-06-27",
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1883.9
+            "rating": 1883.6
           }
         ]
       },
@@ -15640,7 +15640,7 @@
               21
             ]
           ],
-          "unified_delta": -19.4,
+          "unified_delta": -19.5,
           "unified_after": 1782.9
         },
         {
@@ -15668,8 +15668,8 @@
               16
             ]
           ],
-          "unified_delta": 17.1,
-          "unified_after": 1799.9
+          "unified_delta": 16.9,
+          "unified_after": 1799.8
         },
         {
           "date": "2026-06-27",
@@ -15697,7 +15697,7 @@
             ]
           ],
           "unified_delta": 20.8,
-          "unified_after": 1820.7
+          "unified_after": 1820.6
         },
         {
           "date": "2026-06-27",
@@ -15724,8 +15724,8 @@
               15
             ]
           ],
-          "unified_delta": 11.5,
-          "unified_after": 1832.2
+          "unified_delta": 11.4,
+          "unified_after": 1832
         },
         {
           "date": "2026-06-27",
@@ -15753,7 +15753,7 @@
             ]
           ],
           "unified_delta": 16.8,
-          "unified_after": 1849
+          "unified_after": 1848.8
         },
         {
           "date": "2026-06-27",
@@ -15785,7 +15785,7 @@
             ]
           ],
           "unified_delta": 15.3,
-          "unified_after": 1864.3
+          "unified_after": 1864
         },
         {
           "date": "2026-06-27",
@@ -15813,7 +15813,7 @@
             ]
           ],
           "unified_delta": 10.4,
-          "unified_after": 1874.6
+          "unified_after": 1874.4
         },
         {
           "date": "2026-06-27",
@@ -15844,8 +15844,8 @@
               13
             ]
           ],
-          "unified_delta": 9.3,
-          "unified_after": 1883.9
+          "unified_delta": 9.2,
+          "unified_after": 1883.6
         },
         {
           "date": "2026-06-27",
@@ -17807,7 +17807,7 @@
             ]
           ],
           "unified_delta": 11.4,
-          "unified_after": 1488.4
+          "unified_after": 1488.3
         },
         {
           "date": "2026-07-04",
@@ -18936,7 +18936,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1639.9,
+        "rating": 1639.7,
         "seed": 1500,
         "seed_level": "C",
         "matches": 17,
@@ -18944,10 +18944,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.2,
+        "progress": 0.199,
         "status": "demotion",
         "provisional": false,
-        "peak": 1654.5,
+        "peak": 1654.3,
         "category_since": "2026-06-27",
         "history": [
           {
@@ -18956,7 +18956,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1639.9
+            "rating": 1639.7
           }
         ]
       },
@@ -19239,8 +19239,8 @@
               10
             ]
           ],
-          "unified_delta": 21.3,
-          "unified_after": 1611.9
+          "unified_delta": 21.1,
+          "unified_after": 1611.7
         },
         {
           "date": "2026-06-27",
@@ -19265,7 +19265,7 @@
             ]
           ],
           "unified_delta": -8.6,
-          "unified_after": 1603.3
+          "unified_after": 1603.1
         },
         {
           "date": "2026-06-27",
@@ -19294,7 +19294,7 @@
             ]
           ],
           "unified_delta": 18.6,
-          "unified_after": 1621.9
+          "unified_after": 1621.6
         },
         {
           "date": "2026-06-27",
@@ -19322,7 +19322,7 @@
             ]
           ],
           "unified_delta": 9.2,
-          "unified_after": 1631.1
+          "unified_after": 1630.9
         },
         {
           "date": "2026-06-27",
@@ -19354,7 +19354,7 @@
             ]
           ],
           "unified_delta": 6.6,
-          "unified_after": 1637.7
+          "unified_after": 1637.4
         },
         {
           "date": "2026-06-27",
@@ -19382,7 +19382,7 @@
             ]
           ],
           "unified_delta": 9.3,
-          "unified_after": 1647
+          "unified_after": 1646.8
         },
         {
           "date": "2026-06-27",
@@ -19410,7 +19410,7 @@
             ]
           ],
           "unified_delta": 7.5,
-          "unified_after": 1654.5
+          "unified_after": 1654.3
         },
         {
           "date": "2026-06-27",
@@ -19442,7 +19442,7 @@
             ]
           ],
           "unified_delta": -14.6,
-          "unified_after": 1639.9
+          "unified_after": 1639.7
         }
       ]
     },
@@ -19716,7 +19716,7 @@
             ]
           ],
           "unified_delta": 14.8,
-          "unified_after": 1749
+          "unified_after": 1748.9
         },
         {
           "date": "2026-06-27",
@@ -19773,7 +19773,7 @@
             ]
           ],
           "unified_delta": -9.6,
-          "unified_after": 1762.9
+          "unified_after": 1762.8
         },
         {
           "date": "2026-06-27",
@@ -19801,7 +19801,7 @@
             ]
           ],
           "unified_delta": 16.2,
-          "unified_after": 1779.1
+          "unified_after": 1779
         },
         {
           "date": "2026-06-27",
@@ -19828,7 +19828,7 @@
               16
             ]
           ],
-          "unified_delta": 15.5,
+          "unified_delta": 15.4,
           "unified_after": 1794.5
         },
         {
@@ -19885,7 +19885,7 @@
             ]
           ],
           "unified_delta": 12.7,
-          "unified_after": 1793.5
+          "unified_after": 1793.4
         },
         {
           "date": "2026-07-04",
@@ -20153,7 +20153,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1809.4,
+        "rating": 1803.7,
         "seed": 1700,
         "seed_level": "B",
         "matches": 18,
@@ -20161,10 +20161,10 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.047,
+        "progress": 0.018,
         "status": "demotion",
         "provisional": false,
-        "peak": 1823.3,
+        "peak": 1817.3,
         "category_since": "2026-03-07",
         "history": [
           {
@@ -20177,11 +20177,11 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1816.7
+            "rating": 1810.5
           },
           {
             "date": "2026-05-10",
-            "rating": 1809.4
+            "rating": 1803.7
           }
         ]
       },
@@ -20571,8 +20571,8 @@
               18
             ]
           ],
-          "unified_delta": 17.7,
-          "unified_after": 1807.2
+          "unified_delta": 11.5,
+          "unified_after": 1801
         },
         {
           "date": "2026-04-11",
@@ -20599,8 +20599,8 @@
               21
             ]
           ],
-          "unified_delta": 9.6,
-          "unified_after": 1816.7
+          "unified_delta": 9.5,
+          "unified_after": 1810.5
         },
         {
           "date": "2026-05-10",
@@ -20627,8 +20627,8 @@
               21
             ]
           ],
-          "unified_delta": -14.5,
-          "unified_after": 1802.3
+          "unified_delta": -14.3,
+          "unified_after": 1796.2
         },
         {
           "date": "2026-05-10",
@@ -20660,7 +20660,7 @@
             ]
           ],
           "unified_delta": 11,
-          "unified_after": 1813.2
+          "unified_after": 1807.2
         },
         {
           "date": "2026-05-10",
@@ -20687,8 +20687,8 @@
               16
             ]
           ],
-          "unified_delta": 10.1,
-          "unified_after": 1823.3
+          "unified_delta": 10.2,
+          "unified_after": 1817.3
         },
         {
           "date": "2026-05-10",
@@ -20715,8 +20715,8 @@
               21
             ]
           ],
-          "unified_delta": -13.8,
-          "unified_after": 1809.4
+          "unified_delta": -13.7,
+          "unified_after": 1803.7
         }
       ]
     },
@@ -20859,7 +20859,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1771.5,
+        "rating": 1771.2,
         "seed": 1700,
         "seed_level": "B",
         "matches": 26,
@@ -20867,10 +20867,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.857,
+        "progress": 0.856,
         "status": "promotion",
         "provisional": false,
-        "peak": 1787.1,
+        "peak": 1786.9,
         "category_since": null,
         "history": [
           {
@@ -20879,11 +20879,11 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1723.6
+            "rating": 1723.4
           },
           {
             "date": "2026-07-04",
-            "rating": 1771.5
+            "rating": 1771.2
           }
         ]
       },
@@ -21205,7 +21205,7 @@
               14
             ]
           ],
-          "unified_delta": 6.2,
+          "unified_delta": 6.1,
           "unified_after": 1763.9
         },
         {
@@ -21265,8 +21265,8 @@
               12
             ]
           ],
-          "unified_delta": 8.6,
-          "unified_after": 1755.9
+          "unified_delta": 8.5,
+          "unified_after": 1755.8
         },
         {
           "date": "2026-06-27",
@@ -21298,7 +21298,7 @@
             ]
           ],
           "unified_delta": -15.2,
-          "unified_after": 1740.6
+          "unified_after": 1740.5
         },
         {
           "date": "2026-06-27",
@@ -21326,7 +21326,7 @@
             ]
           ],
           "unified_delta": 9.9,
-          "unified_after": 1750.5
+          "unified_after": 1750.4
         },
         {
           "date": "2026-06-27",
@@ -21354,7 +21354,7 @@
             ]
           ],
           "unified_delta": -14.4,
-          "unified_after": 1736
+          "unified_after": 1735.9
         },
         {
           "date": "2026-06-27",
@@ -21385,8 +21385,8 @@
               21
             ]
           ],
-          "unified_delta": -12.4,
-          "unified_after": 1723.6
+          "unified_delta": -12.6,
+          "unified_after": 1723.4
         },
         {
           "date": "2026-07-04",
@@ -21418,7 +21418,7 @@
             ]
           ],
           "unified_delta": 8.5,
-          "unified_after": 1732.1
+          "unified_after": 1731.9
         },
         {
           "date": "2026-07-04",
@@ -21445,8 +21445,8 @@
               6
             ]
           ],
-          "unified_delta": 4.7,
-          "unified_after": 1736.8
+          "unified_delta": 4.6,
+          "unified_after": 1736.5
         },
         {
           "date": "2026-07-04",
@@ -21473,8 +21473,8 @@
               7
             ]
           ],
-          "unified_delta": 10.2,
-          "unified_after": 1747
+          "unified_delta": 10.3,
+          "unified_after": 1746.8
         },
         {
           "date": "2026-07-04",
@@ -21506,7 +21506,7 @@
             ]
           ],
           "unified_delta": 11.5,
-          "unified_after": 1758.6
+          "unified_after": 1758.3
         },
         {
           "date": "2026-07-04",
@@ -21534,7 +21534,7 @@
             ]
           ],
           "unified_delta": 3.7,
-          "unified_after": 1762.2
+          "unified_after": 1762
         },
         {
           "date": "2026-07-04",
@@ -21562,7 +21562,7 @@
             ]
           ],
           "unified_delta": 7.9,
-          "unified_after": 1770.2
+          "unified_after": 1769.9
         },
         {
           "date": "2026-07-04",
@@ -21590,7 +21590,7 @@
             ]
           ],
           "unified_delta": 6.1,
-          "unified_after": 1776.3
+          "unified_after": 1776
         },
         {
           "date": "2026-07-04",
@@ -21622,7 +21622,7 @@
             ]
           ],
           "unified_delta": 10.8,
-          "unified_after": 1787.1
+          "unified_after": 1786.9
         },
         {
           "date": "2026-07-04",
@@ -21654,7 +21654,7 @@
             ]
           ],
           "unified_delta": -15.7,
-          "unified_after": 1771.5
+          "unified_after": 1771.2
         }
       ]
     },
@@ -21796,7 +21796,7 @@
         "next_category": "B",
         "floor": 1400,
         "next_floor": 1600,
-        "progress": 0.4,
+        "progress": 0.401,
         "status": "stable",
         "provisional": false,
         "peak": 1482,
@@ -22479,7 +22479,7 @@
               2
             ]
           ],
-          "unified_delta": 18.3,
+          "unified_delta": 18.2,
           "unified_after": 1201.7
         },
         {
@@ -24843,7 +24843,7 @@
         "next_category": "B",
         "floor": 1400,
         "next_floor": 1600,
-        "progress": 0.26,
+        "progress": 0.259,
         "status": "demotion",
         "provisional": false,
         "peak": 1451.9,
@@ -26461,8 +26461,8 @@
               14
             ]
           ],
-          "unified_delta": 14.7,
-          "unified_after": 1640.8
+          "unified_delta": 14.8,
+          "unified_after": 1640.9
         },
         {
           "date": "2026-05-10",
@@ -26489,7 +26489,7 @@
               21
             ]
           ],
-          "unified_delta": -10.6,
+          "unified_delta": -10.7,
           "unified_after": 1630.2
         },
         {
@@ -26517,7 +26517,7 @@
               21
             ]
           ],
-          "unified_delta": -9.7,
+          "unified_delta": -9.6,
           "unified_after": 1620.6
         },
         {
@@ -26670,7 +26670,7 @@
             ]
           ],
           "unified_delta": 10.9,
-          "unified_after": 1675
+          "unified_after": 1675.1
         },
         {
           "date": "2026-05-10",
@@ -26825,7 +26825,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1989.7,
+        "rating": 1989.4,
         "seed": 1900,
         "seed_level": "A",
         "matches": 7,
@@ -26833,15 +26833,15 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.949,
+        "progress": 0.947,
         "status": "provisional",
         "provisional": true,
-        "peak": 1989.7,
+        "peak": 1989.4,
         "category_since": null,
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1989.7
+            "rating": 1989.4
           }
         ]
       },
@@ -26899,8 +26899,8 @@
               15
             ]
           ],
-          "unified_delta": 12.2,
-          "unified_after": 1926.8
+          "unified_delta": 12.1,
+          "unified_after": 1926.7
         },
         {
           "date": "2026-06-27",
@@ -26928,7 +26928,7 @@
             ]
           ],
           "unified_delta": 13.1,
-          "unified_after": 1940
+          "unified_after": 1939.8
         },
         {
           "date": "2026-06-27",
@@ -26955,8 +26955,8 @@
               15
             ]
           ],
-          "unified_delta": 8.1,
-          "unified_after": 1948.1
+          "unified_delta": 8.2,
+          "unified_after": 1948
         },
         {
           "date": "2026-06-27",
@@ -26983,8 +26983,8 @@
               12
             ]
           ],
-          "unified_delta": 15.6,
-          "unified_after": 1963.7
+          "unified_delta": 15.5,
+          "unified_after": 1963.5
         },
         {
           "date": "2026-06-27",
@@ -27012,7 +27012,7 @@
             ]
           ],
           "unified_delta": 11.5,
-          "unified_after": 1975.2
+          "unified_after": 1975
         },
         {
           "date": "2026-06-27",
@@ -27040,7 +27040,7 @@
             ]
           ],
           "unified_delta": 14.5,
-          "unified_after": 1989.7
+          "unified_after": 1989.4
         }
       ]
     },
@@ -29032,7 +29032,7 @@
             ]
           ],
           "unified_delta": 14.6,
-          "unified_after": 1319.2
+          "unified_after": 1319.1
         },
         {
           "date": "2026-07-04",
@@ -30504,7 +30504,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1557.5,
+        "rating": 1553.5,
         "seed": 1500,
         "seed_level": "C",
         "matches": 25,
@@ -30515,7 +30515,7 @@
         "progress": 0,
         "status": "demotion",
         "provisional": false,
-        "peak": 1628,
+        "peak": 1623.7,
         "category_since": "2026-06-27",
         "history": [
           {
@@ -30528,19 +30528,19 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1529.6
+            "rating": 1524
           },
           {
             "date": "2026-05-10",
-            "rating": 1589.6
+            "rating": 1584.8
           },
           {
             "date": "2026-06-27",
-            "rating": 1617.4
+            "rating": 1613.3
           },
           {
             "date": "2026-07-04",
-            "rating": 1557.5
+            "rating": 1553.5
           }
         ]
       },
@@ -30793,8 +30793,8 @@
               4
             ]
           ],
-          "unified_delta": 25.5,
-          "unified_after": 1490.9
+          "unified_delta": 19.3,
+          "unified_after": 1484.6
         },
         {
           "date": "2026-04-11",
@@ -30821,8 +30821,8 @@
               14
             ]
           ],
-          "unified_delta": 18.5,
-          "unified_after": 1509.3
+          "unified_delta": 18.7,
+          "unified_after": 1503.4
         },
         {
           "date": "2026-04-11",
@@ -30849,8 +30849,8 @@
               15
             ]
           ],
-          "unified_delta": -9.6,
-          "unified_after": 1499.8
+          "unified_delta": -9.5,
+          "unified_after": 1493.8
         },
         {
           "date": "2026-04-11",
@@ -30881,8 +30881,8 @@
               15
             ]
           ],
-          "unified_delta": 14.1,
-          "unified_after": 1513.9
+          "unified_delta": 14.3,
+          "unified_after": 1508.1
         },
         {
           "date": "2026-04-11",
@@ -30909,8 +30909,8 @@
               15
             ]
           ],
-          "unified_delta": 15.7,
-          "unified_after": 1529.6
+          "unified_delta": 15.9,
+          "unified_after": 1524
         },
         {
           "date": "2026-05-10",
@@ -30941,8 +30941,8 @@
               14
             ]
           ],
-          "unified_delta": 14.1,
-          "unified_after": 1543.7
+          "unified_delta": 14.3,
+          "unified_after": 1538.3
         },
         {
           "date": "2026-05-10",
@@ -30969,8 +30969,8 @@
               16
             ]
           ],
-          "unified_delta": 10.6,
-          "unified_after": 1554.2
+          "unified_delta": 10.7,
+          "unified_after": 1549
         },
         {
           "date": "2026-05-10",
@@ -31001,8 +31001,8 @@
               18
             ]
           ],
-          "unified_delta": 12.5,
-          "unified_after": 1566.7
+          "unified_delta": 12.7,
+          "unified_after": 1561.6
         },
         {
           "date": "2026-05-10",
@@ -31033,8 +31033,8 @@
               18
             ]
           ],
-          "unified_delta": 11.2,
-          "unified_after": 1578
+          "unified_delta": 11.3,
+          "unified_after": 1573
         },
         {
           "date": "2026-05-10",
@@ -31061,8 +31061,8 @@
               12
             ]
           ],
-          "unified_delta": 11.6,
-          "unified_after": 1589.6
+          "unified_delta": 11.8,
+          "unified_after": 1584.8
         },
         {
           "date": "2026-06-27",
@@ -31093,8 +31093,8 @@
               13
             ]
           ],
-          "unified_delta": 8.1,
-          "unified_after": 1597.7
+          "unified_delta": 8.3,
+          "unified_after": 1593
         },
         {
           "date": "2026-06-27",
@@ -31121,8 +31121,8 @@
               16
             ]
           ],
-          "unified_delta": 7.6,
-          "unified_after": 1605.3
+          "unified_delta": 7.7,
+          "unified_after": 1600.7
         },
         {
           "date": "2026-06-27",
@@ -31153,8 +31153,8 @@
               16
             ]
           ],
-          "unified_delta": 12.4,
-          "unified_after": 1617.7
+          "unified_delta": 12.6,
+          "unified_after": 1613.3
         },
         {
           "date": "2026-06-27",
@@ -31181,8 +31181,8 @@
               19
             ]
           ],
-          "unified_delta": 10.3,
-          "unified_after": 1628
+          "unified_delta": 10.4,
+          "unified_after": 1623.7
         },
         {
           "date": "2026-06-27",
@@ -31213,8 +31213,8 @@
               21
             ]
           ],
-          "unified_delta": -10.6,
-          "unified_after": 1617.4
+          "unified_delta": -10.5,
+          "unified_after": 1613.3
         },
         {
           "date": "2026-07-04",
@@ -31239,7 +31239,7 @@
             ]
           ],
           "unified_delta": -29.7,
-          "unified_after": 1587.7
+          "unified_after": 1583.6
         },
         {
           "date": "2026-07-04",
@@ -31263,8 +31263,8 @@
               17
             ]
           ],
-          "unified_delta": -30.2,
-          "unified_after": 1557.5
+          "unified_delta": -30.1,
+          "unified_after": 1553.5
         }
       ]
     },
@@ -32905,7 +32905,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1977.7,
+        "rating": 1977.5,
         "seed": 1900,
         "seed_level": "A",
         "matches": 10,
@@ -32913,15 +32913,15 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.889,
+        "progress": 0.887,
         "status": "promotion",
         "provisional": false,
-        "peak": 1994.1,
+        "peak": 1994,
         "category_since": null,
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1977.7
+            "rating": 1977.5
           }
         ]
       },
@@ -32974,7 +32974,7 @@
             ]
           ],
           "unified_delta": 19.2,
-          "unified_after": 1933.8
+          "unified_after": 1933.7
         },
         {
           "date": "2026-06-27",
@@ -33028,7 +33028,7 @@
             ]
           ],
           "unified_delta": 13.5,
-          "unified_after": 1959
+          "unified_after": 1958.9
         },
         {
           "date": "2026-06-27",
@@ -33056,7 +33056,7 @@
             ]
           ],
           "unified_delta": -14.6,
-          "unified_after": 1944.4
+          "unified_after": 1944.3
         },
         {
           "date": "2026-06-27",
@@ -33115,8 +33115,8 @@
               18
             ]
           ],
-          "unified_delta": 12.8,
-          "unified_after": 1973.2
+          "unified_delta": 12.7,
+          "unified_after": 1973
         },
         {
           "date": "2026-06-27",
@@ -33148,7 +33148,7 @@
             ]
           ],
           "unified_delta": 11.8,
-          "unified_after": 1985
+          "unified_after": 1984.8
         },
         {
           "date": "2026-06-27",
@@ -33176,7 +33176,7 @@
             ]
           ],
           "unified_delta": 9.1,
-          "unified_after": 1994.1
+          "unified_after": 1994
         },
         {
           "date": "2026-06-27",
@@ -33207,8 +33207,8 @@
               21
             ]
           ],
-          "unified_delta": -16.4,
-          "unified_after": 1977.7
+          "unified_delta": -16.5,
+          "unified_after": 1977.5
         }
       ]
     },
@@ -33553,7 +33553,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1788.1,
+        "rating": 1787.9,
         "seed": 1700,
         "seed_level": "B",
         "matches": 5,
@@ -33561,15 +33561,15 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.94,
+        "progress": 0.939,
         "status": "provisional",
         "provisional": true,
-        "peak": 1788.1,
+        "peak": 1787.9,
         "category_since": null,
         "history": [
           {
             "date": "2026-04-11",
-            "rating": 1788.1
+            "rating": 1787.9
           }
         ]
       },
@@ -33671,8 +33671,8 @@
               19
             ]
           ],
-          "unified_delta": 13.8,
-          "unified_after": 1765.5
+          "unified_delta": 13.6,
+          "unified_after": 1765.3
         },
         {
           "date": "2026-04-11",
@@ -33701,7 +33701,7 @@
             ]
           ],
           "unified_delta": 22.5,
-          "unified_after": 1788.1
+          "unified_after": 1787.9
         }
       ]
     },
@@ -33937,7 +33937,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1815.4,
+        "rating": 1815.3,
         "seed": 1700,
         "seed_level": "B",
         "matches": 26,
@@ -33945,10 +33945,10 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.077,
+        "progress": 0.076,
         "status": "demotion",
         "provisional": false,
-        "peak": 1840.2,
+        "peak": 1840,
         "category_since": "2026-04-11",
         "history": [
           {
@@ -33957,15 +33957,15 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1824.5
+            "rating": 1824.1
           },
           {
             "date": "2026-05-10",
-            "rating": 1803.9
+            "rating": 1803.5
           },
           {
             "date": "2026-06-27",
-            "rating": 1815.4
+            "rating": 1815.3
           }
         ]
       },
@@ -34315,8 +34315,8 @@
               15
             ]
           ],
-          "unified_delta": 10.6,
-          "unified_after": 1840.2
+          "unified_delta": 10.5,
+          "unified_after": 1840
         },
         {
           "date": "2026-04-11",
@@ -34343,8 +34343,8 @@
               21
             ]
           ],
-          "unified_delta": -15.7,
-          "unified_after": 1824.5
+          "unified_delta": -15.9,
+          "unified_after": 1824.1
         },
         {
           "date": "2026-05-10",
@@ -34371,8 +34371,8 @@
               21
             ]
           ],
-          "unified_delta": -14.4,
-          "unified_after": 1810.1
+          "unified_delta": -14.5,
+          "unified_after": 1809.7
         },
         {
           "date": "2026-05-10",
@@ -34400,7 +34400,7 @@
             ]
           ],
           "unified_delta": -15.5,
-          "unified_after": 1794.6
+          "unified_after": 1794.2
         },
         {
           "date": "2026-05-10",
@@ -34428,7 +34428,7 @@
             ]
           ],
           "unified_delta": 9.3,
-          "unified_after": 1803.9
+          "unified_after": 1803.5
         },
         {
           "date": "2026-06-27",
@@ -34453,7 +34453,7 @@
             ]
           ],
           "unified_delta": -11.7,
-          "unified_after": 1792.2
+          "unified_after": 1791.8
         },
         {
           "date": "2026-06-27",
@@ -34482,7 +34482,7 @@
             ]
           ],
           "unified_delta": 20,
-          "unified_after": 1812.2
+          "unified_after": 1811.8
         },
         {
           "date": "2026-06-27",
@@ -34506,8 +34506,8 @@
               17
             ]
           ],
-          "unified_delta": 15.5,
-          "unified_after": 1827.8
+          "unified_delta": 15.6,
+          "unified_after": 1827.4
         },
         {
           "date": "2026-06-27",
@@ -34532,7 +34532,7 @@
             ]
           ],
           "unified_delta": -10.8,
-          "unified_after": 1817
+          "unified_after": 1816.6
         },
         {
           "date": "2026-06-27",
@@ -34563,8 +34563,8 @@
               16
             ]
           ],
-          "unified_delta": 14.8,
-          "unified_after": 1831.8
+          "unified_delta": 14.9,
+          "unified_after": 1831.5
         },
         {
           "date": "2026-06-27",
@@ -34591,8 +34591,8 @@
               21
             ]
           ],
-          "unified_delta": -9.8,
-          "unified_after": 1822
+          "unified_delta": -9.7,
+          "unified_after": 1821.9
         },
         {
           "date": "2026-06-27",
@@ -34619,7 +34619,7 @@
               21
             ]
           ],
-          "unified_delta": -10.2,
+          "unified_delta": -10.1,
           "unified_after": 1811.7
         },
         {
@@ -34652,7 +34652,7 @@
             ]
           ],
           "unified_delta": 9.4,
-          "unified_after": 1821.2
+          "unified_after": 1821.1
         },
         {
           "date": "2026-06-27",
@@ -34680,7 +34680,7 @@
             ]
           ],
           "unified_delta": 7.3,
-          "unified_after": 1828.5
+          "unified_after": 1828.4
         },
         {
           "date": "2026-06-27",
@@ -34711,8 +34711,8 @@
               21
             ]
           ],
-          "unified_delta": -13.1,
-          "unified_after": 1815.4
+          "unified_delta": -13.2,
+          "unified_after": 1815.3
         }
       ]
     },
@@ -36061,7 +36061,7 @@
             ]
           ],
           "unified_delta": 10.8,
-          "unified_after": 1548.5
+          "unified_after": 1548.4
         },
         {
           "date": "2026-07-04",
@@ -37637,7 +37637,7 @@
             ]
           ],
           "unified_delta": 23.2,
-          "unified_after": 1161
+          "unified_after": 1160.9
         },
         {
           "date": "2026-07-04",
@@ -37665,7 +37665,7 @@
             ]
           ],
           "unified_delta": 12.3,
-          "unified_after": 1173.3
+          "unified_after": 1173.2
         },
         {
           "date": "2026-07-04",
@@ -37693,7 +37693,7 @@
             ]
           ],
           "unified_delta": -14.3,
-          "unified_after": 1159
+          "unified_after": 1158.9
         },
         {
           "date": "2026-07-04",
@@ -37721,7 +37721,7 @@
             ]
           ],
           "unified_delta": 13.7,
-          "unified_after": 1172.7
+          "unified_after": 1172.6
         },
         {
           "date": "2026-07-04",
@@ -37746,7 +37746,7 @@
             ]
           ],
           "unified_delta": 15.8,
-          "unified_after": 1188.5
+          "unified_after": 1188.4
         },
         {
           "date": "2026-07-04",
@@ -39508,7 +39508,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1644.1,
+        "rating": 1643.9,
         "seed": 1588.9,
         "seed_level": "C",
         "matches": 9,
@@ -39524,7 +39524,7 @@
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1644.1
+            "rating": 1643.9
           }
         ]
       },
@@ -39782,8 +39782,8 @@
               21
             ]
           ],
-          "unified_delta": -12.9,
-          "unified_after": 1644.1
+          "unified_delta": -13.1,
+          "unified_after": 1643.9
         }
       ]
     },
@@ -39876,7 +39876,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1752.2,
+        "rating": 1752,
         "seed": 1700,
         "seed_level": "B",
         "matches": 5,
@@ -39884,15 +39884,15 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.761,
+        "progress": 0.76,
         "status": "provisional",
         "provisional": true,
-        "peak": 1752.2,
+        "peak": 1752,
         "category_since": null,
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1752.2
+            "rating": 1752
           }
         ]
       },
@@ -40042,8 +40042,8 @@
               13
             ]
           ],
-          "unified_delta": 13.2,
-          "unified_after": 1752.2
+          "unified_delta": 13.1,
+          "unified_after": 1752
         }
       ]
     },
@@ -42239,7 +42239,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1454.7,
+        "rating": 1454.6,
         "seed": 1383.3,
         "seed_level": "D",
         "matches": 23,
@@ -42263,7 +42263,7 @@
           },
           {
             "date": "2026-07-04",
-            "rating": 1454.7
+            "rating": 1454.6
           }
         ]
       },
@@ -42942,7 +42942,7 @@
             ]
           ],
           "unified_delta": -7.3,
-          "unified_after": 1454.7
+          "unified_after": 1454.6
         }
       ]
     },
@@ -43903,7 +43903,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1763.3,
+        "rating": 1762.7,
         "seed": 1700,
         "seed_level": "B",
         "matches": 4,
@@ -43911,15 +43911,15 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.817,
+        "progress": 0.814,
         "status": "provisional",
         "provisional": true,
-        "peak": 1763.3,
+        "peak": 1762.7,
         "category_since": null,
         "history": [
           {
             "date": "2026-05-10",
-            "rating": 1763.3
+            "rating": 1762.7
           }
         ]
       },
@@ -43949,8 +43949,8 @@
               18
             ]
           ],
-          "unified_delta": 17.5,
-          "unified_after": 1717.5
+          "unified_delta": 17.3,
+          "unified_after": 1717.3
         },
         {
           "date": "2026-05-10",
@@ -43977,8 +43977,8 @@
               15
             ]
           ],
-          "unified_delta": 18.1,
-          "unified_after": 1735.6
+          "unified_delta": 17.9,
+          "unified_after": 1735.2
         },
         {
           "date": "2026-05-10",
@@ -44006,7 +44006,7 @@
             ]
           ],
           "unified_delta": 10.4,
-          "unified_after": 1746.1
+          "unified_after": 1745.6
         },
         {
           "date": "2026-05-10",
@@ -44033,8 +44033,8 @@
               17
             ]
           ],
-          "unified_delta": 17.3,
-          "unified_after": 1763.3
+          "unified_delta": 17.1,
+          "unified_after": 1762.7
         }
       ]
     },
@@ -45751,7 +45751,7 @@
               0
             ]
           ],
-          "unified_delta": 18.5,
+          "unified_delta": 18.6,
           "unified_after": 1732.6
         },
         {
@@ -46527,7 +46527,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1649.3,
+        "rating": 1648.9,
         "seed": 1575,
         "seed_level": "C",
         "matches": 50,
@@ -46535,7 +46535,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.247,
+        "progress": 0.245,
         "status": "demotion",
         "provisional": false,
         "peak": 1674.9,
@@ -46555,19 +46555,19 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1642.8
+            "rating": 1642.7
           },
           {
             "date": "2026-05-10",
-            "rating": 1631.1
+            "rating": 1630.6
           },
           {
             "date": "2026-06-27",
-            "rating": 1619.8
+            "rating": 1619.4
           },
           {
             "date": "2026-07-04",
-            "rating": 1649.3
+            "rating": 1648.9
           }
         ]
       },
@@ -47505,8 +47505,8 @@
               21
             ]
           ],
-          "unified_delta": -10.6,
-          "unified_after": 1650.5
+          "unified_delta": -10.7,
+          "unified_after": 1650.3
         },
         {
           "date": "2026-04-11",
@@ -47531,7 +47531,7 @@
             ]
           ],
           "unified_delta": -7.6,
-          "unified_after": 1642.8
+          "unified_after": 1642.7
         },
         {
           "date": "2026-05-10",
@@ -47559,7 +47559,7 @@
             ]
           ],
           "unified_delta": -11.1,
-          "unified_after": 1631.8
+          "unified_after": 1631.6
         },
         {
           "date": "2026-05-10",
@@ -47587,7 +47587,7 @@
             ]
           ],
           "unified_delta": 9.4,
-          "unified_after": 1641.2
+          "unified_after": 1641
         },
         {
           "date": "2026-05-10",
@@ -47618,8 +47618,8 @@
               21
             ]
           ],
-          "unified_delta": -9.4,
-          "unified_after": 1631.8
+          "unified_delta": -9.5,
+          "unified_after": 1631.5
         },
         {
           "date": "2026-05-10",
@@ -47650,8 +47650,8 @@
               21
             ]
           ],
-          "unified_delta": 7.9,
-          "unified_after": 1639.8
+          "unified_delta": 8,
+          "unified_after": 1639.5
         },
         {
           "date": "2026-05-10",
@@ -47678,8 +47678,8 @@
               21
             ]
           ],
-          "unified_delta": -8.7,
-          "unified_after": 1631.1
+          "unified_delta": -8.8,
+          "unified_after": 1630.6
         },
         {
           "date": "2026-06-27",
@@ -47707,7 +47707,7 @@
             ]
           ],
           "unified_delta": -8.2,
-          "unified_after": 1622.9
+          "unified_after": 1622.4
         },
         {
           "date": "2026-06-27",
@@ -47735,7 +47735,7 @@
             ]
           ],
           "unified_delta": -6.5,
-          "unified_after": 1616.3
+          "unified_after": 1615.9
         },
         {
           "date": "2026-06-27",
@@ -47763,7 +47763,7 @@
             ]
           ],
           "unified_delta": 12.6,
-          "unified_after": 1629
+          "unified_after": 1628.5
         },
         {
           "date": "2026-06-27",
@@ -47791,7 +47791,7 @@
             ]
           ],
           "unified_delta": -5.5,
-          "unified_after": 1623.4
+          "unified_after": 1623
         },
         {
           "date": "2026-06-27",
@@ -47819,7 +47819,7 @@
             ]
           ],
           "unified_delta": -3.6,
-          "unified_after": 1619.8
+          "unified_after": 1619.4
         },
         {
           "date": "2026-07-04",
@@ -47847,7 +47847,7 @@
             ]
           ],
           "unified_delta": -8.3,
-          "unified_after": 1611.5
+          "unified_after": 1611.1
         },
         {
           "date": "2026-07-04",
@@ -47879,7 +47879,7 @@
             ]
           ],
           "unified_delta": -5.7,
-          "unified_after": 1605.8
+          "unified_after": 1605.4
         },
         {
           "date": "2026-07-04",
@@ -47911,7 +47911,7 @@
             ]
           ],
           "unified_delta": 6.8,
-          "unified_after": 1612.6
+          "unified_after": 1612.2
         },
         {
           "date": "2026-07-04",
@@ -47939,7 +47939,7 @@
             ]
           ],
           "unified_delta": 5.5,
-          "unified_after": 1618.1
+          "unified_after": 1617.7
         },
         {
           "date": "2026-07-04",
@@ -47967,7 +47967,7 @@
             ]
           ],
           "unified_delta": 11.1,
-          "unified_after": 1629.2
+          "unified_after": 1628.8
         },
         {
           "date": "2026-07-04",
@@ -47995,7 +47995,7 @@
             ]
           ],
           "unified_delta": 8.4,
-          "unified_after": 1637.6
+          "unified_after": 1637.2
         },
         {
           "date": "2026-07-04",
@@ -48027,7 +48027,7 @@
             ]
           ],
           "unified_delta": 11.7,
-          "unified_after": 1649.3
+          "unified_after": 1648.9
         }
       ]
     },
@@ -48244,7 +48244,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1559.2,
+        "rating": 1558.8,
         "seed": 1554.5,
         "seed_level": "C",
         "matches": 36,
@@ -48255,7 +48255,7 @@
         "progress": 0,
         "status": "demotion",
         "provisional": false,
-        "peak": 1611.7,
+        "peak": 1611.2,
         "category_since": "2026-05-10",
         "history": [
           {
@@ -48268,15 +48268,15 @@
           },
           {
             "date": "2026-05-10",
-            "rating": 1610
+            "rating": 1609.5
           },
           {
             "date": "2026-06-27",
-            "rating": 1562.7
+            "rating": 1562.2
           },
           {
             "date": "2026-07-04",
-            "rating": 1559.2
+            "rating": 1558.8
           }
         ]
       },
@@ -48834,8 +48834,8 @@
               18
             ]
           ],
-          "unified_delta": 14,
-          "unified_after": 1573.4
+          "unified_delta": 13.8,
+          "unified_after": 1573.2
         },
         {
           "date": "2026-05-10",
@@ -48862,8 +48862,8 @@
               15
             ]
           ],
-          "unified_delta": 14.5,
-          "unified_after": 1587.8
+          "unified_delta": 14.3,
+          "unified_after": 1587.5
         },
         {
           "date": "2026-05-10",
@@ -48891,7 +48891,7 @@
             ]
           ],
           "unified_delta": 8.3,
-          "unified_after": 1596.2
+          "unified_after": 1595.9
         },
         {
           "date": "2026-05-10",
@@ -48918,8 +48918,8 @@
               17
             ]
           ],
-          "unified_delta": 13.8,
-          "unified_after": 1610
+          "unified_delta": 13.7,
+          "unified_after": 1609.5
         },
         {
           "date": "2026-06-27",
@@ -48947,7 +48947,7 @@
             ]
           ],
           "unified_delta": -10.9,
-          "unified_after": 1599.1
+          "unified_after": 1598.6
         },
         {
           "date": "2026-06-27",
@@ -48975,7 +48975,7 @@
             ]
           ],
           "unified_delta": 5.7,
-          "unified_after": 1604.8
+          "unified_after": 1604.3
         },
         {
           "date": "2026-06-27",
@@ -49002,8 +49002,8 @@
               7
             ]
           ],
-          "unified_delta": 6.9,
-          "unified_after": 1611.7
+          "unified_delta": 7,
+          "unified_after": 1611.2
         },
         {
           "date": "2026-06-27",
@@ -49035,7 +49035,7 @@
             ]
           ],
           "unified_delta": -19.1,
-          "unified_after": 1592.6
+          "unified_after": 1592.1
         },
         {
           "date": "2026-06-27",
@@ -49063,7 +49063,7 @@
             ]
           ],
           "unified_delta": -8.7,
-          "unified_after": 1583.9
+          "unified_after": 1583.4
         },
         {
           "date": "2026-06-27",
@@ -49091,7 +49091,7 @@
             ]
           ],
           "unified_delta": -13.8,
-          "unified_after": 1570.1
+          "unified_after": 1569.7
         },
         {
           "date": "2026-06-27",
@@ -49119,7 +49119,7 @@
             ]
           ],
           "unified_delta": 9.7,
-          "unified_after": 1579.8
+          "unified_after": 1579.4
         },
         {
           "date": "2026-06-27",
@@ -49147,7 +49147,7 @@
             ]
           ],
           "unified_delta": -17.1,
-          "unified_after": 1562.7
+          "unified_after": 1562.2
         },
         {
           "date": "2026-07-04",
@@ -49175,7 +49175,7 @@
             ]
           ],
           "unified_delta": -11.6,
-          "unified_after": 1551
+          "unified_after": 1550.6
         },
         {
           "date": "2026-07-04",
@@ -49203,7 +49203,7 @@
             ]
           ],
           "unified_delta": 8.3,
-          "unified_after": 1559.3
+          "unified_after": 1558.9
         },
         {
           "date": "2026-07-04",
@@ -49231,7 +49231,7 @@
             ]
           ],
           "unified_delta": 11.4,
-          "unified_after": 1570.7
+          "unified_after": 1570.3
         },
         {
           "date": "2026-07-04",
@@ -49259,7 +49259,7 @@
             ]
           ],
           "unified_delta": -6.6,
-          "unified_after": 1564.2
+          "unified_after": 1563.7
         },
         {
           "date": "2026-07-04",
@@ -49291,7 +49291,7 @@
             ]
           ],
           "unified_delta": 6.4,
-          "unified_after": 1570.5
+          "unified_after": 1570.1
         },
         {
           "date": "2026-07-04",
@@ -49319,7 +49319,7 @@
             ]
           ],
           "unified_delta": -11.4,
-          "unified_after": 1559.2
+          "unified_after": 1558.8
         }
       ]
     },
@@ -50144,7 +50144,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1532.3,
+        "rating": 1532.4,
         "seed": 1500,
         "seed_level": "C",
         "matches": 25,
@@ -50152,7 +50152,7 @@
         "next_category": "B",
         "floor": 1400,
         "next_floor": 1600,
-        "progress": 0.661,
+        "progress": 0.662,
         "status": "stable",
         "provisional": false,
         "peak": 1582.9,
@@ -50172,7 +50172,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1532.3
+            "rating": 1532.4
           }
         ]
       },
@@ -50776,8 +50776,8 @@
               21
             ]
           ],
-          "unified_delta": -6.2,
-          "unified_after": 1558.4
+          "unified_delta": -6.1,
+          "unified_after": 1558.5
         },
         {
           "date": "2026-06-27",
@@ -50836,8 +50836,8 @@
               21
             ]
           ],
-          "unified_delta": -9.2,
-          "unified_after": 1539.7
+          "unified_delta": -9.1,
+          "unified_after": 1539.8
         },
         {
           "date": "2026-06-27",
@@ -50865,7 +50865,7 @@
             ]
           ],
           "unified_delta": 9.7,
-          "unified_after": 1549.4
+          "unified_after": 1549.5
         },
         {
           "date": "2026-06-27",
@@ -50893,7 +50893,7 @@
             ]
           ],
           "unified_delta": -17.1,
-          "unified_after": 1532.3
+          "unified_after": 1532.4
         }
       ]
     },
@@ -51032,7 +51032,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1378.4,
+        "rating": 1378.3,
         "seed": 1300,
         "seed_level": "D",
         "matches": 18,
@@ -51052,7 +51052,7 @@
           },
           {
             "date": "2026-07-04",
-            "rating": 1378.4
+            "rating": 1378.3
           }
         ]
       },
@@ -51595,7 +51595,7 @@
             ]
           ],
           "unified_delta": -8.5,
-          "unified_after": 1378.4
+          "unified_after": 1378.3
         }
       ]
     },
@@ -52147,7 +52147,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1747.8,
+        "rating": 1747.6,
         "seed": 1700,
         "seed_level": "B",
         "matches": 12,
@@ -52155,10 +52155,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.739,
+        "progress": 0.738,
         "status": "promotion",
         "provisional": false,
-        "peak": 1769.5,
+        "peak": 1769.4,
         "category_since": null,
         "history": [
           {
@@ -52167,7 +52167,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1747.8
+            "rating": 1747.6
           }
         ]
       },
@@ -52370,7 +52370,7 @@
             ]
           ],
           "unified_delta": 19.1,
-          "unified_after": 1769.5
+          "unified_after": 1769.4
         },
         {
           "date": "2026-06-27",
@@ -52490,7 +52490,7 @@
             ]
           ],
           "unified_delta": 11,
-          "unified_after": 1758.1
+          "unified_after": 1758
         },
         {
           "date": "2026-06-27",
@@ -52517,8 +52517,8 @@
               21
             ]
           ],
-          "unified_delta": -10.3,
-          "unified_after": 1747.8
+          "unified_delta": -10.4,
+          "unified_after": 1747.6
         }
       ]
     },
@@ -55163,7 +55163,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1754.7,
+        "rating": 1754.2,
         "seed": 1700,
         "seed_level": "B",
         "matches": 21,
@@ -55171,10 +55171,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.774,
+        "progress": 0.771,
         "status": "promotion",
         "provisional": false,
-        "peak": 1786.1,
+        "peak": 1785.9,
         "category_since": null,
         "history": [
           {
@@ -55187,11 +55187,11 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1770.4
+            "rating": 1770.2
           },
           {
             "date": "2026-05-10",
-            "rating": 1754.7
+            "rating": 1754.2
           }
         ]
       },
@@ -55578,8 +55578,8 @@
               7
             ]
           ],
-          "unified_delta": 10.8,
-          "unified_after": 1777.4
+          "unified_delta": 10.6,
+          "unified_after": 1777.2
         },
         {
           "date": "2026-04-11",
@@ -55604,7 +55604,7 @@
             ]
           ],
           "unified_delta": 8.7,
-          "unified_after": 1786.1
+          "unified_after": 1785.9
         },
         {
           "date": "2026-04-11",
@@ -55633,7 +55633,7 @@
             ]
           ],
           "unified_delta": -15.6,
-          "unified_after": 1770.4
+          "unified_after": 1770.2
         },
         {
           "date": "2026-05-10",
@@ -55660,8 +55660,8 @@
               21
             ]
           ],
-          "unified_delta": -14.7,
-          "unified_after": 1755.7
+          "unified_delta": -14.8,
+          "unified_after": 1755.4
         },
         {
           "date": "2026-05-10",
@@ -55689,7 +55689,7 @@
             ]
           ],
           "unified_delta": 12.6,
-          "unified_after": 1768.3
+          "unified_after": 1768
         },
         {
           "date": "2026-05-10",
@@ -55720,8 +55720,8 @@
               21
             ]
           ],
-          "unified_delta": -12.5,
-          "unified_after": 1755.8
+          "unified_delta": -12.7,
+          "unified_after": 1755.3
         },
         {
           "date": "2026-05-10",
@@ -55753,7 +55753,7 @@
             ]
           ],
           "unified_delta": 10.6,
-          "unified_after": 1766.3
+          "unified_after": 1765.9
         },
         {
           "date": "2026-05-10",
@@ -55780,8 +55780,8 @@
               21
             ]
           ],
-          "unified_delta": -11.6,
-          "unified_after": 1754.7
+          "unified_delta": -11.8,
+          "unified_after": 1754.2
         }
       ]
     },
@@ -56022,7 +56022,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1615.5,
+        "rating": 1611.2,
         "seed": 1544.4,
         "seed_level": "C",
         "matches": 41,
@@ -56030,10 +56030,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.078,
+        "progress": 0.056,
         "status": "demotion",
         "provisional": false,
-        "peak": 1636.2,
+        "peak": 1631.5,
         "category_since": "2026-03-07",
         "history": [
           {
@@ -56050,11 +56050,11 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1625.1
+            "rating": 1620.4
           },
           {
             "date": "2026-05-10",
-            "rating": 1615.5
+            "rating": 1611.2
           }
         ]
       },
@@ -57016,8 +57016,8 @@
               18
             ]
           ],
-          "unified_delta": 13.3,
-          "unified_after": 1617.9
+          "unified_delta": 8.6,
+          "unified_after": 1613.3
         },
         {
           "date": "2026-04-11",
@@ -57045,7 +57045,7 @@
             ]
           ],
           "unified_delta": 7.2,
-          "unified_after": 1625.1
+          "unified_after": 1620.4
         },
         {
           "date": "2026-05-10",
@@ -57073,7 +57073,7 @@
             ]
           ],
           "unified_delta": 11.1,
-          "unified_after": 1636.2
+          "unified_after": 1631.5
         },
         {
           "date": "2026-05-10",
@@ -57100,8 +57100,8 @@
               21
             ]
           ],
-          "unified_delta": -7.9,
-          "unified_after": 1628.2
+          "unified_delta": -8,
+          "unified_after": 1623.5
         },
         {
           "date": "2026-05-10",
@@ -57129,7 +57129,7 @@
             ]
           ],
           "unified_delta": -7.2,
-          "unified_after": 1621
+          "unified_after": 1616.3
         },
         {
           "date": "2026-05-10",
@@ -57156,8 +57156,8 @@
               21
             ]
           ],
-          "unified_delta": -10.9,
-          "unified_after": 1610.1
+          "unified_delta": -10.7,
+          "unified_after": 1605.6
         },
         {
           "date": "2026-05-10",
@@ -57189,7 +57189,7 @@
             ]
           ],
           "unified_delta": 8.2,
-          "unified_after": 1618.3
+          "unified_after": 1613.8
         },
         {
           "date": "2026-05-10",
@@ -57216,8 +57216,8 @@
               16
             ]
           ],
-          "unified_delta": 7.5,
-          "unified_after": 1625.9
+          "unified_delta": 7.6,
+          "unified_after": 1621.5
         },
         {
           "date": "2026-05-10",
@@ -57244,8 +57244,8 @@
               21
             ]
           ],
-          "unified_delta": -10.4,
-          "unified_after": 1615.5
+          "unified_delta": -10.3,
+          "unified_after": 1611.2
         }
       ]
     },
@@ -59763,7 +59763,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1608.9,
+        "rating": 1608.5,
         "seed": 1580,
         "seed_level": "C",
         "matches": 30,
@@ -59771,10 +59771,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.045,
+        "progress": 0.042,
         "status": "demotion",
         "provisional": false,
-        "peak": 1673.4,
+        "peak": 1673.2,
         "category_since": "2026-03-07",
         "history": [
           {
@@ -59791,15 +59791,15 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1657.7
+            "rating": 1657.4
           },
           {
             "date": "2026-05-10",
-            "rating": 1637.2
+            "rating": 1636.8
           },
           {
             "date": "2026-06-27",
-            "rating": 1608.9
+            "rating": 1608.5
           }
         ]
       },
@@ -60373,8 +60373,8 @@
               15
             ]
           ],
-          "unified_delta": 10.6,
-          "unified_after": 1673.4
+          "unified_delta": 10.5,
+          "unified_after": 1673.2
         },
         {
           "date": "2026-04-11",
@@ -60401,8 +60401,8 @@
               21
             ]
           ],
-          "unified_delta": -15.7,
-          "unified_after": 1657.7
+          "unified_delta": -15.9,
+          "unified_after": 1657.4
         },
         {
           "date": "2026-05-10",
@@ -60429,8 +60429,8 @@
               21
             ]
           ],
-          "unified_delta": -14.4,
-          "unified_after": 1643.3
+          "unified_delta": -14.5,
+          "unified_after": 1642.9
         },
         {
           "date": "2026-05-10",
@@ -60458,7 +60458,7 @@
             ]
           ],
           "unified_delta": -15.5,
-          "unified_after": 1627.9
+          "unified_after": 1627.5
         },
         {
           "date": "2026-05-10",
@@ -60486,7 +60486,7 @@
             ]
           ],
           "unified_delta": 9.3,
-          "unified_after": 1637.2
+          "unified_after": 1636.8
         },
         {
           "date": "2026-06-27",
@@ -60514,7 +60514,7 @@
             ]
           ],
           "unified_delta": -14,
-          "unified_after": 1623.2
+          "unified_after": 1622.8
         },
         {
           "date": "2026-06-27",
@@ -60542,7 +60542,7 @@
             ]
           ],
           "unified_delta": 8.7,
-          "unified_after": 1631.9
+          "unified_after": 1631.5
         },
         {
           "date": "2026-06-27",
@@ -60569,8 +60569,8 @@
               21
             ]
           ],
-          "unified_delta": -13.5,
-          "unified_after": 1618.4
+          "unified_delta": -13.4,
+          "unified_after": 1618
         },
         {
           "date": "2026-06-27",
@@ -60598,7 +60598,7 @@
             ]
           ],
           "unified_delta": -8.3,
-          "unified_after": 1610.1
+          "unified_after": 1609.7
         },
         {
           "date": "2026-06-27",
@@ -60629,8 +60629,8 @@
               13
             ]
           ],
-          "unified_delta": 11.2,
-          "unified_after": 1621.3
+          "unified_delta": 11.1,
+          "unified_after": 1620.8
         },
         {
           "date": "2026-06-27",
@@ -60658,7 +60658,7 @@
             ]
           ],
           "unified_delta": -12.4,
-          "unified_after": 1608.9
+          "unified_after": 1608.5
         }
       ]
     },
@@ -63328,7 +63328,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1683.2,
+        "rating": 1683.1,
         "seed": 1655.6,
         "seed_level": "B",
         "matches": 27,
@@ -63336,10 +63336,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.416,
+        "progress": 0.415,
         "status": "stable",
         "provisional": false,
-        "peak": 1704.3,
+        "peak": 1704.2,
         "category_since": null,
         "history": [
           {
@@ -63348,11 +63348,11 @@
           },
           {
             "date": "2026-05-10",
-            "rating": 1691.2
+            "rating": 1691.1
           },
           {
             "date": "2026-06-27",
-            "rating": 1683.2
+            "rating": 1683.1
           }
         ]
       },
@@ -63690,7 +63690,7 @@
             ]
           ],
           "unified_delta": 13.8,
-          "unified_after": 1670.7
+          "unified_after": 1670.6
         },
         {
           "date": "2026-05-10",
@@ -63722,7 +63722,7 @@
             ]
           ],
           "unified_delta": -10.6,
-          "unified_after": 1660.1
+          "unified_after": 1660
         },
         {
           "date": "2026-05-10",
@@ -63754,7 +63754,7 @@
             ]
           ],
           "unified_delta": 10.5,
-          "unified_after": 1670.6
+          "unified_after": 1670.5
         },
         {
           "date": "2026-05-10",
@@ -63782,7 +63782,7 @@
             ]
           ],
           "unified_delta": 8.2,
-          "unified_after": 1678.8
+          "unified_after": 1678.7
         },
         {
           "date": "2026-05-10",
@@ -63810,7 +63810,7 @@
             ]
           ],
           "unified_delta": 9.7,
-          "unified_after": 1688.5
+          "unified_after": 1688.4
         },
         {
           "date": "2026-05-10",
@@ -63838,7 +63838,7 @@
             ]
           ],
           "unified_delta": 7.9,
-          "unified_after": 1696.4
+          "unified_after": 1696.3
         },
         {
           "date": "2026-05-10",
@@ -63866,7 +63866,7 @@
             ]
           ],
           "unified_delta": 7.9,
-          "unified_after": 1704.3
+          "unified_after": 1704.2
         },
         {
           "date": "2026-05-10",
@@ -63898,7 +63898,7 @@
             ]
           ],
           "unified_delta": -13.1,
-          "unified_after": 1691.2
+          "unified_after": 1691.1
         },
         {
           "date": "2026-06-27",
@@ -63927,7 +63927,7 @@
             ]
           ],
           "unified_delta": 12,
-          "unified_after": 1703.2
+          "unified_after": 1703.1
         },
         {
           "date": "2026-06-27",
@@ -63977,7 +63977,7 @@
             ]
           ],
           "unified_delta": -12.4,
-          "unified_after": 1675.3
+          "unified_after": 1675.2
         },
         {
           "date": "2026-06-27",
@@ -64005,7 +64005,7 @@
             ]
           ],
           "unified_delta": 8.3,
-          "unified_after": 1683.6
+          "unified_after": 1683.5
         },
         {
           "date": "2026-06-27",
@@ -64069,7 +64069,7 @@
             ]
           ],
           "unified_delta": 7.4,
-          "unified_after": 1680.3
+          "unified_after": 1680.2
         },
         {
           "date": "2026-06-27",
@@ -64097,7 +64097,7 @@
             ]
           ],
           "unified_delta": 13.9,
-          "unified_after": 1694.2
+          "unified_after": 1694.1
         },
         {
           "date": "2026-06-27",
@@ -64144,7 +64144,7 @@
             ]
           ],
           "unified_delta": -11,
-          "unified_after": 1683.2
+          "unified_after": 1683.1
         }
       ]
     },
@@ -67155,7 +67155,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1734,
+        "rating": 1733.9,
         "seed": 1700,
         "seed_level": "B",
         "matches": 11,
@@ -67163,10 +67163,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.67,
+        "progress": 0.669,
         "status": "stable",
         "provisional": false,
-        "peak": 1744.2,
+        "peak": 1744.1,
         "category_since": null,
         "history": [
           {
@@ -67175,7 +67175,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1734
+            "rating": 1733.9
           }
         ]
       },
@@ -67385,8 +67385,8 @@
               18
             ]
           ],
-          "unified_delta": 12.8,
-          "unified_after": 1702.2
+          "unified_delta": 12.7,
+          "unified_after": 1702.1
         },
         {
           "date": "2026-06-27",
@@ -67414,7 +67414,7 @@
             ]
           ],
           "unified_delta": 18.1,
-          "unified_after": 1720.2
+          "unified_after": 1720.1
         },
         {
           "date": "2026-06-27",
@@ -67442,7 +67442,7 @@
             ]
           ],
           "unified_delta": 13.8,
-          "unified_after": 1734.1
+          "unified_after": 1733.9
         },
         {
           "date": "2026-06-27",
@@ -67470,7 +67470,7 @@
             ]
           ],
           "unified_delta": 10.1,
-          "unified_after": 1744.2
+          "unified_after": 1744.1
         },
         {
           "date": "2026-06-27",
@@ -67502,7 +67502,7 @@
             ]
           ],
           "unified_delta": -10.2,
-          "unified_after": 1734
+          "unified_after": 1733.9
         }
       ]
     },
@@ -67959,7 +67959,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1379.1,
+        "rating": 1379,
         "seed": 1333.3,
         "seed_level": "D",
         "matches": 34,
@@ -67987,11 +67987,11 @@
           },
           {
             "date": "2026-05-10",
-            "rating": 1387.4
+            "rating": 1387.3
           },
           {
             "date": "2026-07-04",
-            "rating": 1379.1
+            "rating": 1379
           }
         ]
       },
@@ -68753,8 +68753,8 @@
               21
             ]
           ],
-          "unified_delta": -9,
-          "unified_after": 1396.7
+          "unified_delta": -9.1,
+          "unified_after": 1396.6
         },
         {
           "date": "2026-05-10",
@@ -68782,7 +68782,7 @@
             ]
           ],
           "unified_delta": -8.3,
-          "unified_after": 1388.3
+          "unified_after": 1388.2
         },
         {
           "date": "2026-05-10",
@@ -68810,7 +68810,7 @@
             ]
           ],
           "unified_delta": 11.6,
-          "unified_after": 1400
+          "unified_after": 1399.9
         },
         {
           "date": "2026-05-10",
@@ -68838,7 +68838,7 @@
             ]
           ],
           "unified_delta": -12.6,
-          "unified_after": 1387.4
+          "unified_after": 1387.3
         },
         {
           "date": "2026-07-04",
@@ -68866,7 +68866,7 @@
             ]
           ],
           "unified_delta": 10.4,
-          "unified_after": 1397.8
+          "unified_after": 1397.7
         },
         {
           "date": "2026-07-04",
@@ -68894,7 +68894,7 @@
             ]
           ],
           "unified_delta": -6.1,
-          "unified_after": 1391.7
+          "unified_after": 1391.6
         },
         {
           "date": "2026-07-04",
@@ -68922,7 +68922,7 @@
             ]
           ],
           "unified_delta": -5.9,
-          "unified_after": 1385.8
+          "unified_after": 1385.7
         },
         {
           "date": "2026-07-04",
@@ -68950,7 +68950,7 @@
             ]
           ],
           "unified_delta": 5.1,
-          "unified_after": 1390.9
+          "unified_after": 1390.8
         },
         {
           "date": "2026-07-04",
@@ -68978,7 +68978,7 @@
             ]
           ],
           "unified_delta": -11.8,
-          "unified_after": 1379.1
+          "unified_after": 1379
         }
       ]
     },
@@ -69170,7 +69170,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1425.1,
+        "rating": 1425.2,
         "seed": 1385.7,
         "seed_level": "D",
         "matches": 20,
@@ -69181,7 +69181,7 @@
         "progress": 0.126,
         "status": "demotion",
         "provisional": false,
-        "peak": 1435.2,
+        "peak": 1435.4,
         "category_since": "2026-03-07",
         "history": [
           {
@@ -69194,7 +69194,7 @@
           },
           {
             "date": "2026-05-10",
-            "rating": 1425.1
+            "rating": 1425.2
           }
         ]
       },
@@ -69744,8 +69744,8 @@
               17
             ]
           ],
-          "unified_delta": 9,
-          "unified_after": 1435.2
+          "unified_delta": 9.1,
+          "unified_after": 1435.4
         },
         {
           "date": "2026-05-10",
@@ -69772,8 +69772,8 @@
               21
             ]
           ],
-          "unified_delta": -10.1,
-          "unified_after": 1425.1
+          "unified_delta": -10.2,
+          "unified_after": 1425.2
         }
       ]
     },
@@ -72500,7 +72500,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1547.3,
+        "rating": 1547.2,
         "seed": 1500,
         "seed_level": "C",
         "matches": 8,
@@ -72508,10 +72508,10 @@
         "next_category": "B",
         "floor": 1400,
         "next_floor": 1600,
-        "progress": 0.737,
+        "progress": 0.736,
         "status": "provisional",
         "provisional": true,
-        "peak": 1547.3,
+        "peak": 1547.2,
         "category_since": null,
         "history": [
           {
@@ -72520,7 +72520,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1547.3
+            "rating": 1547.2
           }
         ]
       },
@@ -72634,8 +72634,8 @@
               16
             ]
           ],
-          "unified_delta": 17.1,
-          "unified_after": 1483
+          "unified_delta": 16.9,
+          "unified_after": 1482.9
         },
         {
           "date": "2026-06-27",
@@ -72663,7 +72663,7 @@
             ]
           ],
           "unified_delta": 20.8,
-          "unified_after": 1503.8
+          "unified_after": 1503.7
         },
         {
           "date": "2026-06-27",
@@ -72690,8 +72690,8 @@
               15
             ]
           ],
-          "unified_delta": 11.5,
-          "unified_after": 1515.3
+          "unified_delta": 11.4,
+          "unified_after": 1515.1
         },
         {
           "date": "2026-06-27",
@@ -72719,7 +72719,7 @@
             ]
           ],
           "unified_delta": 16.8,
-          "unified_after": 1532.1
+          "unified_after": 1531.9
         },
         {
           "date": "2026-06-27",
@@ -72751,7 +72751,7 @@
             ]
           ],
           "unified_delta": 15.3,
-          "unified_after": 1547.3
+          "unified_after": 1547.2
         }
       ]
     },
@@ -73549,7 +73549,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1619.3,
+        "rating": 1619.2,
         "seed": 1588.9,
         "seed_level": "C",
         "matches": 17,
@@ -73560,7 +73560,7 @@
         "progress": 0.096,
         "status": "demotion",
         "provisional": false,
-        "peak": 1634.9,
+        "peak": 1634.8,
         "category_since": "2026-05-10",
         "history": [
           {
@@ -73569,7 +73569,7 @@
           },
           {
             "date": "2026-05-10",
-            "rating": 1619.3
+            "rating": 1619.2
           }
         ]
       },
@@ -73884,7 +73884,7 @@
             ]
           ],
           "unified_delta": 15.5,
-          "unified_after": 1621.1
+          "unified_after": 1621
         },
         {
           "date": "2026-05-10",
@@ -73916,7 +73916,7 @@
             ]
           ],
           "unified_delta": 13.8,
-          "unified_after": 1634.9
+          "unified_after": 1634.8
         },
         {
           "date": "2026-05-10",
@@ -73948,7 +73948,7 @@
             ]
           ],
           "unified_delta": -10.6,
-          "unified_after": 1624.3
+          "unified_after": 1624.2
         },
         {
           "date": "2026-05-10",
@@ -73980,7 +73980,7 @@
             ]
           ],
           "unified_delta": -12.6,
-          "unified_after": 1611.8
+          "unified_after": 1611.7
         },
         {
           "date": "2026-05-10",
@@ -74040,7 +74040,7 @@
             ]
           ],
           "unified_delta": 9.3,
-          "unified_after": 1633.7
+          "unified_after": 1633.6
         },
         {
           "date": "2026-05-10",
@@ -74072,7 +74072,7 @@
             ]
           ],
           "unified_delta": -14.5,
-          "unified_after": 1619.3
+          "unified_after": 1619.2
         }
       ]
     },
@@ -75738,7 +75738,7 @@
         "progress": 0.628,
         "status": "provisional",
         "provisional": true,
-        "peak": 1758.4,
+        "peak": 1758.3,
         "category_since": null,
         "history": [
           {
@@ -75946,7 +75946,7 @@
             ]
           ],
           "unified_delta": 7.2,
-          "unified_after": 1758.4
+          "unified_after": 1758.3
         },
         {
           "date": "2026-07-04",
@@ -75977,7 +75977,7 @@
               15
             ]
           ],
-          "unified_delta": -13.5,
+          "unified_delta": -13.6,
           "unified_after": 1744.8
         },
         {
@@ -76146,7 +76146,7 @@
         "progress": 0.628,
         "status": "provisional",
         "provisional": true,
-        "peak": 1758.4,
+        "peak": 1758.3,
         "category_since": null,
         "history": [
           {
@@ -76354,7 +76354,7 @@
             ]
           ],
           "unified_delta": 7.2,
-          "unified_after": 1758.4
+          "unified_after": 1758.3
         },
         {
           "date": "2026-07-04",
@@ -76385,7 +76385,7 @@
               15
             ]
           ],
-          "unified_delta": -13.5,
+          "unified_delta": -13.6,
           "unified_after": 1744.8
         },
         {
@@ -79897,7 +79897,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1611.9,
+        "rating": 1611.6,
         "seed": 1585.7,
         "seed_level": "C",
         "matches": 20,
@@ -79905,7 +79905,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.059,
+        "progress": 0.058,
         "status": "demotion",
         "provisional": false,
         "peak": 1658,
@@ -79921,11 +79921,11 @@
           },
           {
             "date": "2026-05-10",
-            "rating": 1641
+            "rating": 1640.7
           },
           {
             "date": "2026-07-04",
-            "rating": 1611.9
+            "rating": 1611.6
           }
         ]
       },
@@ -80291,8 +80291,8 @@
               21
             ]
           ],
-          "unified_delta": -14.1,
-          "unified_after": 1643.9
+          "unified_delta": -14.3,
+          "unified_after": 1643.7
         },
         {
           "date": "2026-05-10",
@@ -80320,7 +80320,7 @@
             ]
           ],
           "unified_delta": -12.6,
-          "unified_after": 1631.3
+          "unified_after": 1631.2
         },
         {
           "date": "2026-05-10",
@@ -80347,8 +80347,8 @@
               13
             ]
           ],
-          "unified_delta": 9.7,
-          "unified_after": 1641
+          "unified_delta": 9.6,
+          "unified_after": 1640.7
         },
         {
           "date": "2026-07-04",
@@ -80380,7 +80380,7 @@
             ]
           ],
           "unified_delta": 7.6,
-          "unified_after": 1648.5
+          "unified_after": 1648.3
         },
         {
           "date": "2026-07-04",
@@ -80408,7 +80408,7 @@
             ]
           ],
           "unified_delta": -15.2,
-          "unified_after": 1633.4
+          "unified_after": 1633.1
         },
         {
           "date": "2026-07-04",
@@ -80440,7 +80440,7 @@
             ]
           ],
           "unified_delta": -12.7,
-          "unified_after": 1620.7
+          "unified_after": 1620.4
         },
         {
           "date": "2026-07-04",
@@ -80468,7 +80468,7 @@
             ]
           ],
           "unified_delta": -10.8,
-          "unified_after": 1609.9
+          "unified_after": 1609.5
         },
         {
           "date": "2026-07-04",
@@ -80496,7 +80496,7 @@
             ]
           ],
           "unified_delta": 8.2,
-          "unified_after": 1618
+          "unified_after": 1617.7
         },
         {
           "date": "2026-07-04",
@@ -80524,7 +80524,7 @@
             ]
           ],
           "unified_delta": -6.1,
-          "unified_after": 1611.9
+          "unified_after": 1611.6
         }
       ]
     },
@@ -89862,7 +89862,7 @@
             ]
           ],
           "unified_delta": 13.8,
-          "unified_after": 1534.9
+          "unified_after": 1534.8
         },
         {
           "date": "2026-06-27",
@@ -89983,7 +89983,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1722.7,
+        "rating": 1722.6,
         "seed": 1700,
         "seed_level": "B",
         "matches": 5,
@@ -89994,12 +89994,12 @@
         "progress": 0.613,
         "status": "provisional",
         "provisional": true,
-        "peak": 1722.7,
+        "peak": 1722.6,
         "category_since": null,
         "history": [
           {
             "date": "2026-07-04",
-            "rating": 1722.7
+            "rating": 1722.6
           }
         ]
       },
@@ -90062,7 +90062,7 @@
             ]
           ],
           "unified_delta": 10.1,
-          "unified_after": 1699.5
+          "unified_after": 1699.4
         },
         {
           "date": "2026-07-04",
@@ -90094,7 +90094,7 @@
             ]
           ],
           "unified_delta": 15.9,
-          "unified_after": 1715.4
+          "unified_after": 1715.3
         },
         {
           "date": "2026-07-04",
@@ -90154,7 +90154,7 @@
             ]
           ],
           "unified_delta": 18.7,
-          "unified_after": 1722.7
+          "unified_after": 1722.6
         }
       ]
     },
@@ -92068,7 +92068,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1710,
+        "rating": 1709.9,
         "seed": 1700,
         "seed_level": "B",
         "matches": 16,
@@ -92076,7 +92076,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.55,
+        "progress": 0.549,
         "status": "stable",
         "provisional": false,
         "peak": 1767.6,
@@ -92088,11 +92088,11 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1710.1
+            "rating": 1709.9
           },
           {
             "date": "2026-05-10",
-            "rating": 1710
+            "rating": 1709.9
           }
         ]
       },
@@ -92438,8 +92438,8 @@
               21
             ]
           ],
-          "unified_delta": -14.1,
-          "unified_after": 1710.1
+          "unified_delta": -14.3,
+          "unified_after": 1709.9
         },
         {
           "date": "2026-05-10",
@@ -92466,8 +92466,8 @@
               19
             ]
           ],
-          "unified_delta": 14.4,
-          "unified_after": 1724.5
+          "unified_delta": 14.5,
+          "unified_after": 1724.3
         },
         {
           "date": "2026-05-10",
@@ -92498,8 +92498,8 @@
               17
             ]
           ],
-          "unified_delta": 10.6,
-          "unified_after": 1735.1
+          "unified_delta": 10.7,
+          "unified_after": 1735
         },
         {
           "date": "2026-05-10",
@@ -92562,8 +92562,8 @@
               21
             ]
           ],
-          "unified_delta": -11.2,
-          "unified_after": 1710
+          "unified_delta": -11.3,
+          "unified_after": 1709.9
         }
       ]
     },
@@ -94249,7 +94249,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1761.9,
+        "rating": 1761.6,
         "seed": 1766.7,
         "seed_level": "B",
         "matches": 9,
@@ -94257,15 +94257,15 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.81,
+        "progress": 0.808,
         "status": "provisional",
         "provisional": true,
-        "peak": 1806.6,
+        "peak": 1806.5,
         "category_since": null,
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1761.9
+            "rating": 1761.6
           }
         ]
       },
@@ -94323,8 +94323,8 @@
               15
             ]
           ],
-          "unified_delta": 12.2,
-          "unified_after": 1793.5
+          "unified_delta": 12.1,
+          "unified_after": 1793.4
         },
         {
           "date": "2026-06-27",
@@ -94352,7 +94352,7 @@
             ]
           ],
           "unified_delta": 13.1,
-          "unified_after": 1806.6
+          "unified_after": 1806.5
         },
         {
           "date": "2026-06-27",
@@ -94380,7 +94380,7 @@
             ]
           ],
           "unified_delta": -17.5,
-          "unified_after": 1789.1
+          "unified_after": 1789
         },
         {
           "date": "2026-06-27",
@@ -94408,7 +94408,7 @@
             ]
           ],
           "unified_delta": 10.9,
-          "unified_after": 1800
+          "unified_after": 1799.9
         },
         {
           "date": "2026-06-27",
@@ -94436,7 +94436,7 @@
             ]
           ],
           "unified_delta": -16.8,
-          "unified_after": 1783.2
+          "unified_after": 1783.1
         },
         {
           "date": "2026-06-27",
@@ -94464,7 +94464,7 @@
             ]
           ],
           "unified_delta": 12.3,
-          "unified_after": 1795.5
+          "unified_after": 1795.4
         },
         {
           "date": "2026-06-27",
@@ -94492,7 +94492,7 @@
             ]
           ],
           "unified_delta": -18.1,
-          "unified_after": 1777.4
+          "unified_after": 1777.3
         },
         {
           "date": "2026-06-27",
@@ -94523,8 +94523,8 @@
               21
             ]
           ],
-          "unified_delta": -15.5,
-          "unified_after": 1761.9
+          "unified_delta": -15.7,
+          "unified_after": 1761.6
         }
       ]
     },
@@ -99228,7 +99228,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1705.9,
+        "rating": 1706,
         "seed": 1700,
         "seed_level": "B",
         "matches": 3,
@@ -99236,15 +99236,15 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.529,
+        "progress": 0.53,
         "status": "provisional",
         "provisional": true,
-        "peak": 1721.4,
+        "peak": 1721.5,
         "category_since": null,
         "history": [
           {
             "date": "2026-07-04",
-            "rating": 1705.9
+            "rating": 1706
           }
         ]
       },
@@ -99274,8 +99274,8 @@
               14
             ]
           ],
-          "unified_delta": 13.5,
-          "unified_after": 1713.5
+          "unified_delta": 13.6,
+          "unified_after": 1713.6
         },
         {
           "date": "2026-07-04",
@@ -99307,7 +99307,7 @@
             ]
           ],
           "unified_delta": 7.9,
-          "unified_after": 1721.4
+          "unified_after": 1721.5
         },
         {
           "date": "2026-07-04",
@@ -99335,7 +99335,7 @@
             ]
           ],
           "unified_delta": -15.5,
-          "unified_after": 1705.9
+          "unified_after": 1706
         }
       ]
     },
@@ -101790,7 +101790,7 @@
               16
             ]
           ],
-          "unified_delta": 15.5,
+          "unified_delta": 15.4,
           "unified_after": 1540.3
         },
         {
@@ -101975,7 +101975,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1762.9,
+        "rating": 1762.7,
         "seed": 1775,
         "seed_level": "B",
         "matches": 8,
@@ -101991,7 +101991,7 @@
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1762.9
+            "rating": 1762.7
           }
         ]
       },
@@ -102123,7 +102123,7 @@
             ]
           ],
           "unified_delta": 10.8,
-          "unified_after": 1795.9
+          "unified_after": 1795.8
         },
         {
           "date": "2026-06-27",
@@ -102151,8 +102151,8 @@
               21
             ]
           ],
-          "unified_delta": -29.6,
-          "unified_after": 1766.3
+          "unified_delta": -29.7,
+          "unified_after": 1766.1
         },
         {
           "date": "2026-06-27",
@@ -102177,7 +102177,7 @@
             ]
           ],
           "unified_delta": 15.6,
-          "unified_after": 1781.8
+          "unified_after": 1781.7
         },
         {
           "date": "2026-06-27",
@@ -102202,7 +102202,7 @@
             ]
           ],
           "unified_delta": -19,
-          "unified_after": 1762.9
+          "unified_after": 1762.7
         }
       ]
     },
@@ -104659,7 +104659,7 @@
               21
             ]
           ],
-          "unified_delta": -10.8,
+          "unified_delta": -10.9,
           "unified_after": 1388.4
         },
         {
@@ -109426,7 +109426,7 @@
             ]
           ],
           "unified_delta": -11.6,
-          "unified_after": 1381.2
+          "unified_after": 1381.1
         },
         {
           "date": "2026-07-04",
@@ -112934,7 +112934,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1527.7,
+        "rating": 1527.6,
         "seed": 1500,
         "seed_level": "C",
         "matches": 9,
@@ -112954,7 +112954,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1527.7
+            "rating": 1527.6
           }
         ]
       },
@@ -113225,7 +113225,7 @@
             ]
           ],
           "unified_delta": -17.4,
-          "unified_after": 1527.7
+          "unified_after": 1527.6
         }
       ]
     },
@@ -115864,7 +115864,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1645,
+        "rating": 1662.2,
         "seed": 1700,
         "seed_level": "B",
         "matches": 23,
@@ -115872,8 +115872,8 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.225,
-        "status": "demotion",
+        "progress": 0.311,
+        "status": "stable",
         "provisional": false,
         "peak": 1748.1,
         "category_since": null,
@@ -115892,7 +115892,7 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1645
+            "rating": 1662.2
           }
         ]
       },
@@ -116506,8 +116506,8 @@
               21
             ]
           ],
-          "unified_delta": -20.4,
-          "unified_after": 1680
+          "unified_delta": -15.5,
+          "unified_after": 1685
         },
         {
           "date": "2026-04-11",
@@ -116534,8 +116534,8 @@
               21
             ]
           ],
-          "unified_delta": -17.7,
-          "unified_after": 1662.3
+          "unified_delta": -11.5,
+          "unified_after": 1673.5
         },
         {
           "date": "2026-04-11",
@@ -116562,8 +116562,8 @@
               21
             ]
           ],
-          "unified_delta": -17.3,
-          "unified_after": 1645
+          "unified_delta": -11.3,
+          "unified_after": 1662.2
         }
       ]
     },
@@ -116825,7 +116825,7 @@
             ]
           ],
           "unified_delta": -11.7,
-          "unified_after": 1449.2
+          "unified_after": 1449.1
         },
         {
           "date": "2026-05-10",
@@ -118641,7 +118641,7 @@
         "progress": 0.799,
         "status": "promotion",
         "provisional": false,
-        "peak": 1209,
+        "peak": 1208.9,
         "category_since": null,
         "history": [
           {
@@ -118840,7 +118840,7 @@
             ]
           ],
           "unified_delta": 37.1,
-          "unified_after": 1209
+          "unified_after": 1208.9
         },
         {
           "date": "2026-07-04",
@@ -118865,7 +118865,7 @@
             ]
           ],
           "unified_delta": -14.6,
-          "unified_after": 1194.4
+          "unified_after": 1194.3
         },
         {
           "date": "2026-07-04",
@@ -118915,7 +118915,7 @@
             ]
           ],
           "unified_delta": 18.9,
-          "unified_after": 1190
+          "unified_after": 1189.9
         },
         {
           "date": "2026-07-04",
@@ -118940,7 +118940,7 @@
             ]
           ],
           "unified_delta": -16.1,
-          "unified_after": 1173.9
+          "unified_after": 1173.8
         },
         {
           "date": "2026-07-04",
@@ -126327,7 +126327,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1893.7,
+        "rating": 1894,
         "seed": 1900,
         "seed_level": "A",
         "matches": 4,
@@ -126335,15 +126335,15 @@
         "next_category": "M",
         "floor": 1800,
         "next_floor": 2000,
-        "progress": 0.468,
+        "progress": 0.47,
         "status": "provisional",
         "provisional": true,
-        "peak": 1908.2,
+        "peak": 1908.5,
         "category_since": null,
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1893.7
+            "rating": 1894
           }
         ]
       },
@@ -126373,8 +126373,8 @@
               21
             ]
           ],
-          "unified_delta": -15.6,
-          "unified_after": 1884.4
+          "unified_delta": -15.5,
+          "unified_after": 1884.5
         },
         {
           "date": "2026-06-27",
@@ -126401,8 +126401,8 @@
               27
             ]
           ],
-          "unified_delta": 7.4,
-          "unified_after": 1891.8
+          "unified_delta": 7.5,
+          "unified_after": 1892
         },
         {
           "date": "2026-06-27",
@@ -126433,8 +126433,8 @@
               19
             ]
           ],
-          "unified_delta": 16.4,
-          "unified_after": 1908.2
+          "unified_delta": 16.5,
+          "unified_after": 1908.5
         },
         {
           "date": "2026-06-27",
@@ -126462,7 +126462,7 @@
             ]
           ],
           "unified_delta": -14.5,
-          "unified_after": 1893.7
+          "unified_after": 1894
         }
       ]
     },
@@ -127329,7 +127329,7 @@
               21
             ]
           ],
-          "unified_delta": -10.6,
+          "unified_delta": -10.7,
           "unified_after": 1609.2
         },
         {
@@ -134914,7 +134914,7 @@
         "W"
       ],
       "unified": {
-        "rating": 1594.1,
+        "rating": 1593.8,
         "seed": 1614.3,
         "seed_level": "B",
         "matches": 14,
@@ -134930,11 +134930,11 @@
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1583.9
+            "rating": 1583.7
           },
           {
             "date": "2026-07-04",
-            "rating": 1594.1
+            "rating": 1593.8
           }
         ]
       },
@@ -135060,8 +135060,8 @@
               21
             ]
           ],
-          "unified_delta": -10.1,
-          "unified_after": 1579.4
+          "unified_delta": -10.3,
+          "unified_after": 1579.3
         },
         {
           "date": "2026-06-27",
@@ -135093,7 +135093,7 @@
             ]
           ],
           "unified_delta": 14.6,
-          "unified_after": 1594.1
+          "unified_after": 1593.9
         },
         {
           "date": "2026-06-27",
@@ -135140,7 +135140,7 @@
             ]
           ],
           "unified_delta": -10.1,
-          "unified_after": 1583.9
+          "unified_after": 1583.7
         },
         {
           "date": "2026-07-04",
@@ -135172,7 +135172,7 @@
             ]
           ],
           "unified_delta": -10.6,
-          "unified_after": 1573.3
+          "unified_after": 1573.1
         },
         {
           "date": "2026-07-04",
@@ -135200,7 +135200,7 @@
             ]
           ],
           "unified_delta": 10.1,
-          "unified_after": 1583.4
+          "unified_after": 1583.2
         },
         {
           "date": "2026-07-04",
@@ -135232,7 +135232,7 @@
             ]
           ],
           "unified_delta": 15.9,
-          "unified_after": 1599.3
+          "unified_after": 1599.1
         },
         {
           "date": "2026-07-04",
@@ -135260,7 +135260,7 @@
             ]
           ],
           "unified_delta": -11.4,
-          "unified_after": 1587.8
+          "unified_after": 1587.6
         },
         {
           "date": "2026-07-04",
@@ -135288,7 +135288,7 @@
             ]
           ],
           "unified_delta": -10.8,
-          "unified_after": 1577
+          "unified_after": 1576.8
         },
         {
           "date": "2026-07-04",
@@ -135316,7 +135316,7 @@
             ]
           ],
           "unified_delta": 8.2,
-          "unified_after": 1585.2
+          "unified_after": 1585
         },
         {
           "date": "2026-07-04",
@@ -135344,7 +135344,7 @@
             ]
           ],
           "unified_delta": -6.1,
-          "unified_after": 1579.1
+          "unified_after": 1578.8
         },
         {
           "date": "2026-07-04",
@@ -135376,7 +135376,7 @@
             ]
           ],
           "unified_delta": 15,
-          "unified_after": 1594.1
+          "unified_after": 1593.8
         }
       ]
     },
@@ -137280,7 +137280,7 @@
             ]
           ],
           "unified_delta": -12.4,
-          "unified_after": 1590.8
+          "unified_after": 1590.7
         },
         {
           "date": "2026-05-10",
@@ -137308,7 +137308,7 @@
             ]
           ],
           "unified_delta": -15.2,
-          "unified_after": 1575.6
+          "unified_after": 1575.5
         },
         {
           "date": "2026-05-10",
@@ -137387,7 +137387,7 @@
             ]
           ],
           "unified_delta": 7.7,
-          "unified_after": 1608.7
+          "unified_after": 1608.6
         },
         {
           "date": "2026-06-27",
@@ -137412,7 +137412,7 @@
             ]
           ],
           "unified_delta": -11.9,
-          "unified_after": 1596.8
+          "unified_after": 1596.7
         },
         {
           "date": "2026-06-27",
@@ -137491,7 +137491,7 @@
             ]
           ],
           "unified_delta": 10.5,
-          "unified_after": 1604.6
+          "unified_after": 1604.5
         },
         {
           "date": "2026-06-27",
@@ -137519,7 +137519,7 @@
               13
             ]
           ],
-          "unified_delta": 9.5,
+          "unified_delta": 9.6,
           "unified_after": 1614.1
         },
         {
@@ -137664,7 +137664,7 @@
             ]
           ],
           "unified_delta": 9.5,
-          "unified_after": 1594.1
+          "unified_after": 1594
         },
         {
           "date": "2026-07-04",
@@ -137696,7 +137696,7 @@
             ]
           ],
           "unified_delta": -7.4,
-          "unified_after": 1586.7
+          "unified_after": 1586.6
         },
         {
           "date": "2026-07-04",
@@ -141657,7 +141657,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1697.3,
+        "rating": 1697.2,
         "seed": 1700,
         "seed_level": "B",
         "matches": 3,
@@ -141665,7 +141665,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.487,
+        "progress": 0.486,
         "status": "provisional",
         "provisional": true,
         "peak": 1719,
@@ -141673,7 +141673,7 @@
         "history": [
           {
             "date": "2026-05-10",
-            "rating": 1697.3
+            "rating": 1697.2
           }
         ]
       },
@@ -141731,8 +141731,8 @@
               21
             ]
           ],
-          "unified_delta": -11.3,
-          "unified_after": 1707.7
+          "unified_delta": -11.4,
+          "unified_after": 1707.6
         },
         {
           "date": "2026-05-10",
@@ -141760,7 +141760,7 @@
             ]
           ],
           "unified_delta": -10.4,
-          "unified_after": 1697.3
+          "unified_after": 1697.2
         }
       ]
     },
@@ -142587,7 +142587,7 @@
             ]
           ],
           "unified_delta": 8.5,
-          "unified_after": 1458.2
+          "unified_after": 1458.3
         },
         {
           "date": "2026-07-04",
@@ -144314,7 +144314,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1610.4,
+        "rating": 1610.2,
         "seed": 1600,
         "seed_level": "C",
         "matches": 15,
@@ -144322,7 +144322,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.052,
+        "progress": 0.051,
         "status": "demotion",
         "provisional": false,
         "peak": 1659.5,
@@ -144334,11 +144334,11 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1614
+            "rating": 1613.8
           },
           {
             "date": "2026-07-04",
-            "rating": 1610.4
+            "rating": 1610.2
           }
         ]
       },
@@ -144668,8 +144668,8 @@
               21
             ]
           ],
-          "unified_delta": -16.1,
-          "unified_after": 1614
+          "unified_delta": -16.3,
+          "unified_after": 1613.8
         },
         {
           "date": "2026-07-04",
@@ -144697,7 +144697,7 @@
             ]
           ],
           "unified_delta": 11.2,
-          "unified_after": 1625.2
+          "unified_after": 1625
         },
         {
           "date": "2026-07-04",
@@ -144729,7 +144729,7 @@
             ]
           ],
           "unified_delta": -9,
-          "unified_after": 1616.2
+          "unified_after": 1616
         },
         {
           "date": "2026-07-04",
@@ -144757,7 +144757,7 @@
             ]
           ],
           "unified_delta": -5.8,
-          "unified_after": 1610.4
+          "unified_after": 1610.2
         }
       ]
     },
@@ -145592,10 +145592,10 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.441,
+        "progress": 0.44,
         "status": "provisional",
         "provisional": true,
-        "peak": 1703.6,
+        "peak": 1703.5,
         "category_since": null,
         "history": [
           {
@@ -145662,8 +145662,8 @@
               13
             ]
           ],
-          "unified_delta": 14,
-          "unified_after": 1703.6
+          "unified_delta": 13.9,
+          "unified_after": 1703.5
         },
         {
           "date": "2026-06-27",
@@ -145690,7 +145690,7 @@
               21
             ]
           ],
-          "unified_delta": -15.5,
+          "unified_delta": -15.4,
           "unified_after": 1688.1
         }
       ]
@@ -148763,7 +148763,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1572.9,
+        "rating": 1572.7,
         "seed": 1600,
         "seed_level": "C",
         "matches": 22,
@@ -148783,11 +148783,11 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1558.9
+            "rating": 1558.8
           },
           {
             "date": "2026-07-04",
-            "rating": 1572.9
+            "rating": 1572.7
           }
         ]
       },
@@ -149165,8 +149165,8 @@
               21
             ]
           ],
-          "unified_delta": -7.6,
-          "unified_after": 1577.2
+          "unified_delta": -7.7,
+          "unified_after": 1577
         },
         {
           "date": "2026-06-27",
@@ -149198,7 +149198,7 @@
             ]
           ],
           "unified_delta": -11.7,
-          "unified_after": 1565.5
+          "unified_after": 1565.3
         },
         {
           "date": "2026-06-27",
@@ -149230,7 +149230,7 @@
             ]
           ],
           "unified_delta": -6.6,
-          "unified_after": 1558.9
+          "unified_after": 1558.8
         },
         {
           "date": "2026-07-04",
@@ -149258,7 +149258,7 @@
             ]
           ],
           "unified_delta": -6.8,
-          "unified_after": 1552.1
+          "unified_after": 1552
         },
         {
           "date": "2026-07-04",
@@ -149286,7 +149286,7 @@
             ]
           ],
           "unified_delta": -3.7,
-          "unified_after": 1548.5
+          "unified_after": 1548.3
         },
         {
           "date": "2026-07-04",
@@ -149314,7 +149314,7 @@
             ]
           ],
           "unified_delta": 9.3,
-          "unified_after": 1557.8
+          "unified_after": 1557.6
         },
         {
           "date": "2026-07-04",
@@ -149342,7 +149342,7 @@
             ]
           ],
           "unified_delta": 9,
-          "unified_after": 1566.8
+          "unified_after": 1566.7
         },
         {
           "date": "2026-07-04",
@@ -149370,7 +149370,7 @@
             ]
           ],
           "unified_delta": 11.2,
-          "unified_after": 1578
+          "unified_after": 1577.9
         },
         {
           "date": "2026-07-04",
@@ -149398,7 +149398,7 @@
             ]
           ],
           "unified_delta": 8.4,
-          "unified_after": 1586.4
+          "unified_after": 1586.2
         },
         {
           "date": "2026-07-04",
@@ -149426,7 +149426,7 @@
             ]
           ],
           "unified_delta": -13.5,
-          "unified_after": 1572.9
+          "unified_after": 1572.7
         }
       ]
     },
@@ -150179,7 +150179,7 @@
             ]
           ],
           "unified_delta": 17,
-          "unified_after": 1414.5
+          "unified_after": 1414.4
         },
         {
           "date": "2026-06-27",
@@ -155317,7 +155317,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1605.3,
+        "rating": 1605.2,
         "seed": 1633.3,
         "seed_level": "B",
         "matches": 34,
@@ -155341,11 +155341,11 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1596.9
+            "rating": 1596.7
           },
           {
             "date": "2026-06-27",
-            "rating": 1605.3
+            "rating": 1605.2
           }
         ]
       },
@@ -155951,8 +155951,8 @@
               12
             ]
           ],
-          "unified_delta": 18.5,
-          "unified_after": 1605.6
+          "unified_delta": 18.3,
+          "unified_after": 1605.4
         },
         {
           "date": "2026-04-11",
@@ -155977,7 +155977,7 @@
             ]
           ],
           "unified_delta": -8.7,
-          "unified_after": 1596.9
+          "unified_after": 1596.7
         },
         {
           "date": "2026-06-27",
@@ -156002,7 +156002,7 @@
             ]
           ],
           "unified_delta": 20.6,
-          "unified_after": 1617.5
+          "unified_after": 1617.3
         },
         {
           "date": "2026-06-27",
@@ -156027,7 +156027,7 @@
             ]
           ],
           "unified_delta": 16.7,
-          "unified_after": 1634.2
+          "unified_after": 1634
         },
         {
           "date": "2026-06-27",
@@ -156052,7 +156052,7 @@
             ]
           ],
           "unified_delta": -9.2,
-          "unified_after": 1625
+          "unified_after": 1624.9
         },
         {
           "date": "2026-06-27",
@@ -156080,8 +156080,8 @@
               10
             ]
           ],
-          "unified_delta": 16.3,
-          "unified_after": 1641.4
+          "unified_delta": 16.2,
+          "unified_after": 1641.1
         },
         {
           "date": "2026-06-27",
@@ -156106,7 +156106,7 @@
             ]
           ],
           "unified_delta": -11.8,
-          "unified_after": 1629.6
+          "unified_after": 1629.2
         },
         {
           "date": "2026-06-27",
@@ -156133,8 +156133,8 @@
               21
             ]
           ],
-          "unified_delta": -13.6,
-          "unified_after": 1615.9
+          "unified_delta": -13.5,
+          "unified_after": 1615.7
         },
         {
           "date": "2026-06-27",
@@ -156166,7 +156166,7 @@
             ]
           ],
           "unified_delta": 9.6,
-          "unified_after": 1625.5
+          "unified_after": 1625.3
         },
         {
           "date": "2026-06-27",
@@ -156194,7 +156194,7 @@
             ]
           ],
           "unified_delta": 5.7,
-          "unified_after": 1631.2
+          "unified_after": 1631
         },
         {
           "date": "2026-06-27",
@@ -156222,7 +156222,7 @@
             ]
           ],
           "unified_delta": 5.2,
-          "unified_after": 1636.4
+          "unified_after": 1636.2
         },
         {
           "date": "2026-06-27",
@@ -156253,8 +156253,8 @@
               21
             ]
           ],
-          "unified_delta": -14.4,
-          "unified_after": 1622
+          "unified_delta": -14.3,
+          "unified_after": 1621.9
         },
         {
           "date": "2026-06-27",
@@ -156286,7 +156286,7 @@
             ]
           ],
           "unified_delta": -6.4,
-          "unified_after": 1615.6
+          "unified_after": 1615.5
         },
         {
           "date": "2026-06-27",
@@ -156314,7 +156314,7 @@
             ]
           ],
           "unified_delta": -10.3,
-          "unified_after": 1605.3
+          "unified_after": 1605.2
         }
       ]
     },
@@ -158047,7 +158047,7 @@
               21
             ]
           ],
-          "unified_delta": -13.8,
+          "unified_delta": -13.9,
           "unified_after": 1660.4
         },
         {
@@ -160611,7 +160611,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1429,
+        "rating": 1428.9,
         "seed": 1500,
         "seed_level": "C",
         "matches": 9,
@@ -160631,7 +160631,7 @@
           },
           {
             "date": "2026-07-04",
-            "rating": 1429
+            "rating": 1428.9
           }
         ]
       },
@@ -160849,7 +160849,7 @@
             ]
           ],
           "unified_delta": 11.6,
-          "unified_after": 1455
+          "unified_after": 1454.9
         },
         {
           "date": "2026-07-04",
@@ -160874,7 +160874,7 @@
             ]
           ],
           "unified_delta": -26,
-          "unified_after": 1429
+          "unified_after": 1428.9
         }
       ]
     },
@@ -170255,7 +170255,7 @@
               15
             ]
           ],
-          "unified_delta": -18.5,
+          "unified_delta": -18.6,
           "unified_after": 1854.1
         }
       ]
@@ -171151,7 +171151,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1704.5,
+        "rating": 1699.1,
         "seed": 1754.5,
         "seed_level": "B",
         "matches": 31,
@@ -171159,7 +171159,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.522,
+        "progress": 0.495,
         "status": "stable",
         "provisional": false,
         "peak": 1769.3,
@@ -171179,15 +171179,15 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1745.2
+            "rating": 1739.1
           },
           {
             "date": "2026-05-10",
-            "rating": 1720.2
+            "rating": 1714.3
           },
           {
             "date": "2026-06-27",
-            "rating": 1704.5
+            "rating": 1699.1
           }
         ]
       },
@@ -171817,8 +171817,8 @@
               21
             ]
           ],
-          "unified_delta": -14.8,
-          "unified_after": 1738.5
+          "unified_delta": -15,
+          "unified_after": 1738.3
         },
         {
           "date": "2026-04-11",
@@ -171845,8 +171845,8 @@
               11
             ]
           ],
-          "unified_delta": 17.3,
-          "unified_after": 1755.8
+          "unified_delta": 11.3,
+          "unified_after": 1749.6
         },
         {
           "date": "2026-04-11",
@@ -171873,8 +171873,8 @@
               21
             ]
           ],
-          "unified_delta": -10.6,
-          "unified_after": 1745.2
+          "unified_delta": -10.5,
+          "unified_after": 1739.1
         },
         {
           "date": "2026-05-10",
@@ -171901,8 +171901,8 @@
               21
             ]
           ],
-          "unified_delta": -14,
-          "unified_after": 1731.2
+          "unified_delta": -13.8,
+          "unified_after": 1725.3
         },
         {
           "date": "2026-05-10",
@@ -171934,7 +171934,7 @@
             ]
           ],
           "unified_delta": -11,
-          "unified_after": 1720.2
+          "unified_after": 1714.3
         },
         {
           "date": "2026-06-27",
@@ -171965,8 +171965,8 @@
               16
             ]
           ],
-          "unified_delta": 14.8,
-          "unified_after": 1735
+          "unified_delta": 14.9,
+          "unified_after": 1729.2
         },
         {
           "date": "2026-06-27",
@@ -171993,8 +171993,8 @@
               21
             ]
           ],
-          "unified_delta": -9.8,
-          "unified_after": 1725.2
+          "unified_delta": -9.7,
+          "unified_after": 1719.5
         },
         {
           "date": "2026-06-27",
@@ -172021,8 +172021,8 @@
               21
             ]
           ],
-          "unified_delta": -10.2,
-          "unified_after": 1715
+          "unified_delta": -10.1,
+          "unified_after": 1709.4
         },
         {
           "date": "2026-06-27",
@@ -172049,8 +172049,8 @@
               21
             ]
           ],
-          "unified_delta": -13.6,
-          "unified_after": 1701.3
+          "unified_delta": -13.5,
+          "unified_after": 1695.8
         },
         {
           "date": "2026-06-27",
@@ -172082,7 +172082,7 @@
             ]
           ],
           "unified_delta": 9.6,
-          "unified_after": 1710.9
+          "unified_after": 1705.4
         },
         {
           "date": "2026-06-27",
@@ -172114,7 +172114,7 @@
             ]
           ],
           "unified_delta": -6.4,
-          "unified_after": 1704.5
+          "unified_after": 1699.1
         }
       ]
     },
@@ -172295,7 +172295,7 @@
               15
             ]
           ],
-          "unified_delta": -18.3,
+          "unified_delta": -18.2,
           "unified_after": 1437.4
         }
       ]
@@ -175645,7 +175645,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.326,
+        "progress": 0.325,
         "status": "stable",
         "provisional": false,
         "peak": 1789.8,
@@ -176261,7 +176261,7 @@
             ]
           ],
           "unified_delta": -12.4,
-          "unified_after": 1680.4
+          "unified_after": 1680.3
         },
         {
           "date": "2026-05-10",
@@ -178034,7 +178034,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1416.4,
+        "rating": 1416.5,
         "seed": 1460,
         "seed_level": "D",
         "matches": 5,
@@ -178050,7 +178050,7 @@
         "history": [
           {
             "date": "2026-07-04",
-            "rating": 1416.4
+            "rating": 1416.5
           }
         ]
       },
@@ -178109,7 +178109,7 @@
             ]
           ],
           "unified_delta": -10.1,
-          "unified_after": 1430.5
+          "unified_after": 1430.6
         },
         {
           "date": "2026-07-04",
@@ -178137,7 +178137,7 @@
             ]
           ],
           "unified_delta": -5.8,
-          "unified_after": 1424.7
+          "unified_after": 1424.8
         },
         {
           "date": "2026-07-04",
@@ -178169,7 +178169,7 @@
             ]
           ],
           "unified_delta": 10.7,
-          "unified_after": 1435.3
+          "unified_after": 1435.4
         },
         {
           "date": "2026-07-04",
@@ -178197,7 +178197,7 @@
             ]
           ],
           "unified_delta": -19,
-          "unified_after": 1416.4
+          "unified_after": 1416.5
         }
       ]
     },
@@ -180330,7 +180330,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1636,
+        "rating": 1635.8,
         "seed": 1700,
         "seed_level": "B",
         "matches": 3,
@@ -180338,7 +180338,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.18,
+        "progress": 0.179,
         "status": "provisional",
         "provisional": true,
         "peak": 1700,
@@ -180346,7 +180346,7 @@
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1636
+            "rating": 1635.8
           }
         ]
       },
@@ -180398,8 +180398,8 @@
               21
             ]
           ],
-          "unified_delta": -24.7,
-          "unified_after": 1659.2
+          "unified_delta": -24.9,
+          "unified_after": 1659
         },
         {
           "date": "2026-06-27",
@@ -180428,7 +180428,7 @@
             ]
           ],
           "unified_delta": -23.2,
-          "unified_after": 1636
+          "unified_after": 1635.8
         }
       ]
     },
@@ -181861,23 +181861,23 @@
         "L"
       ],
       "unified": {
-        "rating": 2030.7,
-        "seed": 2100,
+        "rating": 1652.2,
+        "seed": 1700,
         "seed_level": "M",
         "matches": 3,
-        "category": "M",
-        "next_category": null,
-        "floor": 2000,
-        "next_floor": null,
-        "progress": 0.153,
+        "category": "B",
+        "next_category": "A",
+        "floor": 1600,
+        "next_floor": 1800,
+        "progress": 0.261,
         "status": "provisional",
         "provisional": true,
-        "peak": 2100,
+        "peak": 1700,
         "category_since": null,
         "history": [
           {
             "date": "2026-04-11",
-            "rating": 2030.7
+            "rating": 1652.2
           }
         ]
       },
@@ -181907,8 +181907,8 @@
               21
             ]
           ],
-          "unified_delta": -25.5,
-          "unified_after": 2074.5
+          "unified_delta": -19.3,
+          "unified_after": 1680.7
         },
         {
           "date": "2026-04-11",
@@ -181935,8 +181935,8 @@
               21
             ]
           ],
-          "unified_delta": -22.1,
-          "unified_after": 2052.3
+          "unified_delta": -14.4,
+          "unified_after": 1666.3
         },
         {
           "date": "2026-04-11",
@@ -181963,8 +181963,8 @@
               21
             ]
           ],
-          "unified_delta": -21.7,
-          "unified_after": 2030.7
+          "unified_delta": -14.1,
+          "unified_after": 1652.2
         }
       ]
     },
@@ -187154,7 +187154,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.248,
+        "progress": 0.247,
         "status": "provisional",
         "provisional": true,
         "peak": 1709.4,
@@ -189369,7 +189369,7 @@
               17
             ]
           ],
-          "unified_delta": 10.8,
+          "unified_delta": 10.9,
           "unified_after": 1307.2
         },
         {
@@ -191086,7 +191086,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1468.9,
+        "rating": 1469,
         "seed": 1500,
         "seed_level": "C",
         "matches": 8,
@@ -191106,7 +191106,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1468.9
+            "rating": 1469
           }
         ]
       },
@@ -191313,7 +191313,7 @@
             ]
           ],
           "unified_delta": -9.5,
-          "unified_after": 1474.9
+          "unified_after": 1475
         },
         {
           "date": "2026-06-27",
@@ -191341,7 +191341,7 @@
             ]
           ],
           "unified_delta": -6,
-          "unified_after": 1468.9
+          "unified_after": 1469
         }
       ]
     },
@@ -195022,7 +195022,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1600.4,
+        "rating": 1600.3,
         "seed": 1675,
         "seed_level": "C",
         "matches": 29,
@@ -195046,11 +195046,11 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1591.8
+            "rating": 1591.7
           },
           {
             "date": "2026-07-04",
-            "rating": 1600.4
+            "rating": 1600.3
           }
         ]
       },
@@ -195597,7 +195597,7 @@
             ]
           ],
           "unified_delta": -6,
-          "unified_after": 1613.2
+          "unified_after": 1613.1
         },
         {
           "date": "2026-06-27",
@@ -195625,7 +195625,7 @@
             ]
           ],
           "unified_delta": -8.5,
-          "unified_after": 1604.8
+          "unified_after": 1604.7
         },
         {
           "date": "2026-06-27",
@@ -195653,7 +195653,7 @@
             ]
           ],
           "unified_delta": -13,
-          "unified_after": 1591.8
+          "unified_after": 1591.7
         },
         {
           "date": "2026-07-04",
@@ -195681,7 +195681,7 @@
             ]
           ],
           "unified_delta": 6.8,
-          "unified_after": 1598.6
+          "unified_after": 1598.5
         },
         {
           "date": "2026-07-04",
@@ -195709,7 +195709,7 @@
             ]
           ],
           "unified_delta": -7.9,
-          "unified_after": 1590.7
+          "unified_after": 1590.6
         },
         {
           "date": "2026-07-04",
@@ -195765,7 +195765,7 @@
             ]
           ],
           "unified_delta": 12.4,
-          "unified_after": 1593.7
+          "unified_after": 1593.6
         },
         {
           "date": "2026-07-04",
@@ -195793,7 +195793,7 @@
             ]
           ],
           "unified_delta": -11.2,
-          "unified_after": 1582.6
+          "unified_after": 1582.5
         },
         {
           "date": "2026-07-04",
@@ -195821,7 +195821,7 @@
             ]
           ],
           "unified_delta": 15.3,
-          "unified_after": 1597.9
+          "unified_after": 1597.8
         },
         {
           "date": "2026-07-04",
@@ -195849,7 +195849,7 @@
             ]
           ],
           "unified_delta": 15.2,
-          "unified_after": 1613.1
+          "unified_after": 1613
         },
         {
           "date": "2026-07-04",
@@ -195877,7 +195877,7 @@
             ]
           ],
           "unified_delta": -12.7,
-          "unified_after": 1600.4
+          "unified_after": 1600.3
         }
       ]
     },
@@ -196303,7 +196303,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1612.2,
+        "rating": 1611.9,
         "seed": 1700,
         "seed_level": "B",
         "matches": 21,
@@ -196311,7 +196311,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.061,
+        "progress": 0.06,
         "status": "demotion",
         "provisional": false,
         "peak": 1700,
@@ -196323,15 +196323,15 @@
           },
           {
             "date": "2026-05-10",
-            "rating": 1642.3
+            "rating": 1642.2
           },
           {
             "date": "2026-06-27",
-            "rating": 1630.7
+            "rating": 1630.5
           },
           {
             "date": "2026-07-04",
-            "rating": 1612.2
+            "rating": 1611.9
           }
         ]
       },
@@ -196481,8 +196481,8 @@
               21
             ]
           ],
-          "unified_delta": -13.3,
-          "unified_after": 1653.2
+          "unified_delta": -13.4,
+          "unified_after": 1653.1
         },
         {
           "date": "2026-05-10",
@@ -196510,7 +196510,7 @@
             ]
           ],
           "unified_delta": -11.6,
-          "unified_after": 1641.6
+          "unified_after": 1641.5
         },
         {
           "date": "2026-05-10",
@@ -196538,7 +196538,7 @@
             ]
           ],
           "unified_delta": 14.2,
-          "unified_after": 1655.8
+          "unified_after": 1655.7
         },
         {
           "date": "2026-05-10",
@@ -196570,7 +196570,7 @@
             ]
           ],
           "unified_delta": 13.6,
-          "unified_after": 1669.4
+          "unified_after": 1669.3
         },
         {
           "date": "2026-05-10",
@@ -196598,7 +196598,7 @@
             ]
           ],
           "unified_delta": -12.1,
-          "unified_after": 1657.2
+          "unified_after": 1657.1
         },
         {
           "date": "2026-05-10",
@@ -196630,7 +196630,7 @@
             ]
           ],
           "unified_delta": -14.9,
-          "unified_after": 1642.3
+          "unified_after": 1642.2
         },
         {
           "date": "2026-06-27",
@@ -196662,7 +196662,7 @@
             ]
           ],
           "unified_delta": -10.9,
-          "unified_after": 1631.5
+          "unified_after": 1631.4
         },
         {
           "date": "2026-06-27",
@@ -196690,7 +196690,7 @@
             ]
           ],
           "unified_delta": -7.3,
-          "unified_after": 1624.2
+          "unified_after": 1624.1
         },
         {
           "date": "2026-06-27",
@@ -196722,7 +196722,7 @@
             ]
           ],
           "unified_delta": 10.2,
-          "unified_after": 1634.4
+          "unified_after": 1634.3
         },
         {
           "date": "2026-06-27",
@@ -196753,8 +196753,8 @@
               21
             ]
           ],
-          "unified_delta": -8.1,
-          "unified_after": 1626.3
+          "unified_delta": -8.3,
+          "unified_after": 1626
         },
         {
           "date": "2026-06-27",
@@ -196786,7 +196786,7 @@
             ]
           ],
           "unified_delta": 11.7,
-          "unified_after": 1638
+          "unified_after": 1637.7
         },
         {
           "date": "2026-06-27",
@@ -196837,7 +196837,7 @@
             ]
           ],
           "unified_delta": 14.5,
-          "unified_after": 1652.5
+          "unified_after": 1652.2
         },
         {
           "date": "2026-06-27",
@@ -196869,7 +196869,7 @@
             ]
           ],
           "unified_delta": -13.6,
-          "unified_after": 1638.8
+          "unified_after": 1638.6
         },
         {
           "date": "2026-06-27",
@@ -196897,7 +196897,7 @@
             ]
           ],
           "unified_delta": -8.1,
-          "unified_after": 1630.7
+          "unified_after": 1630.5
         },
         {
           "date": "2026-07-04",
@@ -196925,7 +196925,7 @@
             ]
           ],
           "unified_delta": -13.5,
-          "unified_after": 1617.2
+          "unified_after": 1617
         },
         {
           "date": "2026-07-04",
@@ -196953,7 +196953,7 @@
             ]
           ],
           "unified_delta": 9.8,
-          "unified_after": 1627
+          "unified_after": 1626.8
         },
         {
           "date": "2026-07-04",
@@ -196981,7 +196981,7 @@
             ]
           ],
           "unified_delta": -14.8,
-          "unified_after": 1612.2
+          "unified_after": 1611.9
         }
       ]
     },
@@ -201038,7 +201038,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1798.5,
+        "rating": 1798.4,
         "seed": 1900,
         "seed_level": "A",
         "matches": 8,
@@ -201054,7 +201054,7 @@
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1798.5
+            "rating": 1798.4
           }
         ]
       },
@@ -201142,8 +201142,8 @@
               21
             ]
           ],
-          "unified_delta": -18.5,
-          "unified_after": 1837.3
+          "unified_delta": -18.6,
+          "unified_after": 1837.2
         },
         {
           "date": "2026-06-27",
@@ -201175,7 +201175,7 @@
             ]
           ],
           "unified_delta": -16,
-          "unified_after": 1821.3
+          "unified_after": 1821.2
         },
         {
           "date": "2026-06-27",
@@ -201203,7 +201203,7 @@
             ]
           ],
           "unified_delta": -13.1,
-          "unified_after": 1808.2
+          "unified_after": 1808
         },
         {
           "date": "2026-06-27",
@@ -201235,7 +201235,7 @@
             ]
           ],
           "unified_delta": 13.6,
-          "unified_after": 1821.8
+          "unified_after": 1821.7
         },
         {
           "date": "2026-06-27",
@@ -201267,7 +201267,7 @@
             ]
           ],
           "unified_delta": -11.8,
-          "unified_after": 1810
+          "unified_after": 1809.9
         },
         {
           "date": "2026-06-27",
@@ -201295,7 +201295,7 @@
             ]
           ],
           "unified_delta": -11.5,
-          "unified_after": 1798.5
+          "unified_after": 1798.4
         }
       ]
     },
@@ -202275,7 +202275,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1642.2,
+        "rating": 1642.3,
         "seed": 1700,
         "seed_level": "B",
         "matches": 5,
@@ -202283,7 +202283,7 @@
         "next_category": "A",
         "floor": 1600,
         "next_floor": 1800,
-        "progress": 0.211,
+        "progress": 0.212,
         "status": "provisional",
         "provisional": true,
         "peak": 1700,
@@ -202295,7 +202295,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1642.2
+            "rating": 1642.3
           }
         ]
       },
@@ -202413,7 +202413,7 @@
               21
             ]
           ],
-          "unified_delta": -9.3,
+          "unified_delta": -9.2,
           "unified_after": 1656.2
         },
         {
@@ -202445,8 +202445,8 @@
               21
             ]
           ],
-          "unified_delta": -14,
-          "unified_after": 1642.2
+          "unified_delta": -13.9,
+          "unified_after": 1642.3
         }
       ]
     },
@@ -202591,7 +202591,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1789.2,
+        "rating": 1789.1,
         "seed": 1900,
         "seed_level": "A",
         "matches": 8,
@@ -202607,7 +202607,7 @@
         "history": [
           {
             "date": "2026-06-27",
-            "rating": 1789.2
+            "rating": 1789.1
           }
         ]
       },
@@ -202691,8 +202691,8 @@
               21
             ]
           ],
-          "unified_delta": -18.5,
-          "unified_after": 1828
+          "unified_delta": -18.6,
+          "unified_after": 1827.9
         },
         {
           "date": "2026-06-27",
@@ -202724,7 +202724,7 @@
             ]
           ],
           "unified_delta": -16,
-          "unified_after": 1812
+          "unified_after": 1811.9
         },
         {
           "date": "2026-06-27",
@@ -202752,7 +202752,7 @@
             ]
           ],
           "unified_delta": -13.1,
-          "unified_after": 1798.9
+          "unified_after": 1798.7
         },
         {
           "date": "2026-06-27",
@@ -202784,7 +202784,7 @@
             ]
           ],
           "unified_delta": 13.6,
-          "unified_after": 1812.5
+          "unified_after": 1812.4
         },
         {
           "date": "2026-06-27",
@@ -202816,7 +202816,7 @@
             ]
           ],
           "unified_delta": -11.8,
-          "unified_after": 1800.7
+          "unified_after": 1800.6
         },
         {
           "date": "2026-06-27",
@@ -202844,7 +202844,7 @@
             ]
           ],
           "unified_delta": -11.5,
-          "unified_after": 1789.2
+          "unified_after": 1789.1
         }
       ]
     },
@@ -206084,7 +206084,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1399.8,
+        "rating": 1399.7,
         "seed": 1500,
         "seed_level": "C",
         "matches": 32,
@@ -206120,7 +206120,7 @@
           },
           {
             "date": "2026-07-04",
-            "rating": 1399.8
+            "rating": 1399.7
           }
         ]
       },
@@ -206908,7 +206908,7 @@
             ]
           ],
           "unified_delta": -3.7,
-          "unified_after": 1404.6
+          "unified_after": 1404.5
         },
         {
           "date": "2026-07-04",
@@ -206991,7 +206991,7 @@
             ]
           ],
           "unified_delta": -12.2,
-          "unified_after": 1399.8
+          "unified_after": 1399.7
         }
       ]
     },
@@ -210675,7 +210675,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1673.3,
+        "rating": 1673.2,
         "seed": 1780,
         "seed_level": "B",
         "matches": 17,
@@ -210699,7 +210699,7 @@
           },
           {
             "date": "2026-07-04",
-            "rating": 1673.3
+            "rating": 1673.2
           }
         ]
       },
@@ -210869,7 +210869,7 @@
               21
             ]
           ],
-          "unified_delta": -8.1,
+          "unified_delta": -8.2,
           "unified_after": 1740.4
         },
         {
@@ -210897,8 +210897,8 @@
               29
             ]
           ],
-          "unified_delta": -7.4,
-          "unified_after": 1733
+          "unified_delta": -7.5,
+          "unified_after": 1732.9
         },
         {
           "date": "2026-06-27",
@@ -210926,7 +210926,7 @@
             ]
           ],
           "unified_delta": -10.6,
-          "unified_after": 1722.4
+          "unified_after": 1722.3
         },
         {
           "date": "2026-06-27",
@@ -210982,7 +210982,7 @@
             ]
           ],
           "unified_delta": 8.5,
-          "unified_after": 1714.7
+          "unified_after": 1714.6
         },
         {
           "date": "2026-07-04",
@@ -211010,7 +211010,7 @@
             ]
           ],
           "unified_delta": -7.9,
-          "unified_after": 1706.8
+          "unified_after": 1706.7
         },
         {
           "date": "2026-07-04",
@@ -211038,7 +211038,7 @@
             ]
           ],
           "unified_delta": 12.4,
-          "unified_after": 1719.2
+          "unified_after": 1719.1
         },
         {
           "date": "2026-07-04",
@@ -211066,7 +211066,7 @@
             ]
           ],
           "unified_delta": -11.2,
-          "unified_after": 1708
+          "unified_after": 1707.9
         },
         {
           "date": "2026-07-04",
@@ -211094,7 +211094,7 @@
             ]
           ],
           "unified_delta": 15.3,
-          "unified_after": 1723.4
+          "unified_after": 1723.3
         },
         {
           "date": "2026-07-04",
@@ -211122,7 +211122,7 @@
             ]
           ],
           "unified_delta": -17.8,
-          "unified_after": 1705.6
+          "unified_after": 1705.5
         },
         {
           "date": "2026-07-04",
@@ -211150,7 +211150,7 @@
             ]
           ],
           "unified_delta": -17.7,
-          "unified_after": 1687.9
+          "unified_after": 1687.8
         },
         {
           "date": "2026-07-04",
@@ -211178,7 +211178,7 @@
             ]
           ],
           "unified_delta": -14.6,
-          "unified_after": 1673.3
+          "unified_after": 1673.2
         }
       ]
     },
@@ -213101,7 +213101,7 @@
             ]
           ],
           "unified_delta": 10.3,
-          "unified_after": 1282.5
+          "unified_after": 1282.4
         },
         {
           "date": "2026-06-27",
@@ -214269,7 +214269,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1581.7,
+        "rating": 1578.6,
         "seed": 1628.6,
         "seed_level": "B",
         "matches": 57,
@@ -214280,7 +214280,7 @@
         "progress": 0,
         "status": "demotion",
         "provisional": false,
-        "peak": 1657.7,
+        "peak": 1655.8,
         "category_since": null,
         "history": [
           {
@@ -214297,19 +214297,19 @@
           },
           {
             "date": "2026-04-11",
-            "rating": 1631.6
+            "rating": 1627.6
           },
           {
             "date": "2026-05-10",
-            "rating": 1612.8
+            "rating": 1609
           },
           {
             "date": "2026-06-27",
-            "rating": 1587.8
+            "rating": 1584.5
           },
           {
             "date": "2026-07-04",
-            "rating": 1581.7
+            "rating": 1578.6
           }
         ]
       },
@@ -215208,8 +215208,8 @@
               21
             ]
           ],
-          "unified_delta": -11.1,
-          "unified_after": 1644.8
+          "unified_delta": -11.2,
+          "unified_after": 1644.6
         },
         {
           "date": "2026-04-11",
@@ -215236,8 +215236,8 @@
               11
             ]
           ],
-          "unified_delta": 13,
-          "unified_after": 1657.7
+          "unified_delta": 8.4,
+          "unified_after": 1653
         },
         {
           "date": "2026-04-11",
@@ -215264,8 +215264,8 @@
               21
             ]
           ],
-          "unified_delta": -8,
-          "unified_after": 1649.8
+          "unified_delta": -7.8,
+          "unified_after": 1645.2
         },
         {
           "date": "2026-04-11",
@@ -215293,8 +215293,8 @@
               21
             ]
           ],
-          "unified_delta": -8.1,
-          "unified_after": 1641.6
+          "unified_delta": -8,
+          "unified_after": 1637.2
         },
         {
           "date": "2026-04-11",
@@ -215322,8 +215322,8 @@
               21
             ]
           ],
-          "unified_delta": -13.9,
-          "unified_after": 1627.8
+          "unified_delta": -13.7,
+          "unified_after": 1623.5
         },
         {
           "date": "2026-04-11",
@@ -215351,8 +215351,8 @@
               15
             ]
           ],
-          "unified_delta": 12.1,
-          "unified_after": 1639.9
+          "unified_delta": 12.2,
+          "unified_after": 1635.7
         },
         {
           "date": "2026-04-11",
@@ -215376,8 +215376,8 @@
               21
             ]
           ],
-          "unified_delta": -8.3,
-          "unified_after": 1631.6
+          "unified_delta": -8.1,
+          "unified_after": 1627.6
         },
         {
           "date": "2026-05-10",
@@ -215405,7 +215405,7 @@
             ]
           ],
           "unified_delta": 10.8,
-          "unified_after": 1642.4
+          "unified_after": 1638.4
         },
         {
           "date": "2026-05-10",
@@ -215437,7 +215437,7 @@
             ]
           ],
           "unified_delta": 8,
-          "unified_after": 1650.4
+          "unified_after": 1646.5
         },
         {
           "date": "2026-05-10",
@@ -215468,8 +215468,8 @@
               21
             ]
           ],
-          "unified_delta": -10.4,
-          "unified_after": 1640
+          "unified_delta": -10.3,
+          "unified_after": 1636.1
         },
         {
           "date": "2026-05-10",
@@ -215500,8 +215500,8 @@
               21
             ]
           ],
-          "unified_delta": -8.4,
-          "unified_after": 1631.5
+          "unified_delta": -8.5,
+          "unified_after": 1627.6
         },
         {
           "date": "2026-05-10",
@@ -215528,8 +215528,8 @@
               21
             ]
           ],
-          "unified_delta": -10.5,
-          "unified_after": 1621
+          "unified_delta": -10.4,
+          "unified_after": 1617.2
         },
         {
           "date": "2026-05-10",
@@ -215561,7 +215561,7 @@
             ]
           ],
           "unified_delta": -8.2,
-          "unified_after": 1612.8
+          "unified_after": 1609
         },
         {
           "date": "2026-06-27",
@@ -215589,8 +215589,8 @@
               21
             ]
           ],
-          "unified_delta": -12.8,
-          "unified_after": 1600.1
+          "unified_delta": -12.6,
+          "unified_after": 1596.4
         },
         {
           "date": "2026-06-27",
@@ -215614,8 +215614,8 @@
               13
             ]
           ],
-          "unified_delta": 14.8,
-          "unified_after": 1614.9
+          "unified_delta": 15,
+          "unified_after": 1611.3
         },
         {
           "date": "2026-06-27",
@@ -215643,8 +215643,8 @@
               18
             ]
           ],
-          "unified_delta": 17.7,
-          "unified_after": 1632.6
+          "unified_delta": 17.8,
+          "unified_after": 1629.2
         },
         {
           "date": "2026-06-27",
@@ -215672,8 +215672,8 @@
               21
             ]
           ],
-          "unified_delta": -12.3,
-          "unified_after": 1620.4
+          "unified_delta": -12.1,
+          "unified_after": 1617
         },
         {
           "date": "2026-06-27",
@@ -215701,7 +215701,7 @@
             ]
           ],
           "unified_delta": -4.6,
-          "unified_after": 1615.8
+          "unified_after": 1612.4
         },
         {
           "date": "2026-06-27",
@@ -215733,7 +215733,7 @@
             ]
           ],
           "unified_delta": -7.2,
-          "unified_after": 1608.6
+          "unified_after": 1605.2
         },
         {
           "date": "2026-06-27",
@@ -215760,8 +215760,8 @@
               21
             ]
           ],
-          "unified_delta": -6.9,
-          "unified_after": 1601.7
+          "unified_delta": -6.8,
+          "unified_after": 1598.4
         },
         {
           "date": "2026-06-27",
@@ -215792,8 +215792,8 @@
               21
             ]
           ],
-          "unified_delta": -5.6,
-          "unified_after": 1596.2
+          "unified_delta": -5.5,
+          "unified_after": 1592.9
         },
         {
           "date": "2026-06-27",
@@ -215825,7 +215825,7 @@
             ]
           ],
           "unified_delta": -8.4,
-          "unified_after": 1587.8
+          "unified_after": 1584.5
         },
         {
           "date": "2026-07-04",
@@ -215852,8 +215852,8 @@
               15
             ]
           ],
-          "unified_delta": -6.1,
-          "unified_after": 1581.7
+          "unified_delta": -6,
+          "unified_after": 1578.5
         },
         {
           "date": "2026-07-04",
@@ -215881,7 +215881,7 @@
             ]
           ],
           "unified_delta": -3.5,
-          "unified_after": 1578.2
+          "unified_after": 1575
         },
         {
           "date": "2026-07-04",
@@ -215909,7 +215909,7 @@
             ]
           ],
           "unified_delta": 8.1,
-          "unified_after": 1586.3
+          "unified_after": 1583.1
         },
         {
           "date": "2026-07-04",
@@ -215940,8 +215940,8 @@
               13
             ]
           ],
-          "unified_delta": 4.7,
-          "unified_after": 1591
+          "unified_delta": 4.8,
+          "unified_after": 1587.9
         },
         {
           "date": "2026-07-04",
@@ -215969,7 +215969,7 @@
             ]
           ],
           "unified_delta": -9.3,
-          "unified_after": 1581.7
+          "unified_after": 1578.6
         }
       ]
     },
@@ -216481,7 +216481,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1572.7,
+        "rating": 1572.5,
         "seed": 1700,
         "seed_level": "B",
         "matches": 12,
@@ -216501,7 +216501,7 @@
           },
           {
             "date": "2026-06-27",
-            "rating": 1572.7
+            "rating": 1572.5
           }
         ]
       },
@@ -216668,7 +216668,7 @@
             ]
           ],
           "unified_delta": -12.9,
-          "unified_after": 1632.4
+          "unified_after": 1632.3
         },
         {
           "date": "2026-06-27",
@@ -216737,7 +216737,7 @@
             ]
           ],
           "unified_delta": 9.2,
-          "unified_after": 1620.7
+          "unified_after": 1620.6
         },
         {
           "date": "2026-06-27",
@@ -216764,8 +216764,8 @@
               21
             ]
           ],
-          "unified_delta": -9.5,
-          "unified_after": 1611.2
+          "unified_delta": -9.6,
+          "unified_after": 1611
         },
         {
           "date": "2026-06-27",
@@ -216797,7 +216797,7 @@
             ]
           ],
           "unified_delta": -14.6,
-          "unified_after": 1596.6
+          "unified_after": 1596.4
         },
         {
           "date": "2026-06-27",
@@ -216829,7 +216829,7 @@
             ]
           ],
           "unified_delta": -14.5,
-          "unified_after": 1582.1
+          "unified_after": 1581.9
         },
         {
           "date": "2026-06-27",
@@ -216857,7 +216857,7 @@
             ]
           ],
           "unified_delta": -9.3,
-          "unified_after": 1572.7
+          "unified_after": 1572.5
         }
       ]
     },
@@ -224813,7 +224813,7 @@
         "L"
       ],
       "unified": {
-        "rating": 1323.4,
+        "rating": 1323.3,
         "seed": 1450,
         "seed_level": "C",
         "matches": 20,
@@ -224841,7 +224841,7 @@
           },
           {
             "date": "2026-07-04",
-            "rating": 1323.4
+            "rating": 1323.3
           }
         ]
       },
@@ -225432,7 +225432,7 @@
             ]
           ],
           "unified_delta": -6.3,
-          "unified_after": 1323.4
+          "unified_after": 1323.3
         }
       ]
     }
@@ -225470,7 +225470,7 @@
       {
         "key": "M",
         "floor": 2000,
-        "seed": 2100
+        "seed": 1700
       }
     ]
   },

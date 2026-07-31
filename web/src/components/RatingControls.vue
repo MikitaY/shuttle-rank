@@ -9,9 +9,11 @@ defineProps({
   system: String,
   query: String,
   minMatches: Boolean,
+  detailed: Boolean,
 })
 const emit = defineEmits([
-  'update:mode', 'update:discipline', 'update:level', 'update:system', 'update:query', 'update:minMatches',
+  'update:mode', 'update:discipline', 'update:level', 'update:system',
+  'update:query', 'update:minMatches', 'update:detailed',
 ])
 
 const modes = RATING_MODES
@@ -91,6 +93,16 @@ function toggleSearch() {
           @change="emit('update:minMatches', $event.target.checked)"
         />
         от 5 матчей
+      </label>
+
+      <!-- Phones hide the extra columns by default; this brings them back. -->
+      <label class="minm detail-toggle">
+        <input
+          type="checkbox"
+          :checked="detailed"
+          @change="emit('update:detailed', $event.target.checked)"
+        />
+        Подробно
       </label>
     </div>
   </div>

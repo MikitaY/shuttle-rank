@@ -10,6 +10,7 @@ const props = defineProps({
   sortDir: Number,
   discipline: String,
   level: String,
+  detailed: { type: Boolean, default: false },
 })
 const emit = defineEmits(['sort'])
 
@@ -42,7 +43,7 @@ const pct = winrate => Math.round(winrate * 100)
 <template>
   <p class="category-caption">Категория: {{ categoryLabel }}</p>
 
-  <div class="table-wrap">
+  <div class="table-wrap" :class="{ detailed }">
     <table>
       <thead>
         <tr>

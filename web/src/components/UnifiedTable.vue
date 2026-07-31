@@ -10,6 +10,7 @@ const props = defineProps({
   sortDir: Number,
   confirmAt: { type: Number, default: 10 },
   ladder: { type: Array, default: () => [] },
+  detailed: { type: Boolean, default: false },
 })
 const emit = defineEmits(['sort'])
 
@@ -18,6 +19,13 @@ const { visible, remaining, more, total } = useLazyRows(computed(() => props.row
 const openName = ref(null)
 function toggle(name) {
   openName.value = openName.value === name ? null : name
+}
+
+// Tapping a category badge explains that player's standing — a hover title alone
+// wouldn't work on phones.
+const hintName = ref(null)
+function toggleHint(name) {
+  hintName.value = hintName.value === name ? null : name
 }
 
 const columns = [
@@ -48,12 +56,11 @@ const hint = u => categoryHint(u, props.ladder, props.confirmAt)
 
 <template>
   <p class="category-caption">
-    Один рейтинг на все дисциплины и уровни. <b>D → C</b> — до следующей категории
-    осталось меньше 60 очков. Приглушённая категория — предварительная: она подтверждается
-    после {{ confirmAt }} сыгранных матчей.
+    Один рейтинг на все дисциплины и уровни. Нажми на категорию — покажем, чего игроку
+    не хватает до следующей; подробности методики — в «?» вверху страницы.
   </p>
 
-  <div class="table-wrap">
+  <div class="table-wrap" :class="{ detailed }">
     <table>
       <thead>
         <tr>
@@ -73,9 +80,10 @@ const hint = u => categoryHint(u, props.ladder, props.confirmAt)
             <td class="rank num">{{ i + 1 }}</td>
             <td class="name">{{ surnameFirst(r.p.name) }}</td>
             <td>
-              <span class="cat" :class="['cat-' + r.u.category, r.u.status]" :title="hint(r.u)">
-                {{ categoryLabel(r.u) }}
-              </span>
+              <button
+                type="button" class="cat" :class="['cat-' + r.u.category, r.u.status]"
+                :title="hint(r.u)" @click.stop="toggleHint(r.p.name)"
+              >{{ categoryLabel(r.u) }}</button>
             </td>
             <td class="num rating-val">{{ Math.round(r.u.rating) }}</td>
             <td class="num hide-m">
@@ -97,6 +105,12 @@ const hint = u => categoryHint(u, props.ladder, props.confirmAt)
                 v-for="(x, j) in r.p.form.slice(-5)" :key="j"
                 class="chip" :class="x"
               >{{ x === 'W' ? 'В' : 'П' }}</span>
+            </td>
+          </tr>
+          <tr v-if="hintName === r.p.name" class="hint-row">
+            <td colspan="9">
+              <span class="cat" :class="['cat-' + r.u.category, r.u.status]">{{ categoryLabel(r.u) }}</span>
+              {{ hint(r.u) }}
             </td>
           </tr>
           <tr v-if="openName === r.p.name" class="detail">

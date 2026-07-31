@@ -62,9 +62,11 @@ public sealed class UnifiedConfig
     /// bottom category.</summary>
     public double BandWidth { get; set; } = 200;
 
-    /// <summary>Starting rating by the level a player entered the league in (band midpoints).</summary>
+    /// <summary>Starting rating by the level a player entered the league in (band midpoints).
+    /// A MASTER+ draw seeds like B: it's an age bracket, so entering it says nothing beyond
+    /// "plays at the veterans' level" — the М+ category itself is only reachable by rating.</summary>
     public Dictionary<string, double> SeedByLevel { get; set; } =
-        new() { ["E"] = 1100, ["D"] = 1300, ["C"] = 1500, ["B"] = 1700, ["A"] = 1900, ["M"] = 2100 };
+        new() { ["E"] = 1100, ["D"] = 1300, ["C"] = 1500, ["B"] = 1700, ["A"] = 1900, ["M"] = 1700 };
 
     /// <summary>Seed for a player whose first draw carries no level.</summary>
     public double DefaultSeed { get; set; } = 1300;

@@ -1,11 +1,13 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { fmtDate } from '../utils/format.js'
+import MethodologyNotes from './MethodologyNotes.vue'
 
 const props = defineProps({
   tournaments: { type: Array, required: true },
   playersCount: { type: Number, required: true },
   updated: { type: String, default: null },
+  mode: { type: String, default: 'category' },
 })
 
 const totalMatches = computed(() =>
@@ -59,7 +61,7 @@ const emit = defineEmits(['toggle-calc'])
 
   <div v-if="showList" class="tournaments-panel">
     <div class="tournaments-panel-head">
-      <b>Турниры, учитываемые в рейтинге</b>
+      <b>О рейтинге</b>
       <button type="button" class="close-btn" @click="showList = false">✕</button>
     </div>
 
@@ -67,6 +69,9 @@ const emit = defineEmits(['toggle-calc'])
       <li v-for="s in stats" :key="s.label"><b>{{ s.value }}</b> {{ s.label }}</li>
     </ul>
 
+    <MethodologyNotes :mode="mode" />
+
+    <h4 class="panel-subhead">Турниры, учитываемые в рейтинге</h4>
     <ul>
       <li v-for="t in tournamentsByDate" :key="t.id">
         <span class="t-date">{{ fmtDate(t.date) }}</span>

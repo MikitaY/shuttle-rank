@@ -208,20 +208,21 @@ public class UnifiedRatingTests
     }
 
     [Fact]
-    public void Masters_is_the_rung_above_A()
+    public void Masters_is_the_rung_above_A_but_is_not_handed_out_for_entering_the_draw()
     {
         var league = League(("t1", "2026-01-01", [Singles("A", "B", "M"), Singles("C", "D", "A")]));
         var r = new RatingEngine(Config()).Compute(league);
 
-        var masters = Unified(r, "A");
-        Assert.Equal(2100, masters.Seed);
-        Assert.Equal("M", masters.Category);
-        Assert.Null(masters.NextCategory);          // top of the ladder
-        Assert.Equal(2000, masters.Floor);
+        // A MASTER+ debut seeds at the veterans' actual level (B), not at the top rung.
+        var fromMasters = Unified(r, "A");
+        Assert.Equal(1700, fromMasters.Seed);
+        Assert.Equal("B", fromMasters.Category);
 
-        // An A player still has somewhere to climb.
+        // М+ is the rung above A, reachable only by rating.
         Assert.Equal("M", Unified(r, "C").NextCategory);
         Assert.Equal(2000, Unified(r, "C").NextFloor);
+        Assert.Equal("M", r.UnifiedParams!.Categories[^1].Key);
+        Assert.Equal(2000, r.UnifiedParams!.Categories[^1].Floor);
     }
 
     [Fact]

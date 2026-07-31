@@ -5,7 +5,6 @@ import RatingControls from './components/RatingControls.vue'
 import RatingTable from './components/RatingTable.vue'
 import UnifiedTable from './components/UnifiedTable.vue'
 import PairCalculator from './components/PairCalculator.vue'
-import MethodologyFooter from './components/MethodologyFooter.vue'
 import { comboKey, categoryLadder } from './utils/format.js'
 
 // --- Data ---
@@ -30,6 +29,9 @@ watch(mode, m => localStorage.setItem('sr.mode', m))
 
 // Pair calculator panel, opened from the header button.
 const showCalc = ref(false)
+
+// Phones drop the secondary columns; this checkbox puts them back.
+const detailed = ref(false)
 
 // Masters (M) is only ever played as doubles in this league, so "Пары" + Masters
 // is the default view that actually has players in it.
@@ -172,6 +174,7 @@ function onModeChange(value) {
       :tournaments="data.tournaments"
       :players-count="data.players.length"
       :updated="data.updated"
+      :mode="mode"
       @toggle-calc="showCalc = !showCalc"
     />
 
@@ -189,6 +192,8 @@ function onModeChange(value) {
       :system="system"
       :query="query"
       :min-matches="minMatches"
+      :detailed="detailed"
+      @update:detailed="detailed = $event"
       @update:mode="onModeChange"
       @update:discipline="onDisciplineChange"
       @update:level="onLevelChange"
@@ -205,6 +210,7 @@ function onModeChange(value) {
         :sort-dir="sortDir"
         :discipline="discipline"
         :level="level"
+        :detailed="detailed"
         @sort="onSort"
       />
       <UnifiedTable
@@ -214,12 +220,11 @@ function onModeChange(value) {
         :sort-dir="sortDir"
         :confirm-at="confirmAt"
         :ladder="ladder"
+        :detailed="detailed"
         @sort="onSort"
       />
     </template>
     <p v-else-if="error" class="empty">Не удалось загрузить данные: {{ error }}</p>
     <p v-else class="empty">Загрузка…</p>
-
-    <MethodologyFooter :mode="mode" />
   </div>
 </template>

@@ -141,19 +141,29 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
 /* --- Cross-category rating --- */
 .cat {
   display: inline-block; padding: 2px 9px; border-radius: 999px;
-  border: 1px solid transparent; font-size: 12px; font-weight: 700; white-space: nowrap;
-  background: var(--cat-E-bg); color: var(--cat-E-fg);
+  border: 1px solid transparent; font: inherit; font-size: 12px; font-weight: 700;
+  white-space: nowrap; background: var(--cat-E-bg); color: var(--cat-E-fg);
 }
+button.cat { cursor: pointer; }
+button.cat:hover { border-color: currentColor; }
 .cat-E { background: var(--cat-E-bg); color: var(--cat-E-fg); }
 .cat-D { background: var(--cat-D-bg); color: var(--cat-D-fg); }
 .cat-C { background: var(--cat-C-bg); color: var(--cat-C-fg); }
 .cat-B { background: var(--cat-B-bg); color: var(--cat-B-fg); }
 .cat-A { background: var(--cat-A-bg); color: var(--cat-A-fg); }
 .cat-M { background: var(--cat-M-bg); color: var(--cat-M-fg); }
-/* Within reach of the next category: dashed ring around "D → C". Not confirmed yet: dimmed. */
+/* Within reach of the next category: dashed ring around "D → C".
+   Not assigned yet: neutral grey, visibly inactive whatever the category is. */
 .cat.promotion { border-style: dashed; border-color: currentColor; }
-.cat.provisional { opacity: .55; }
+.cat.provisional { background: var(--cat-E-bg); color: var(--muted); font-weight: 600; }
 .to-next { color: var(--muted); font-size: 12px; }
+
+/* One-line explanation of a player's category, opened by tapping the badge. */
+tr.hint-row td {
+  background: var(--hover); white-space: normal; color: var(--muted); font-size: 13px;
+  padding: 8px 10px;
+}
+tr.hint-row .cat { margin-right: 8px; }
 
 /* Long lists render in chunks; this row is both the loader trigger and the manual button. */
 .more-row td { padding: 0; }
@@ -191,21 +201,34 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
   background: transparent; border: 0; padding: 0 0 0 4px; color: var(--accent);
   font: inherit; font-size: 12px; text-decoration: underline; cursor: pointer;
 }
-footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
-footer h3 { color: var(--text); font-size: 15px; margin: 18px 0 6px; }
-.guide-link { margin-top: 14px; }
+/* Methodology block inside the "?" panel. */
+.notes { border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 10px; }
+.notes h4, .panel-subhead {
+  margin: 0 0 6px; color: var(--text); font-size: 14px; font-weight: 650;
+}
+.panel-subhead { margin: 12px 0 6px; }
+.notes p { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
+.notes b { color: var(--text); }
+.guide-link { margin-top: 12px !important; }
 .guide-link a {
   display: inline-block; padding: 9px 14px; border-radius: 10px;
-  background: var(--card); border: 1px solid var(--border);
-  color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none;
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--accent); font-size: 13px; font-weight: 600; text-decoration: none;
 }
 .guide-link a:hover { border-color: var(--accent); }
 footer p { margin: 0 0 8px; }
 .empty { text-align: center; color: var(--muted); padding: 30px; }
-.only-m { display: none; }   /* short labels that replace the full ones on phones */
+.only-m { display: none; }         /* short labels that replace the full ones on phones */
+label.detail-toggle { display: none; }  /* "Подробно" — only where columns are hidden */
 @media (max-width: 720px) {
   .hide-m { display: none; }
   .only-m { display: inline; }
+  label.detail-toggle { display: flex; }
+
+  /* "Подробно": bring the secondary columns back, at the cost of sideways scrolling. */
+  .detailed th.hide-m, .detailed td.hide-m { display: table-cell; }
+  .detailed span.hide-m { display: inline; }
+  .detailed .only-m { display: none; }
   .wrap { padding: 14px 8px 40px; }
 
   /* Title, then the buttons on their own right-aligned line — the pill plus the title

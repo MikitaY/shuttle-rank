@@ -65,12 +65,13 @@ export function categoryLabel(u) {
 export function categoryHint(u, ladder = [], confirmAt = 10) {
   if (u.provisional) {
     const left = Math.max(0, confirmAt - u.matches)
-    return `Предварительная категория — та, в которой игрок начал. `
-      + `Подтверждение после ${confirmAt} матчей, осталось ${left}.`
+    return `Категория ещё не присвоена — показана та, в которой игрок начал. `
+      + `Осталось ${left} ${plural(left, ['матч', 'матча', 'матчей'])} из ${confirmAt}.`
   }
   if (u.status === 'promotion' && u.next_floor != null) {
+    const left = Math.max(0, Math.round(u.next_floor - u.rating))
     return `До категории ${categoryName(u.next_category)} осталось `
-      + `${Math.max(0, Math.round(u.next_floor - u.rating))} очков.`
+      + `${left} ${plural(left, ['очко', 'очка', 'очков'])}.`
   }
   if (u.status === 'demotion' && ladder.length) {
     const at = ladder.findIndex(b => b.key === u.category)
@@ -78,7 +79,7 @@ export function categoryHint(u, ladder = [], confirmAt = 10) {
     return `Рейтинг у нижней границы категории ${categoryName(u.category)}${below}.`
   }
   return `Категория ${categoryName(u.category)}: от ${Math.round(u.floor)}`
-    + (u.next_floor != null ? ` до ${Math.round(u.next_floor - 1)}` : ' и выше')
+    + (u.next_floor != null ? ` до ${Math.round(u.next_floor - 1)}.` : ' и выше.')
 }
 
 // A pair is not rated as an entity — its strength is the mean of the two players,

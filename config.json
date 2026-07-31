@@ -76,7 +76,7 @@
     "ladder": ["E", "D", "C", "B", "A", "M"],
     "category_floors": { "E": 0, "D": 1200, "C": 1400, "B": 1600, "A": 1800, "M": 2000 },
     "band_width": 200,
-    "seed_by_level": { "E": 1100, "D": 1300, "C": 1500, "B": 1700, "A": 1900, "M": 2100 },
+    "seed_by_level": { "E": 1100, "D": 1300, "C": 1500, "B": 1700, "A": 1900, "M": 1700 },
     "default_seed": 1300,
     "scale": 400,
     "k_provisional": 40,
