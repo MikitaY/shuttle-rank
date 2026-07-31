@@ -30,6 +30,8 @@ public sealed class RatingEngine
             return a;
         }
 
+        var unified = new UnifiedRater(_cfg.Unified, league);
+
         foreach (var (t, m) in IterPlayed(league))
         {
             var a = m.Sides[0];
@@ -42,6 +44,10 @@ public sealed class RatingEngine
 
             var mult = level != null && _cfg.Points.LevelMultiplier.TryGetValue(level, out var mm) ? mm : 1.0;
             var winPts = _cfg.Points.WinByRound[kind] * mult;
+
+            // Cross-category rating: deltas are computed from pre-match ratings, recorded in
+            // the match log, and only then applied (see UnifiedRater).
+            var uniDeltas = unified.Rate(m, a, b);
 
             foreach (var side in new[] { a, b })
             {
@@ -74,6 +80,7 @@ public sealed class RatingEngine
                     var games = ReferenceEquals(side, a)
                         ? m.Games.Select(g => new[] { g[0], g[1] }).ToList()
                         : m.Games.Select(g => new[] { g[1], g[0] }).ToList();
+                    var uniDelta = uniDeltas?[name];
                     p.MatchLog.Add(new MatchLogEntry
                     {
                         Date = t.Date,
@@ -86,6 +93,8 @@ public sealed class RatingEngine
                         Teammates = side.Players.Where(x => x != name).ToList(),
                         Opponents = opp.Players.ToList(),
                         Games = games,
+                        UnifiedDelta = uniDelta != null ? Math.Round(uniDelta.Value, 1) : null,
+                        UnifiedAfter = uniDelta != null ? Math.Round(unified.Rating(name) + uniDelta.Value, 1) : null,
                     });
                 }
             }
@@ -108,14 +117,18 @@ public sealed class RatingEngine
                     foreach (var n in b.Players) { var p = Get(n); p.Elo[scope] = p.GetElo(scope) - delta; p.EloMatches[scope] = p.EloMatches.GetValueOrDefault(scope) + 1; }
                 }
             }
+
+            if (uniDeltas != null) unified.Commit(t, uniDeltas);
         }
+
+        unified.Finish();
 
         foreach (var p in players.Values)
             p.Points += _cfg.Points.Participation * p.Tournaments.Count;
 
         InferLevels(players);
 
-        return BuildOutput(league, players);
+        return BuildOutput(league, players, unified);
     }
 
     private void InferLevels(Dictionary<string, Acc> players)
@@ -139,10 +152,11 @@ public sealed class RatingEngine
         }
     }
 
-    private static RatingsOutput BuildOutput(LeagueData league, Dictionary<string, Acc> players)
+    private static RatingsOutput BuildOutput(LeagueData league, Dictionary<string, Acc> players, UnifiedRater unified)
     {
         var output = new RatingsOutput
         {
+            UnifiedParams = unified.Params(),
             Tournaments = league.Tournaments.Select(t => new TournamentSummary
             {
                 Id = t.Id,
@@ -178,6 +192,7 @@ public sealed class RatingEngine
                 ByLevel = p.ByLevel.ToDictionary(kv => kv.Key, kv => ToStat(kv.Value)),
                 ByCombo = p.ByCombo.ToDictionary(kv => kv.Key, kv => ToStat(kv.Value)),
                 Form = Last(p.History, 8),
+                Unified = unified.Result(name),
                 MatchLog = p.MatchLog,
             });
         }
@@ -209,7 +224,7 @@ public sealed class RatingEngine
     }
 
     /// <summary>Matches in chronological order that are eligible for rating.</summary>
-    private static IEnumerable<(Tournament, Match)> IterPlayed(LeagueData league)
+    internal static IEnumerable<(Tournament, Match)> IterPlayed(LeagueData league)
     {
         foreach (var t in league.Tournaments)
             foreach (var m in t.Matches)

@@ -2,12 +2,23 @@
   --bg: #f6f7f9; --card: #ffffff; --text: #1a2233; --muted: #64748b;
   --border: #e2e8f0; --accent: #2563eb; --accent-soft: #dbeafe;
   --win: #16a34a; --loss: #dc2626; --hover: #f1f5f9;
+  /* Category badges of the cross-category rating, weakest to strongest. */
+  --cat-E-bg: #eef2f7; --cat-E-fg: #475569;
+  --cat-D-bg: #dcfce7; --cat-D-fg: #15803d;
+  --cat-C-bg: #dbeafe; --cat-C-fg: #1d4ed8;
+  --cat-B-bg: #ede9fe; --cat-B-fg: #6d28d9;
+  --cat-A-bg: #fef3c7; --cat-A-fg: #b45309;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0f141c; --card: #171e29; --text: #e5eaf2; --muted: #8b98ab;
     --border: #263140; --accent: #60a5fa; --accent-soft: #1e3a5f;
     --win: #4ade80; --loss: #f87171; --hover: #1d2734;
+    --cat-E-bg: #253040; --cat-E-fg: #94a3b8;
+    --cat-D-bg: #14351f; --cat-D-fg: #4ade80;
+    --cat-C-bg: #14294a; --cat-C-fg: #93c5fd;
+    --cat-B-bg: #2a1f4a; --cat-B-fg: #c4b5fd;
+    --cat-A-bg: #3a2a10; --cat-A-fg: #fbbf24;
   }
 }
 * { box-sizing: border-box; }
@@ -116,6 +127,54 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
 .log-divider { border: 0; border-top: 1px solid var(--border); margin: 10px 0; }
 .log-group-label { margin: 6px 8px 2px; color: var(--muted); font-size: 12px; font-weight: 600; }
 .category-caption { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
+
+/* --- Cross-category rating --- */
+.cat {
+  display: inline-block; padding: 2px 9px; border-radius: 999px;
+  border: 1px solid transparent; font-size: 12px; font-weight: 700; white-space: nowrap;
+  background: var(--cat-E-bg); color: var(--cat-E-fg);
+}
+.cat-E { background: var(--cat-E-bg); color: var(--cat-E-fg); }
+.cat-D { background: var(--cat-D-bg); color: var(--cat-D-fg); }
+.cat-C { background: var(--cat-C-bg); color: var(--cat-C-fg); }
+.cat-B { background: var(--cat-B-bg); color: var(--cat-B-fg); }
+.cat-A { background: var(--cat-A-bg); color: var(--cat-A-fg); }
+/* On the way up: dashed ring. Not confirmed yet: dimmed. */
+.cat.promotion { border-style: dashed; border-color: currentColor; }
+.cat.provisional { opacity: .7; }
+.to-next { color: var(--muted); font-size: 12px; }
+
+/* --- Pair rating calculator --- */
+.calc {
+  margin-top: 16px; background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+}
+.calc-head {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; background: transparent; border: 0; color: var(--text);
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.calc-head:hover { background: var(--hover); }
+.calc-toggle { color: var(--muted); font-size: 18px; line-height: 1; }
+.calc-body { padding: 0 16px 16px; border-top: 1px solid var(--border); }
+.calc-pairs { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 14px; }
+.calc-panel { flex: 1 1 240px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.calc-panel h4 { margin: 0; font-size: 13px; font-weight: 600; color: var(--muted); }
+.calc-panel input[type=search] { flex: 0 0 auto; width: 100%; min-width: 0; }
+.calc-out { margin: 2px 0 0; }
+.calc-out b { font-size: 19px; font-variant-numeric: tabular-nums; }
+.calc-sub { display: block; color: var(--muted); font-size: 12px; }
+.calc-stats {
+  list-style: none; display: flex; flex-direction: column; gap: 6px;
+  margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--border); font-size: 14px;
+}
+.calc-stats .res-W { color: var(--win); font-weight: 700; }
+.calc-stats .res-L { color: var(--loss); font-weight: 700; }
+.calc-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+.calc-clear {
+  background: transparent; border: 0; padding: 0 0 0 4px; color: var(--accent);
+  font: inherit; font-size: 12px; text-decoration: underline; cursor: pointer;
+}
 footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
 footer h3 { color: var(--text); font-size: 15px; margin: 18px 0 6px; }
 footer p { margin: 0 0 8px; }

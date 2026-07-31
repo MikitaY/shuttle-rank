@@ -57,3 +57,19 @@ npm run build    # production build to web/dist
   or down by their winrate.
 
 All parameters live in `config.json`.
+
+### Two rating styles
+
+The frontend has a switcher between them; the backend computes both.
+
+- **Per category** (`elo`, `points`) — a separate table per discipline, optionally
+  narrowed to one level.
+- **Cross-category** (`unified`) — one rating per player over *every* match. The seed
+  is the midpoint of the category the player debuted in (E 1100, D 1300, C 1500,
+  B 1700, A 1900; Masters seeds as B), so beating a stronger category pays off from the
+  first match. K-factor falls with experience (40 / 32 / 24), doubles and mixed count
+  0.75 as much as singles. Categories are 200-point chess-style bands: promotion at the
+  next floor but only after 10 rated matches, demotion only 50 points below your own
+  floor, and `D → C` once the next floor is within 60 points. Masters is not a rung —
+  it's an age bracket. Pairs get no category of their own; the frontend's calculator
+  averages two players' ratings, which is exactly the pair strength the engine uses.

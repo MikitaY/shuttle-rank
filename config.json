@@ -71,5 +71,21 @@
     "winrate_up": 0.65,
     "winrate_down": 0.35,
     "adjustment": 0.4
+  },
+  "unified": {
+    "ladder": ["E", "D", "C", "B", "A"],
+    "category_floors": { "E": 0, "D": 1200, "C": 1400, "B": 1600, "A": 1800 },
+    "band_width": 200,
+    "seed_by_level": { "E": 1100, "D": 1300, "C": 1500, "B": 1700, "A": 1900, "M": 1700 },
+    "default_seed": 1300,
+    "scale": 400,
+    "k_provisional": 40,
+    "k_developing": 32,
+    "k_settled": 24,
+    "provisional_matches": 10,
+    "developing_matches": 30,
+    "doubles_weight": 0.75,
+    "demotion_buffer": 50,
+    "transition_zone": 60
   }
 }
