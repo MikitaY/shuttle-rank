@@ -208,6 +208,36 @@ public class UnifiedRatingTests
     }
 
     [Fact]
+    public void Masters_is_the_rung_above_A()
+    {
+        var league = League(("t1", "2026-01-01", [Singles("A", "B", "M"), Singles("C", "D", "A")]));
+        var r = new RatingEngine(Config()).Compute(league);
+
+        var masters = Unified(r, "A");
+        Assert.Equal(2100, masters.Seed);
+        Assert.Equal("M", masters.Category);
+        Assert.Null(masters.NextCategory);          // top of the ladder
+        Assert.Equal(2000, masters.Floor);
+
+        // An A player still has somewhere to climb.
+        Assert.Equal("M", Unified(r, "C").NextCategory);
+        Assert.Equal(2000, Unified(r, "C").NextFloor);
+    }
+
+    [Fact]
+    public void Sitting_at_the_bottom_of_a_band_reads_as_demotion_risk()
+    {
+        // Seeded C, nine losses and a win back leaves the rating under the C floor
+        // but inside the buffer — the category holds, the status warns.
+        var matches = Enumerable.Range(0, 9).Select(i => Singles($"L{i}", "A", "C")).ToList();
+        matches.Add(Singles("A", "W", "C"));
+        var u = Unified(new RatingEngine(Config()).Compute(League(("t1", "2026-01-01", matches.ToArray()))), "A");
+
+        Assert.Equal("C", u.Category);
+        Assert.Equal("demotion", u.Status);
+    }
+
+    [Fact]
     public void K_factor_slows_down_as_matches_pile_up()
     {
         var cfg = Config();

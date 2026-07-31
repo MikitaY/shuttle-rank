@@ -28,6 +28,10 @@ const tournamentsByDate = computed(() =>
   [...props.tournaments].sort((a, b) => (b.date || '').localeCompare(a.date || '')))
 
 const showList = ref(false)
+
+// The pair calculator lives in App.vue (it needs the rated players) — the header only
+// owns its button, next to the info one.
+const emit = defineEmits(['toggle-calc'])
 </script>
 
 <template>
@@ -41,9 +45,16 @@ const showList = ref(false)
       </p>
     </div>
 
-    <button class="info-round-btn" type="button" @click="showList = !showList" aria-label="Инфо о рейтинге">
-      ?
-    </button>
+    <div class="header-actions">
+      <button
+        class="pill-btn" type="button"
+        @click="emit('toggle-calc')"
+        title="Рейтинг пары: выбери двух игроков"
+      ><span aria-hidden="true">🧮</span> Калькулятор пар</button>
+      <button class="info-round-btn" type="button" @click="showList = !showList" aria-label="Инфо о рейтинге">
+        ?
+      </button>
+    </div>
   </header>
 
   <div v-if="showList" class="tournaments-panel">

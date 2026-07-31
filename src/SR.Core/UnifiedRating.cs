@@ -113,8 +113,10 @@ public sealed class UnifiedRater
             NextFloor = next?.Floor,
             Progress = Math.Round(progress, 3),
             Provisional = provisional,
+            // ▲ within reach of the next floor, ▼ hanging on the edge of its own.
             Status = provisional ? "provisional"
                    : next is { } n && s.Rating >= n.Floor - _cfg.TransitionZone ? "promotion"
+                   : i > 0 && s.Rating < floor + _cfg.TransitionZone ? "demotion"
                    : "stable",
             Peak = Math.Round(s.Peak, 1),
             CategorySince = s.CategoryChangedAt,

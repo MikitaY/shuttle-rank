@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import PlayerMatchLog from './PlayerMatchLog.vue'
 import { CATEGORIES, surnameFirst } from '../utils/format.js'
+import { useLazyRows } from '../utils/useLazyRows.js'
 
 const props = defineProps({
   rows: { type: Array, required: true },
@@ -11,6 +12,8 @@ const props = defineProps({
   level: String,
 })
 const emit = defineEmits(['sort'])
+
+const { visible, remaining, more, total } = useLazyRows(computed(() => props.rows))
 
 // Expanded row with match history (keyed by player name).
 const openName = ref(null)
@@ -51,7 +54,7 @@ const pct = winrate => Math.round(winrate * 100)
         </tr>
       </thead>
       <tbody>
-        <template v-for="(r, i) in rows" :key="r.p.name">
+        <template v-for="(r, i) in visible" :key="r.p.name">
           <tr class="player-row" @click="toggle(r.p.name)">
             <td class="rank num">{{ i + 1 }}</td>
             <td class="name">{{ surnameFirst(r.p.name) }}</td>
@@ -75,7 +78,17 @@ const pct = winrate => Math.round(winrate * 100)
           </tr>
         </template>
 
-        <tr v-if="!rows.length">
+        <tr v-if="remaining" class="more-row">
+          <td colspan="8">
+            <div class="more-wrap">
+              <button type="button" class="more-btn" @click="more">
+                Показать ещё {{ Math.min(remaining, 40) }} из {{ remaining }}
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr v-if="!total">
           <td colspan="8" class="empty">Никого не найдено</td>
         </tr>
       </tbody>

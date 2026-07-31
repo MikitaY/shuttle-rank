@@ -1,13 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { surnameFirst, pairRating, categoryOf, winProbability, plural } from '../utils/format.js'
+import { surnameFirst, pairRating, categoryOf, categoryName, winProbability, plural } from '../utils/format.js'
 
 const props = defineProps({
   players: { type: Array, required: true },   // only players with a unified rating
   ladder: { type: Array, required: true },
 })
-
-const open = ref(false)
+const emit = defineEmits(['close'])
 
 // Datalist entries are display names ("Янковский Никита"), so keep a way back to the player.
 const byDisplay = computed(() => {
@@ -77,12 +76,12 @@ function clear() {
 
 <template>
   <section class="calc">
-    <button type="button" class="calc-head" @click="open = !open">
-      <span>🧮 Калькулятор рейтинга пары</span>
-      <span class="calc-toggle">{{ open ? '−' : '+' }}</span>
-    </button>
+    <div class="calc-head">
+      <b>🧮 Калькулятор пар</b>
+      <button type="button" class="close-btn" @click="emit('close')">✕</button>
+    </div>
 
-    <div v-if="open" class="calc-body">
+    <div class="calc-body">
       <datalist id="calc-players">
         <option v-for="name in options" :key="name" :value="name" />
       </datalist>
@@ -96,17 +95,17 @@ function clear() {
             list="calc-players" type="search" :placeholder="labels[pi * 2 + k]"
           />
           <p v-if="pi === 0 && pair1" class="calc-out">
-            <b>{{ Math.round(pair1.rating) }}</b> · категория {{ pair1.category }}<template
-              v-if="pair1.provisional">&thinsp;?</template>
+            <b>{{ Math.round(pair1.rating) }}</b> · уровень {{ categoryName(pair1.category) }}
             <span class="calc-sub">
-              {{ Math.round(pair1.a.unified.rating) }} + {{ Math.round(pair1.b.unified.rating) }}
+              {{ Math.round(pair1.a.unified.rating) }} + {{ Math.round(pair1.b.unified.rating) }}<template
+                v-if="pair1.provisional"> · есть предварительный рейтинг</template>
             </span>
           </p>
           <p v-else-if="pi === 1 && pair2" class="calc-out">
-            <b>{{ Math.round(pair2.rating) }}</b> · категория {{ pair2.category }}<template
-              v-if="pair2.provisional">&thinsp;?</template>
+            <b>{{ Math.round(pair2.rating) }}</b> · уровень {{ categoryName(pair2.category) }}
             <span class="calc-sub">
-              {{ Math.round(pair2.a.unified.rating) }} + {{ Math.round(pair2.b.unified.rating) }}
+              {{ Math.round(pair2.a.unified.rating) }} + {{ Math.round(pair2.b.unified.rating) }}<template
+                v-if="pair2.provisional"> · есть предварительный рейтинг</template>
             </span>
           </p>
         </div>
@@ -135,7 +134,7 @@ function clear() {
       <p class="calc-note">
         Рейтинг пары — среднее рейтингов игроков: именно от него движок считает ожидаемый
         результат парного матча. Своей категории у пары нет — категории присваиваются только
-        игрокам. «?» — в паре есть игрок с предварительным рейтингом.
+        игрокам, поэтому здесь показан просто уровень, в который попадает это среднее.
         <button type="button" class="calc-clear" @click="clear">Очистить</button>
       </p>
     </div>

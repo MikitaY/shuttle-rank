@@ -50,22 +50,21 @@ public sealed class LevelInferenceConfig
 /// player over every discipline and level, plus the category ladder built on top of it.</summary>
 public sealed class UnifiedConfig
 {
-    /// <summary>Categories from weakest to strongest. Masters is deliberately absent —
-    /// it's an age bracket, not a rung on the skill ladder.</summary>
-    public List<string> Ladder { get; set; } = new() { "E", "D", "C", "B", "A" };
+    /// <summary>Categories from weakest to strongest. "M" is the league's Masters+ bracket,
+    /// the rung above A (shown as "М+").</summary>
+    public List<string> Ladder { get; set; } = new() { "E", "D", "C", "B", "A", "M" };
 
     /// <summary>Lowest rating that belongs to a category (chess-class bands, 200 wide).</summary>
     public Dictionary<string, double> CategoryFloors { get; set; } =
-        new() { ["E"] = 0, ["D"] = 1200, ["C"] = 1400, ["B"] = 1600, ["A"] = 1800 };
+        new() { ["E"] = 0, ["D"] = 1200, ["C"] = 1400, ["B"] = 1600, ["A"] = 1800, ["M"] = 2000 };
 
     /// <summary>Width of a category band — only used to draw progress inside the open-ended
     /// bottom category.</summary>
     public double BandWidth { get; set; } = 200;
 
-    /// <summary>Starting rating by the level a player entered the league in (band midpoints).
-    /// Masters seeds like B — it's the bracket the league's veterans actually compete in.</summary>
+    /// <summary>Starting rating by the level a player entered the league in (band midpoints).</summary>
     public Dictionary<string, double> SeedByLevel { get; set; } =
-        new() { ["E"] = 1100, ["D"] = 1300, ["C"] = 1500, ["B"] = 1700, ["A"] = 1900, ["M"] = 1700 };
+        new() { ["E"] = 1100, ["D"] = 1300, ["C"] = 1500, ["B"] = 1700, ["A"] = 1900, ["M"] = 2100 };
 
     /// <summary>Seed for a player whose first draw carries no level.</summary>
     public double DefaultSeed { get; set; } = 1300;

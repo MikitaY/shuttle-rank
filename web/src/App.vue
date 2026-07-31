@@ -28,6 +28,9 @@ onMounted(async () => {
 const mode = ref(localStorage.getItem('sr.mode') === 'unified' ? 'unified' : 'category')
 watch(mode, m => localStorage.setItem('sr.mode', m))
 
+// Pair calculator panel, opened from the header button.
+const showCalc = ref(false)
+
 // Masters (M) is only ever played as doubles in this league, so "Пары" + Masters
 // is the default view that actually has players in it.
 const discipline = ref('doubles')   // 'singles' | 'doubles' | 'mixed' — always one selected.
@@ -169,6 +172,14 @@ function onModeChange(value) {
       :tournaments="data.tournaments"
       :players-count="data.players.length"
       :updated="data.updated"
+      @toggle-calc="showCalc = !showCalc"
+    />
+
+    <PairCalculator
+      v-if="data && showCalc"
+      :players="rated"
+      :ladder="ladder"
+      @close="showCalc = false"
     />
 
     <RatingControls
@@ -196,16 +207,15 @@ function onModeChange(value) {
         :level="level"
         @sort="onSort"
       />
-      <template v-else>
-        <UnifiedTable
-          :rows="unifiedRows"
-          :sort-key="sortKey"
-          :sort-dir="sortDir"
-          :confirm-at="confirmAt"
-          @sort="onSort"
-        />
-        <PairCalculator :players="rated" :ladder="ladder" />
-      </template>
+      <UnifiedTable
+        v-else
+        :rows="unifiedRows"
+        :sort-key="sortKey"
+        :sort-dir="sortDir"
+        :confirm-at="confirmAt"
+        :ladder="ladder"
+        @sort="onSort"
+      />
     </template>
     <p v-else-if="error" class="empty">Не удалось загрузить данные: {{ error }}</p>
     <p v-else class="empty">Загрузка…</p>

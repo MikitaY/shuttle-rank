@@ -1,15 +1,19 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import PlayerMatchLog from './PlayerMatchLog.vue'
-import { surnameFirst, categoryLabel, plural } from '../utils/format.js'
+import { surnameFirst, categoryLabel, categoryHint, plural } from '../utils/format.js'
+import { useLazyRows } from '../utils/useLazyRows.js'
 
 const props = defineProps({
   rows: { type: Array, required: true },
   sortKey: String,
   sortDir: Number,
   confirmAt: { type: Number, default: 10 },
+  ladder: { type: Array, default: () => [] },
 })
 const emit = defineEmits(['sort'])
+
+const { visible, remaining, more, total } = useLazyRows(computed(() => props.rows))
 
 const openName = ref(null)
 function toggle(name) {
@@ -19,10 +23,10 @@ function toggle(name) {
 const columns = [
   { key: 'rank', label: '#' },
   { key: 'name', label: 'Игрок' },
-  { key: 'category', label: 'Категория' },
+  { key: 'category', label: 'Категория', short: 'Кат.' },
   { key: 'rating', label: 'Рейтинг' },
   { key: 'progress', label: 'До следующей', cls: 'hide-m' },
-  { key: 'matches', label: 'Матчи' },
+  { key: 'matches', label: 'Матчи', cls: 'hide-m' },
   { key: 'wl', label: 'В–П', cls: 'hide-m' },
   { key: 'winrate', label: '% побед' },
   { key: 'form', label: 'Форма', cls: 'hide-m' },
@@ -38,12 +42,15 @@ const toConfirm = u => {
   const left = Math.max(0, props.confirmAt - u.matches)
   return `ещё ${left} ${plural(left, ['матч', 'матча', 'матчей'])}`
 }
+
+const hint = u => categoryHint(u, props.ladder, props.confirmAt)
 </script>
 
 <template>
   <p class="category-caption">
-    Один рейтинг на все дисциплины и уровни. Категория присваивается игроку
-    после {{ confirmAt }} сыгранных матчей; до этого она предварительная (?).
+    Один рейтинг на все дисциплины и уровни. <b>D → C</b> — до следующей категории
+    осталось меньше 60 очков. Приглушённая категория — предварительная: она подтверждается
+    после {{ confirmAt }} сыгранных матчей.
   </p>
 
   <div class="table-wrap">
@@ -54,17 +61,20 @@ const toConfirm = u => {
             v-for="c in columns" :key="c.key"
             :class="[c.cls, { sorted: sortKey === c.key }]"
             @click="emit('sort', c.key)"
-          >{{ c.label }}</th>
+          >
+            <span :class="{ 'hide-m': c.short }">{{ c.label }}</span>
+            <span v-if="c.short" class="only-m">{{ c.short }}</span>
+          </th>
         </tr>
       </thead>
       <tbody>
-        <template v-for="(r, i) in rows" :key="r.p.name">
+        <template v-for="(r, i) in visible" :key="r.p.name">
           <tr class="player-row" @click="toggle(r.p.name)">
             <td class="rank num">{{ i + 1 }}</td>
             <td class="name">{{ surnameFirst(r.p.name) }}</td>
             <td>
-              <span class="cat" :class="['cat-' + r.u.category, r.u.status]">
-                {{ categoryLabel(r.u) }}<template v-if="r.u.provisional">&thinsp;?</template>
+              <span class="cat" :class="['cat-' + r.u.category, r.u.status]" :title="hint(r.u)">
+                {{ categoryLabel(r.u) }}
               </span>
             </td>
             <td class="num rating-val">{{ Math.round(r.u.rating) }}</td>
@@ -76,7 +86,7 @@ const toConfirm = u => {
                 <span v-else class="to-next">верх</span>
               </template>
             </td>
-            <td class="num">{{ r.p.matches }}</td>
+            <td class="num hide-m">{{ r.p.matches }}</td>
             <td class="num hide-m">{{ r.p.wins }}–{{ r.p.losses }}</td>
             <td class="num">
               <span class="bar-bg hide-m"><span class="bar" :style="{ width: pct(r.p.winrate) + '%' }"></span></span>
@@ -94,7 +104,17 @@ const toConfirm = u => {
           </tr>
         </template>
 
-        <tr v-if="!rows.length">
+        <tr v-if="remaining" class="more-row">
+          <td colspan="9">
+            <div class="more-wrap">
+              <button type="button" class="more-btn" @click="more">
+                Показать ещё {{ Math.min(remaining, 40) }} из {{ remaining }}
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr v-if="!total">
           <td colspan="9" class="empty">Никого не найдено</td>
         </tr>
       </tbody>

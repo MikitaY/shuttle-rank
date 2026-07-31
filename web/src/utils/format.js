@@ -48,9 +48,37 @@ export function categoryOf(rating, ladder) {
   return found?.key ?? ''
 }
 
-// "D", or "D → C" for a player already knocking on the next category's door.
+// Display name of a category: "M" is the league's Masters+ bracket, the rung above A.
+const CATEGORY_NAMES = { M: 'М+' }
+export function categoryName(key) {
+  return CATEGORY_NAMES[key] || key
+}
+
+// Badge text: "C" normally, "D → C" for a player within reach of the next category.
 export function categoryLabel(u) {
-  return u.status === 'promotion' && u.next_category ? `${u.category} → ${u.next_category}` : u.category
+  return u.status === 'promotion' && u.next_category
+    ? `${categoryName(u.category)} → ${categoryName(u.next_category)}`
+    : categoryName(u.category)
+}
+
+// Tooltip spelling out what the badge is showing.
+export function categoryHint(u, ladder = [], confirmAt = 10) {
+  if (u.provisional) {
+    const left = Math.max(0, confirmAt - u.matches)
+    return `Предварительная категория — та, в которой игрок начал. `
+      + `Подтверждение после ${confirmAt} матчей, осталось ${left}.`
+  }
+  if (u.status === 'promotion' && u.next_floor != null) {
+    return `До категории ${categoryName(u.next_category)} осталось `
+      + `${Math.max(0, Math.round(u.next_floor - u.rating))} очков.`
+  }
+  if (u.status === 'demotion' && ladder.length) {
+    const at = ladder.findIndex(b => b.key === u.category)
+    const below = at > 0 ? ` (ниже — ${categoryName(ladder[at - 1].key)})` : ''
+    return `Рейтинг у нижней границы категории ${categoryName(u.category)}${below}.`
+  }
+  return `Категория ${categoryName(u.category)}: от ${Math.round(u.floor)}`
+    + (u.next_floor != null ? ` до ${Math.round(u.next_floor - 1)}` : ' и выше')
 }
 
 // A pair is not rated as an entity — its strength is the mean of the two players,

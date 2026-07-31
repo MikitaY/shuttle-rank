@@ -8,6 +8,7 @@
   --cat-C-bg: #dbeafe; --cat-C-fg: #1d4ed8;
   --cat-B-bg: #ede9fe; --cat-B-fg: #6d28d9;
   --cat-A-bg: #fef3c7; --cat-A-fg: #b45309;
+  --cat-M-bg: #ffe4e6; --cat-M-fg: #be123c;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,6 +20,7 @@
     --cat-C-bg: #14294a; --cat-C-fg: #93c5fd;
     --cat-B-bg: #2a1f4a; --cat-B-fg: #c4b5fd;
     --cat-A-bg: #3a2a10; --cat-A-fg: #fbbf24;
+    --cat-M-bg: #3d1420; --cat-M-fg: #fda4af;
   }
 }
 * { box-sizing: border-box; }
@@ -39,6 +41,14 @@ header a { color: var(--accent); }
   font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
 }
 .info-round-btn:hover { color: var(--text); border-color: var(--accent); }
+.header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.pill-btn {
+  display: flex; align-items: center; gap: 6px; height: 38px; padding: 0 14px;
+  border-radius: 999px; background: var(--card); border: 1px solid var(--border);
+  color: var(--text); font: inherit; font-size: 13px; font-weight: 600;
+  white-space: nowrap; cursor: pointer;
+}
+.pill-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 .tournaments-panel {
   background: var(--card); border: 1px solid var(--border); border-radius: 10px;
@@ -139,23 +149,29 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
 .cat-C { background: var(--cat-C-bg); color: var(--cat-C-fg); }
 .cat-B { background: var(--cat-B-bg); color: var(--cat-B-fg); }
 .cat-A { background: var(--cat-A-bg); color: var(--cat-A-fg); }
-/* On the way up: dashed ring. Not confirmed yet: dimmed. */
+.cat-M { background: var(--cat-M-bg); color: var(--cat-M-fg); }
+/* Within reach of the next category: dashed ring around "D → C". Not confirmed yet: dimmed. */
 .cat.promotion { border-style: dashed; border-color: currentColor; }
-.cat.provisional { opacity: .7; }
+.cat.provisional { opacity: .55; }
 .to-next { color: var(--muted); font-size: 12px; }
+
+/* Long lists render in chunks; this row is both the loader trigger and the manual button. */
+.more-row td { padding: 0; }
+.more-wrap { display: flex; justify-content: center; padding: 10px; }
+.more-btn {
+  background: transparent; border: 1px solid var(--border); border-radius: 999px;
+  padding: 7px 16px; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer;
+}
+.more-btn:hover { border-color: var(--accent); }
 
 /* --- Pair rating calculator --- */
 .calc {
-  margin-top: 16px; background: var(--card); border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; margin: -10px 0 20px; overflow: hidden;
 }
 .calc-head {
-  width: 100%; display: flex; justify-content: space-between; align-items: center;
-  padding: 12px 16px; background: transparent; border: 0; color: var(--text);
-  font: inherit; font-weight: 600; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;
 }
-.calc-head:hover { background: var(--hover); }
-.calc-toggle { color: var(--muted); font-size: 18px; line-height: 1; }
 .calc-body { padding: 0 16px 16px; border-top: 1px solid var(--border); }
 .calc-pairs { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 14px; }
 .calc-panel { flex: 1 1 240px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
@@ -177,11 +193,33 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
 }
 footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
 footer h3 { color: var(--text); font-size: 15px; margin: 18px 0 6px; }
+.guide-link { margin-top: 14px; }
+.guide-link a {
+  display: inline-block; padding: 9px 14px; border-radius: 10px;
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none;
+}
+.guide-link a:hover { border-color: var(--accent); }
 footer p { margin: 0 0 8px; }
 .empty { text-align: center; color: var(--muted); padding: 30px; }
+.only-m { display: none; }   /* short labels that replace the full ones on phones */
 @media (max-width: 720px) {
   .hide-m { display: none; }
+  .only-m { display: inline; }
   .wrap { padding: 14px 8px 40px; }
+
+  /* Title, then the buttons on their own right-aligned line — the pill plus the title
+     don't fit across a phone. */
+  /* Denser cells so the remaining columns fit a phone without sideways scrolling. */
+  thead th { padding: 9px 6px; }
+  tbody td { padding: 8px 6px; }
+  td.rank { width: 28px; }
+  .cat { padding: 2px 7px; }
+
+  .header-row { flex-wrap: wrap; gap: 8px; }
+  .header-actions { width: 100%; justify-content: flex-end; }
+  header h1 { font-size: 23px; }
+  header .sub { margin-bottom: 12px; }
 
   /* Controls: one filter group per row instead of everything wrapping inline. */
   .controls { flex-direction: column; align-items: stretch; }
