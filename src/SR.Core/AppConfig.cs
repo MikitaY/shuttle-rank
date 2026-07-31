@@ -15,6 +15,7 @@ public sealed class AppConfig
     public EloConfig Elo { get; set; } = new();
     public PointsConfig Points { get; set; } = new();
     public LevelInferenceConfig LevelInference { get; set; } = new();
+    public UnifiedConfig Unified { get; set; } = new();
 
     public static AppConfig Load(string path)
     {
@@ -43,6 +44,54 @@ public sealed class LevelInferenceConfig
     public double WinrateUp { get; set; } = 0.65;
     public double WinrateDown { get; set; } = 0.35;
     public double Adjustment { get; set; } = 0.4;
+}
+
+/// <summary>Parameters of the single cross-category ("сквозной") rating: one number per
+/// player over every discipline and level, plus the category ladder built on top of it.</summary>
+public sealed class UnifiedConfig
+{
+    /// <summary>Categories from weakest to strongest. "M" is the league's Masters+ bracket,
+    /// the rung above A (shown as "М+").</summary>
+    public List<string> Ladder { get; set; } = new() { "E", "D", "C", "B", "A", "M" };
+
+    /// <summary>Lowest rating that belongs to a category (chess-class bands, 200 wide).</summary>
+    public Dictionary<string, double> CategoryFloors { get; set; } =
+        new() { ["E"] = 0, ["D"] = 1200, ["C"] = 1400, ["B"] = 1600, ["A"] = 1800, ["M"] = 2000 };
+
+    /// <summary>Width of a category band — only used to draw progress inside the open-ended
+    /// bottom category.</summary>
+    public double BandWidth { get; set; } = 200;
+
+    /// <summary>Starting rating by the level a player entered the league in (band midpoints).
+    /// A MASTER+ draw seeds like B: it's an age bracket, so entering it says nothing beyond
+    /// "plays at the veterans' level" — the М+ category itself is only reachable by rating.</summary>
+    public Dictionary<string, double> SeedByLevel { get; set; } =
+        new() { ["E"] = 1100, ["D"] = 1300, ["C"] = 1500, ["B"] = 1700, ["A"] = 1900, ["M"] = 1700 };
+
+    /// <summary>Seed for a player whose first draw carries no level.</summary>
+    public double DefaultSeed { get; set; } = 1300;
+
+    public double Scale { get; set; } = 400;
+
+    /// <summary>K-factor by experience: fast while the rating is still finding its place,
+    /// slower once it has settled (FIDE-style).</summary>
+    public double KProvisional { get; set; } = 40;
+    public double KDeveloping { get; set; } = 32;
+    public double KSettled { get; set; } = 24;
+    public int ProvisionalMatches { get; set; } = 10;
+    public int DevelopingMatches { get; set; } = 30;
+
+    /// <summary>Doubles and mixed results move the rating less — half of the outcome
+    /// belongs to the partner.</summary>
+    public double DoublesWeight { get; set; } = 0.75;
+
+    /// <summary>How far below its own floor a rating must fall before the category drops,
+    /// so players don't bounce between two categories.</summary>
+    public double DemotionBuffer { get; set; } = 50;
+
+    /// <summary>Distance to the next floor at which a player is shown as transitioning
+    /// ("D → C").</summary>
+    public double TransitionZone { get; set; } = 60;
 }
 
 /// <summary>A tournament outside OrganizerId/TournamentNamePattern, included by id

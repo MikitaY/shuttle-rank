@@ -1,17 +1,22 @@
 <script setup>
 import { ref, nextTick } from 'vue'
-import { CATEGORIES } from '../utils/format.js'
+import { CATEGORIES, RATING_MODES } from '../utils/format.js'
 
 defineProps({
+  mode: String,
   discipline: String,
   level: String,
   system: String,
   query: String,
   minMatches: Boolean,
+  detailed: Boolean,
 })
 const emit = defineEmits([
-  'update:discipline', 'update:level', 'update:system', 'update:query', 'update:minMatches',
+  'update:mode', 'update:discipline', 'update:level', 'update:system',
+  'update:query', 'update:minMatches', 'update:detailed',
 ])
+
+const modes = RATING_MODES
 
 const disciplines = CATEGORIES.filter(c => c.group === 'discipline')
 const levels = CATEGORIES.filter(c => c.group === 'level')
@@ -31,29 +36,41 @@ function toggleSearch() {
 
 <template>
   <div class="controls">
-    <div class="tabs tabs-wide">
+    <div class="tabs tabs-wide tabs-mode">
       <button
-        v-for="d in disciplines" :key="d.key"
-        :class="{ active: discipline === d.key }"
-        @click="emit('update:discipline', d.key)"
-      >{{ d.label }}</button>
+        v-for="m in modes" :key="m.key"
+        :class="{ active: mode === m.key }"
+        @click="emit('update:mode', m.key)"
+      >{{ m.label }}</button>
     </div>
 
-    <div class="tabs tabs-wide">
-      <button
-        v-for="l in levels" :key="l.key"
-        :class="{ active: level === l.key }"
-        @click="emit('update:level', level === l.key ? null : l.key)"
-      >{{ l.label }}</button>
-    </div>
+    <!-- Discipline, level and Elo/points only mean something in the per-category tables:
+         the cross-category rating is a single number over every match. -->
+    <template v-if="mode === 'category'">
+      <div class="tabs tabs-wide">
+        <button
+          v-for="d in disciplines" :key="d.key"
+          :class="{ active: discipline === d.key }"
+          @click="emit('update:discipline', d.key)"
+        >{{ d.label }}</button>
+      </div>
 
-    <div class="tabs tabs-wide">
-      <button
-        v-for="s in systems" :key="s.key"
-        :class="{ active: system === s.key }"
-        @click="emit('update:system', s.key)"
-      >{{ s.label }}</button>
-    </div>
+      <div class="tabs tabs-wide">
+        <button
+          v-for="l in levels" :key="l.key"
+          :class="{ active: level === l.key }"
+          @click="emit('update:level', level === l.key ? null : l.key)"
+        >{{ l.label }}</button>
+      </div>
+
+      <div class="tabs tabs-wide">
+        <button
+          v-for="s in systems" :key="s.key"
+          :class="{ active: system === s.key }"
+          @click="emit('update:system', s.key)"
+        >{{ s.label }}</button>
+      </div>
+    </template>
 
     <div class="controls-row">
       <div class="search-wrap" :class="{ open: searchOpen }">
@@ -76,6 +93,16 @@ function toggleSearch() {
           @change="emit('update:minMatches', $event.target.checked)"
         />
         от 5 матчей
+      </label>
+
+      <!-- Phones hide the extra columns by default; this brings them back. -->
+      <label class="minm detail-toggle">
+        <input
+          type="checkbox"
+          :checked="detailed"
+          @change="emit('update:detailed', $event.target.checked)"
+        />
+        Подробно
       </label>
     </div>
   </div>

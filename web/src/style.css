@@ -2,12 +2,25 @@
   --bg: #f6f7f9; --card: #ffffff; --text: #1a2233; --muted: #64748b;
   --border: #e2e8f0; --accent: #2563eb; --accent-soft: #dbeafe;
   --win: #16a34a; --loss: #dc2626; --hover: #f1f5f9;
+  /* Category badges of the cross-category rating, weakest to strongest. */
+  --cat-E-bg: #eef2f7; --cat-E-fg: #475569;
+  --cat-D-bg: #dcfce7; --cat-D-fg: #15803d;
+  --cat-C-bg: #dbeafe; --cat-C-fg: #1d4ed8;
+  --cat-B-bg: #ede9fe; --cat-B-fg: #6d28d9;
+  --cat-A-bg: #fef3c7; --cat-A-fg: #b45309;
+  --cat-M-bg: #ffe4e6; --cat-M-fg: #be123c;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0f141c; --card: #171e29; --text: #e5eaf2; --muted: #8b98ab;
     --border: #263140; --accent: #60a5fa; --accent-soft: #1e3a5f;
     --win: #4ade80; --loss: #f87171; --hover: #1d2734;
+    --cat-E-bg: #253040; --cat-E-fg: #94a3b8;
+    --cat-D-bg: #14351f; --cat-D-fg: #4ade80;
+    --cat-C-bg: #14294a; --cat-C-fg: #93c5fd;
+    --cat-B-bg: #2a1f4a; --cat-B-fg: #c4b5fd;
+    --cat-A-bg: #3a2a10; --cat-A-fg: #fbbf24;
+    --cat-M-bg: #3d1420; --cat-M-fg: #fda4af;
   }
 }
 * { box-sizing: border-box; }
@@ -28,6 +41,14 @@ header a { color: var(--accent); }
   font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
 }
 .info-round-btn:hover { color: var(--text); border-color: var(--accent); }
+.header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.pill-btn {
+  display: flex; align-items: center; gap: 6px; height: 38px; padding: 0 14px;
+  border-radius: 999px; background: var(--card); border: 1px solid var(--border);
+  color: var(--text); font: inherit; font-size: 13px; font-weight: 600;
+  white-space: nowrap; cursor: pointer;
+}
+.pill-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 .tournaments-panel {
   background: var(--card); border: 1px solid var(--border); border-radius: 10px;
@@ -116,13 +137,115 @@ tr.detail td { background: var(--hover); white-space: normal; padding: 12px 16px
 .log-divider { border: 0; border-top: 1px solid var(--border); margin: 10px 0; }
 .log-group-label { margin: 6px 8px 2px; color: var(--muted); font-size: 12px; font-weight: 600; }
 .category-caption { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
-footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
-footer h3 { color: var(--text); font-size: 15px; margin: 18px 0 6px; }
+
+/* --- Cross-category rating --- */
+.cat {
+  display: inline-block; padding: 2px 9px; border-radius: 999px;
+  border: 1px solid transparent; font: inherit; font-size: 12px; font-weight: 700;
+  white-space: nowrap; background: var(--cat-E-bg); color: var(--cat-E-fg);
+}
+.cat-E { background: var(--cat-E-bg); color: var(--cat-E-fg); }
+.cat-D { background: var(--cat-D-bg); color: var(--cat-D-fg); }
+.cat-C { background: var(--cat-C-bg); color: var(--cat-C-fg); }
+.cat-B { background: var(--cat-B-bg); color: var(--cat-B-fg); }
+.cat-A { background: var(--cat-A-bg); color: var(--cat-A-fg); }
+.cat-M { background: var(--cat-M-bg); color: var(--cat-M-fg); }
+/* Within reach of the next category: dashed ring around "D → C".
+   Not assigned yet: neutral grey, visibly inactive whatever the category is. */
+.cat.promotion { border-style: dashed; border-color: currentColor; }
+.cat.provisional { background: var(--cat-E-bg); color: var(--muted); font-weight: 600; }
+.to-next { color: var(--muted); font-size: 12px; }
+
+/* Long lists render in chunks; this row is both the loader trigger and the manual button. */
+.more-row td { padding: 0; }
+.more-wrap { display: flex; justify-content: center; padding: 10px; }
+.more-btn {
+  background: transparent; border: 1px solid var(--border); border-radius: 999px;
+  padding: 7px 16px; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer;
+}
+.more-btn:hover { border-color: var(--accent); }
+
+/* --- Pair rating calculator --- */
+.calc {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; margin: -10px 0 20px; overflow: hidden;
+}
+.calc-head {
+  display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;
+}
+.calc-body { padding: 0 16px 16px; border-top: 1px solid var(--border); }
+.calc-pairs { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 14px; }
+.calc-panel { flex: 1 1 240px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.calc-panel h4 { margin: 0; font-size: 13px; font-weight: 600; color: var(--muted); }
+.calc-panel input[type=search] { flex: 0 0 auto; width: 100%; min-width: 0; }
+.calc-out { margin: 2px 0 0; }
+.calc-out b { font-size: 19px; font-variant-numeric: tabular-nums; }
+.calc-sub { display: block; color: var(--muted); font-size: 12px; }
+.calc-stats {
+  list-style: none; display: flex; flex-direction: column; gap: 6px;
+  margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--border); font-size: 14px;
+}
+.calc-stats .res-W { color: var(--win); font-weight: 700; }
+.calc-stats .res-L { color: var(--loss); font-weight: 700; }
+.calc-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+.calc-clear {
+  background: transparent; border: 0; padding: 0 0 0 4px; color: var(--accent);
+  font: inherit; font-size: 12px; text-decoration: underline; cursor: pointer;
+}
+/* Methodology block inside the "?" panel. */
+.notes { border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 10px; }
+.notes h4, .panel-subhead {
+  margin: 0 0 6px; color: var(--text); font-size: 14px; font-weight: 650;
+}
+.panel-subhead { margin: 12px 0 6px; }
+.notes p { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
+.notes b { color: var(--text); }
+.guide-link { margin-top: 12px !important; }
+.guide-link a {
+  display: inline-block; padding: 9px 14px; border-radius: 10px;
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--accent); font-size: 13px; font-weight: 600; text-decoration: none;
+}
+.guide-link a:hover { border-color: var(--accent); }
 footer p { margin: 0 0 8px; }
 .empty { text-align: center; color: var(--muted); padding: 30px; }
+.only-m { display: none; }         /* short labels that replace the full ones on phones */
+label.detail-toggle { display: none; }  /* "Подробно" — only where columns are hidden */
 @media (max-width: 720px) {
   .hide-m { display: none; }
+  .only-m { display: inline; }
+  label.detail-toggle { display: flex; }
+
+  /* "Подробно": bring the secondary columns back, at the cost of sideways scrolling. */
+  .detailed th.hide-m, .detailed td.hide-m { display: table-cell; }
+  .detailed span.hide-m { display: inline; }
+  .detailed .only-m { display: none; }
   .wrap { padding: 14px 8px 40px; }
+
+  /* Title, then the buttons on their own right-aligned line — the pill plus the title
+     don't fit across a phone. */
+  /* Denser cells so the remaining columns fit a phone without sideways scrolling. */
+  thead th { padding: 9px 6px; }
+  tbody td { padding: 8px 6px; }
+  td.rank { width: 28px; }
+  .cat { padding: 2px 7px; }
+
+  .header-row { flex-wrap: wrap; gap: 8px; }
+  .header-actions { width: 100%; justify-content: flex-end; }
+  header h1 { font-size: 23px; }
+  header .sub { margin-bottom: 12px; }
+
+  /* The panels pull themselves up under the subtitle on desktop; here the buttons sit
+     between, so the negative offset would slide them over the buttons. */
+  .tournaments-panel, .calc { margin-top: 10px; }
+
+  /* Keep the info panel a popover rather than a wall of text that buries the table. */
+  .tournaments-panel { max-height: 65vh; overflow-y: auto; padding: 12px 14px; }
+  .tournaments-panel-head {
+    position: sticky; top: -12px; background: var(--card); padding: 4px 0 8px; margin: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .notes p { font-size: 12.5px; line-height: 1.55; }
 
   /* Controls: one filter group per row instead of everything wrapping inline. */
   .controls { flex-direction: column; align-items: stretch; }

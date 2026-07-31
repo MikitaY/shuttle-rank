@@ -6,6 +6,10 @@ const props = defineProps({
   player: { type: Object, required: true },
   discipline: { type: String, default: '' },
   level: { type: String, default: null },
+  // Cross-category view: one chronological list with the rating change of every match,
+  // instead of sections split by discipline and level.
+  unified: { type: Boolean, default: false },
+  confirmAt: { type: Number, default: 10 },
 })
 
 // Elo summary for disciplines where the player has at least one match.
@@ -59,6 +63,8 @@ const otherGroups = computed(() => {
 
 // One section for the active category, then (if any) a divider and one section per other group.
 const sections = computed(() => {
+  if (props.unified) return [{ label: null, matches: fullLog.value }]
+
   const list = [{ label: null, matches: primary.value }]
   if (otherGroups.value.length) {
     list.push({ divider: true })
@@ -68,11 +74,26 @@ const sections = computed(() => {
 })
 
 const score = m => m.games.map(g => g.join(':')).join(', ') || 'w/o'
+
+// "+12.4" / "−8.1" — the rating change this match produced.
+const delta = m => m.unified_delta == null
+  ? ''
+  : (m.unified_delta >= 0 ? '+' : '−') + Math.abs(m.unified_delta).toFixed(1)
 </script>
 
 <template>
-  <b>{{ surnameFirst(player.name) }}</b> — Elo: общий {{ Math.round(player.elo.overall) }}{{ eloSummary }}
-  · очки {{ Math.round(player.points) }}
+  <template v-if="unified">
+    <b>{{ surnameFirst(player.name) }}</b> — сквозной рейтинг {{ Math.round(player.unified.rating) }},
+    старт {{ Math.round(player.unified.seed) }}<template v-if="player.unified.seed_level">
+    ({{ player.unified.seed_level }})</template>, пик {{ Math.round(player.unified.peak) }}
+    · категория {{ player.unified.category }}<template v-if="player.unified.provisional">
+    (предварительная, {{ player.unified.matches }} из {{ confirmAt }} матчей)</template><template
+    v-else-if="player.unified.category_since"> с {{ fmtDate(player.unified.category_since) }}</template>
+  </template>
+  <template v-else>
+    <b>{{ surnameFirst(player.name) }}</b> — Elo: общий {{ Math.round(player.elo.overall) }}{{ eloSummary }}
+    · очки {{ Math.round(player.points) }}
+  </template>
 
   <template v-for="(s, si) in sections" :key="si">
     <hr v-if="s.divider" class="log-divider" />
@@ -89,6 +110,8 @@ const score = m => m.games.map(g => g.join(':')).join(', ') || 'w/o'
               {{ m.opponents.map(surnameFirst).join(' / ') }}<template v-if="m.teammates.length"> (с {{ m.teammates.map(surnameFirst).join(', ') }})</template>
             </td>
             <td class="score">{{ score(m) }}</td>
+            <td v-if="unified" class="num" :class="m.unified_delta >= 0 ? 'res-W' : 'res-L'">{{ delta(m) }}</td>
+            <td v-if="unified" class="num">{{ m.unified_after != null ? Math.round(m.unified_after) : '' }}</td>
           </tr>
         </tbody>
       </table>
