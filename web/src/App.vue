@@ -13,7 +13,8 @@ const error = ref(null)
 
 onMounted(async () => {
   try {
-    const res = await fetch(`${import.meta.env.BASE_URL}data/ratings.json`)
+    // ?v= — see the __DATA_VERSION__ note in vite.config.js.
+    const res = await fetch(`${import.meta.env.BASE_URL}data/ratings.json?v=${__DATA_VERSION__}`)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     data.value = await res.json()
   } catch (e) {
