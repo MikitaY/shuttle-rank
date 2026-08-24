@@ -33,10 +33,16 @@ tournamentsoftware ──scrape──▶ data/league.json ──rate──▶ we
 Regenerate ratings (.NET 10 SDK):
 
 ```bash
-dotnet run --project src/SR.Scraper                # uses the on-disk HTML cache
-dotnet run --project src/SR.Scraper -- --refresh   # re-fetch every page
+dotnet run --project src/SR.Scraper                # picks up new tournaments
+dotnet run --project src/SR.Scraper -- --refresh   # re-fetch every page, cache and all
 dotnet test                                        # run the engine tests
 ```
+
+The plain run is the one to use after a tournament weekend. Pages of a finished event never
+change, so they are cached on disk forever and cost nothing on a re-run; the two things that
+*do* change are always downloaded anew — the organizer's tournament listing, and every page of
+a tournament played in the last `Scraper.RevalidateDays` days (results keep being corrected for
+a few days after the final). `--refresh` is only for when the cache itself is suspect.
 
 Frontend (Node 22):
 

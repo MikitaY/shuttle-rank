@@ -20,14 +20,27 @@ public sealed partial class Scraper
         _client = client;
     }
 
-    private async Task<IDocument> LoadAsync(string url, bool xhr = false) =>
-        await _parser.ParseDocumentAsync(await _client.FetchAsync(url, xhr));
+    /// <summary>A tournament played within this many days is re-fetched instead of being read
+    /// from the cache: an event scraped while it was still running is missing half its bracket,
+    /// and the site keeps correcting results for a while after the last match.</summary>
+    private const int RevalidateDays = 10;
 
-    /// <summary>All organizer tournaments, filtered by the league name.</summary>
+    private async Task<IDocument> LoadAsync(string url, bool xhr = false, bool bypassCache = false) =>
+        await _parser.ParseDocumentAsync(await _client.FetchAsync(url, xhr, bypassCache));
+
+    /// <summary>True while a tournament's pages may still change — see <see cref="RevalidateDays"/>.
+    /// A tournament with no date is treated as settled: only explicit config entries lack one.</summary>
+    private static bool IsFresh(Tournament tournament) =>
+        DateOnly.TryParse(tournament.Date, out var date)
+        && DateOnly.FromDateTime(DateTime.UtcNow).DayNumber - date.DayNumber <= RevalidateDays;
+
+    /// <summary>All organizer tournaments, filtered by the league name.
+    /// The listing grows an entry after every event, so it is always downloaded anew — reading
+    /// it from the cache is exactly how a newly played tournament goes unnoticed.</summary>
     public async Task<List<Tournament>> DiscoverTournamentsAsync()
     {
         var url = $"{_cfg.BaseUrl}/find.aspx?a=7&q={_cfg.OrganizerId}";
-        var doc = await LoadAsync(url);
+        var doc = await LoadAsync(url, bypassCache: true);
         var pattern = new Regex(_cfg.TournamentNamePattern, RegexOptions.IgnoreCase);
         var tournaments = new List<Tournament>();
 
@@ -64,7 +77,8 @@ public sealed partial class Scraper
     public async Task<List<Match>> ParseMatchesAsync(Tournament tournament)
     {
         var matchesUrl = $"{_cfg.BaseUrl}/tournament/{tournament.Id}/Matches";
-        var doc = await LoadAsync(matchesUrl);
+        var fresh = IsFresh(tournament);
+        var doc = await LoadAsync(matchesUrl, bypassCache: fresh);
 
         var days = doc.QuerySelectorAll("a.js-date-selection-tab")
                       .Select(a => a.GetAttribute("data-value"))
@@ -84,7 +98,8 @@ public sealed partial class Scraper
             // Multi-day — fetch each day's fragment (the default page shows only one).
             foreach (var day in days)
             {
-                var dayDoc = await LoadAsync($"{matchesUrl}/MatchesInDay?date={day}", xhr: true);
+                var dayDoc = await LoadAsync($"{matchesUrl}/MatchesInDay?date={day}", xhr: true,
+                    bypassCache: fresh);
                 ParseMatchGroups(dayDoc, matches, ref seq);
             }
         }
@@ -185,7 +200,7 @@ public sealed partial class Scraper
     public async Task<List<Standing>> ParseStandingsAsync(Tournament tournament, int drawId)
     {
         var url = $"{_cfg.BaseUrl}/tournament/{tournament.Id}/Draw/{drawId}/GetStandings";
-        var doc = await LoadAsync(url, xhr: true);
+        var doc = await LoadAsync(url, xhr: true, bypassCache: IsFresh(tournament));
         var rows = new List<Standing>();
 
         foreach (var tr in doc.QuerySelectorAll("table tr"))
