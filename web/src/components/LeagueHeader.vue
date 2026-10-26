@@ -43,6 +43,7 @@ const emit = defineEmits(['toggle-calc'])
       <p class="sub">
         Рейтинг игроков по открытым результатам
         <a href="https://www.tournamentsoftware.com" target="_blank" rel="noopener">tournamentsoftware.com</a>
+        и <a href="https://drivevolan.by/tournament/list" target="_blank" rel="noopener">drivevolan.by</a>
         · обновлено {{ updatedLabel }}
       </p>
     </div>
