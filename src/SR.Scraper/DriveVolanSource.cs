@@ -22,7 +22,7 @@ public static class DriveVolanSource
     }
 
     /// <summary>players.csv: name as drivevolan shows it -> our player. Keyed by name, not by
-    /// drivevolan id: match rows carry only names, and two profiles of one person share a row value.</summary>
+    /// drivevolan id: match rows carry only names, and two profiles of one person share a name.</summary>
     private static Dictionary<string, string> LoadNames(string path)
     {
         var names = new Dictionary<string, string>();
@@ -30,7 +30,7 @@ public static class DriveVolanSource
         {
             if (string.IsNullOrWhiteSpace(line)) continue;
             var cols = SplitCsv(line);
-            names[cols[1]] = cols[3];
+            names[cols[0]] = cols[1];
         }
         return names;
     }

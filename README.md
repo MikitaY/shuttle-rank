@@ -31,7 +31,7 @@ drivevolan.by ──export.js──┘  (data/drivevolan/, committed)
 | `tests/SR.Core.Tests` | xUnit tests for the rating engine. |
 | `web/` | Vue 3 + Vite frontend that reads `ratings.json`. |
 | `config.json` | Organizer, tournaments, aliases, Elo/points/level parameters. |
-| `data/drivevolan/` | drivevolan.by exports (`tournaments/<id>.json`), the reviewed name map (`players.csv`) and its review workbook. |
+| `data/drivevolan/` | drivevolan.by exports (`tournaments/<id>.json`) and the name map `players.csv` (drivevolan name → ours). |
 | `tools/drivevolan/` | Browser export script and the player-matching helper for drivevolan.by. |
 
 ## Running
@@ -61,7 +61,8 @@ tournaments are skipped.
    the site shows them. Put the files into `data/drivevolan/tournaments/`.
 2. `python tools/drivevolan/match_players.py` lists names `players.csv` doesn't know yet in
    `players-candidates.csv`, each with a suggested match from the current ratings.
-3. Review the candidates and append the confirmed rows to `data/drivevolan/players.csv`.
+3. Review the candidates and append the confirmed `name_drivevolan;player` pairs to
+   `data/drivevolan/players.csv`. The candidates file is a scratch file and isn't committed.
    Column `player` holds our spelling ("Имя Фамилия"); our naming wins over the site's.
 4. `dotnet run --project src/SR.Scraper`. A name missing from `players.csv` stops the run
    instead of slipping into the ratings under the site's spelling.

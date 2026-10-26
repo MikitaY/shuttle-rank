@@ -66,6 +66,7 @@ nunit-*.xml
 # shuttle-rank: HTML-кэш скрейпера и промежуточный league.json (генерируются)
 data/cache/
 data/league.json
+data/drivevolan/players-candidates.csv
 web/node_modules/
 web/dist/
 .DS_Store
