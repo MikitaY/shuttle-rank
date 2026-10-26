@@ -41,6 +41,20 @@ foreach (var t in tournaments)
     league.Tournaments.Add(t);
 }
 
+// drivevolan.by: exported by hand into data/drivevolan (see tools/drivevolan/export.js).
+var driveVolan = DriveVolanSource.Load(Path.Combine(root, "data", "drivevolan"));
+Console.WriteLine($"drivevolan.by tournaments: {driveVolan.Count}");
+foreach (var t in driveVolan)
+{
+    scraper.NormalizeNames(t.Matches);
+    Console.WriteLine($"  {t.Date}  {t.Name}");
+    Console.WriteLine($"    matches: {t.Matches.Count}, walkovers: {t.Matches.Count(m => m.Walkover)}");
+    league.Tournaments.Add(t);
+}
+
+// Elo is path-dependent: both sources must be rated in one chronological sequence.
+league.Tournaments = league.Tournaments.OrderBy(t => t.Date ?? "", StringComparer.Ordinal).ToList();
+
 // Intermediate league.json (for debugging; not committed to the repository).
 var leaguePath = Path.Combine(root, "data", "league.json");
 Directory.CreateDirectory(Path.GetDirectoryName(leaguePath)!);

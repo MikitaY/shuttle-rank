@@ -9,14 +9,18 @@ points and inferred skill levels, and publishes them to a Vue web app.
 ## How it works
 
 ```
-tournamentsoftware ──scrape──▶ data/league.json ──rate──▶ web/public/data/ratings.json ──▶ Vue app
+tournamentsoftware ──scrape──┐
+                             ├──▶ data/league.json ──rate──▶ web/public/data/ratings.json ──▶ Vue app
+drivevolan.by ──export.js──┘  (data/drivevolan/, committed)
 ```
 
 1. Discover the organizer's tournaments (plus one-off events named in `config.json`).
 2. Parse every match — across **all days** of multi-day tournaments — resolve
    playoff placeholders from group standings, and normalize player names via the
    alias map.
-3. Compute ratings and write `ratings.json`, which the frontend renders.
+3. Add the drivevolan.by tournaments committed in `data/drivevolan/` (see below) and order
+   everything by date — Elo is path-dependent, so both sources are rated as one timeline.
+4. Compute ratings and write `ratings.json`, which the frontend renders.
 
 ## Layout
 
@@ -27,6 +31,8 @@ tournamentsoftware ──scrape──▶ data/league.json ──rate──▶ we
 | `tests/SR.Core.Tests` | xUnit tests for the rating engine. |
 | `web/` | Vue 3 + Vite frontend that reads `ratings.json`. |
 | `config.json` | Organizer, tournaments, aliases, Elo/points/level parameters. |
+| `data/drivevolan/` | drivevolan.by exports (`tournaments/<id>.json`), the reviewed name map (`players.csv`) and its review workbook. |
+| `tools/drivevolan/` | Browser export script and the player-matching helper for drivevolan.by. |
 
 ## Running
 
@@ -43,6 +49,26 @@ change, so they are cached on disk forever and cost nothing on a re-run; the two
 *do* change are always downloaded anew — the organizer's tournament listing, and every page of
 a tournament played in the last `Scraper.RevalidateDays` days (results keep being corrected for
 a few days after the final). `--refresh` is only for when the cache itself is suspect.
+
+### drivevolan.by tournaments
+
+drivevolan.by shows results only to a signed-in user, so its tournaments are exported by hand
+and committed rather than scraped on every run. Only individual tournaments are used; team
+tournaments are skipped.
+
+1. Sign in on drivevolan.by and run `tools/drivevolan/export.js` in the browser console. It
+   downloads `<id>.json` for every individual tournament — names, rounds and scores exactly as
+   the site shows them. Put the files into `data/drivevolan/tournaments/`.
+2. `python tools/drivevolan/match_players.py` lists names `players.csv` doesn't know yet in
+   `players-candidates.csv`, each with a suggested match from the current ratings.
+3. Review the candidates and append the confirmed rows to `data/drivevolan/players.csv`.
+   Column `player` holds our spelling ("Имя Фамилия"); our naming wins over the site's.
+4. `dotnet run --project src/SR.Scraper`. A name missing from `players.csv` stops the run
+   instead of slipping into the ratings under the site's spelling.
+
+The site's rounds are mapped onto tournamentsoftware terms (`Полуфинал` → `Semi final`,
+`Группа A` → `Group A`…), so stage points are the same for both sources. A straight-zero
+result (21-0, 21-0) is how the site records a no-show; it's treated as a walkover.
 
 Frontend (Node 22):
 
